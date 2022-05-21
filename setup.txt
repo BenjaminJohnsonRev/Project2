@@ -1,0 +1,10 @@
+Bread[
+    {
+        "name": "MultiGrain",
+        "price": 10.00
+    },
+    {
+        "name": "White",
+        "price": 12.00
+    }
+]
