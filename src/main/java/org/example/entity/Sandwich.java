@@ -1,10 +1,12 @@
-package com.megabites.entity;
+package org.example.entity;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import javax.persistence.Entity;
 
 @NoArgsConstructor
 @AllArgsConstructor
