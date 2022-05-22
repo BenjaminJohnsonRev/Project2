@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<div class="container text-center">
+    <div>
+        <h1> User Registration Signup Form</h1>
+    </div>
+
+
+    <!--<form th: action="@{/process_register}" method="post" th:object="${user}"
+          style="max-width: 600px; margin 0 auto;">-->
+        <form method="post" action="/register" th:object="${registerRequest}">
+
+            <div class="form-group row">
+                <label class="col-form-label col-4">Username</label>
+                <div class="col-8">
+                    <input type = "text" class="form-control" name="login" minlength="6" required maxlength="15" />
+                </div>
+            </div>
+        <div>
+            <div class="form-group row">
+                <label class="col-form-label col-4">E-mail</label>
+                <div class="col-8">
+                    <input type = "email" class="form-control" name="email" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-4">Password</label>
+                <div class="col-8">
+                    <input type = "password" class="form-control" name="password" minlength="6" maxlength="15" required />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-4">First Name</label>
+                <div class="col-8">
+                    <input type = "text" class="form-control" name="firstName" required minlength="6" maxlength="25" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-form-label col-4">Last Name</label>
+                <div class="col-8">
+                    <input type = "text" class="form-control" name="lastName" required minlength="2" maxlength="25" />
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" name="sign-in" class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+            <a href="/">Navigate to main</a>
+    </form>
+    <!--  <h3><a th:href="@{/register}">Register</a></h3>-->
+</div>
+
+</body>
+</html>
