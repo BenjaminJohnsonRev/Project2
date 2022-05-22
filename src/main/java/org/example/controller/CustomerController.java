@@ -1,7 +1,7 @@
-package com.megabites.controller;
+package org.example.controller;
 
-import com.megabites.entity.Customer;
-import com.megabites.service.CustomerService;
+import org.example.entity.Customer;
+import org.example.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

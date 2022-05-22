@@ -1,5 +1,5 @@
-package com.megabites.service;
-import com.megabites.entity.Sandwich;
+package org.example.service;
+import org.example.entity.Sandwich;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

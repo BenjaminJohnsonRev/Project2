@@ -1,6 +1,6 @@
-package com.megabites.data;
+package org.example.data;
 
-import com.megabites.entity.Sandwich;
+import org.example.entity.Sandwich;
 
 import java.sql.ResultSet;
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.megabites.data;
+package org.example.data;
 
-import com.megabites.entity.Order;
+import org.example.entity.Order;
 
 import java.sql.ResultSet;
 import java.util.List;

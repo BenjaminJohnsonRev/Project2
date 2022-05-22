@@ -1,5 +1,5 @@
-package com.megabites.service;
-import com.megabites.entity.Customer;
+package org.example.service;
+import org.example.entity.Customer;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;

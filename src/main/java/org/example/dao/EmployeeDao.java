@@ -1,6 +1,6 @@
-package com.megabites.data;
+package org.example.data;
 
-import com.megabites.entity.Employee;
+import org.example.entity.Employee;
 
 import java.sql.ResultSet;
 import java.util.List;
