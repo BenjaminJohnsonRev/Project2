@@ -1,45 +1,60 @@
-package com.megabites.service;
-import com.megabites.entity.Customer;
+package org.example.services;
+
+import org.example.dao.CustomerRepository;
+import org.example.entity.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class CustomerService {
+    @Autowired
+    CustomerRepository customerRepository;
 
     public Customer add_customer(Customer customer){
+        customerRepository.save(customer);
         System.out.println("Customer: " + customer.toString());
         return customer;
     }
 
     public List<Customer> get_all_customers(){
-        Customer customer1 = new Customer(1l, "name1", "password1");
-        Customer customer2 = new Customer(2l, "name2", "password2");
-        Customer customer3 = new Customer(3l, "name3", "password3");
-        List<Customer> customers = new ArrayList<>();
-        customers.add(customer1);
-        customers.add(customer2);
-        customers.add(customer3);
-
-        return customers;
+        return customerRepository.findAll();
     }
 
     public Customer get_customer_by_id(Long id){
-        System.out.println("passed in id: " + id);
-
-        return new Customer(1l, "name1", "password1");
+        return customerRepository.getById(id);
     }
 
     public Customer update_customer(Customer customer, Long id){
-        System.out.println("Updating customer with id: " + id);
-        System.out.println(customer);
-        return customer;
+        Customer customerDB = customerRepository.findById(id).get();
+        customerDB.setUsername(customer.getUsername());
+        customerDB.setPassword(customer.getPassword());
+        customerRepository.save(customerDB);
+        return customerDB;
     }
 
     public void delete_customer(Long id){
-        System.out.println("Deleting customer with id: " + id);
-
+        customerRepository.deleteById(id);
     }
 }
+
+
+
+
+/*
+//this is an example from Rory's demo, I kept it just in case it could be useful later
+    public List<Customer> get_customers_custom(String flag){
+        switch(flag){
+            case "new":
+                return customerRepository.findByYearGreaterThan(2000);
+            case "old":
+                return customerRepository.findByYearLessThan(2001);
+            case "suez":
+                return customerRepository.findByAuthorName("authorrrr");
+            default:
+                return get_all_customers();
+        }
+    }
+
+ */
