@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ffac8e3-87b8-423c-9b69-2e389cd93c61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/dao/CustomerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/dao/CustomerRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/dao/EmployeeRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/dao/EmployeeRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/dao/ManagerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/dao/ManagerRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/services/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/services/CustomerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/services/EmployeeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/services/EmployeeServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/services/ManagerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/services/ManagerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,10 +54,11 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Desktop/Revature Classwork/GitHub Demos/demos/week-5/book/book" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BackEnd" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd\target" />
       <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd\src\test\java\org\example" />
       <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd" />
       <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd\src" />
