@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="homeStyle.css"/>
+    <style>
+        body{font-family: arial, sans-serif;}
+    </style>
+</head>
+<body>
+    <h1>Megabites Sandwich Shop</h1>
+
+    <h2>Login or Register</h2>
+    <form>
+        <label for="username">Username</label>
+        <input required id="username" type="text" name="username" placeholder="user123"/>
+        <br/>
+        <label for="password">Password</label>
+        <input required id="password" type="password" name="password"/>
+        <br/>
+        <button onClick = customerPage()>Login</button>
+        <br/>
+        <br/>
+        <button onclick = "window.location.href='registerPage.html'">Register</button>
+    </form>
+
+    <script>
+        function customerPage(){
+            alert("login");
+        }
+
+    </script>
+
+</body>
+</html>

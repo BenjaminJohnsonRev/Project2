@@ -15,6 +15,7 @@ import javax.persistence.*;
 @Data
 @ToString
 @Entity
+@Table(name = "employees")
 public class Employee {
     @Id
     @GeneratedValue

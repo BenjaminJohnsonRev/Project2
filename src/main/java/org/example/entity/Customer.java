@@ -15,10 +15,11 @@ import javax.persistence.*;
 @Data
 @ToString
 @Entity
+@Table(name = "customers")
 public class Customer {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long customer_id;
     @Column
     private String username;
     @Column

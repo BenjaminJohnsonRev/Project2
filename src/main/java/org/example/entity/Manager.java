@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Data
 @ToString
 @Entity
+@Table(name = "managers")
 public class Manager {
     @Id
     @GeneratedValue
