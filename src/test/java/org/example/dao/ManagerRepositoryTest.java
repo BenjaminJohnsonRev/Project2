@@ -29,7 +29,7 @@ class ManagerRepositoryTest {
     public void injectedComponentsAreNotNull(){
         Manager savedManager = manager_repository.save(test_manager1);
 
-        assertThat(test_manager1).isNotNull();
+        assertThat(savedManager).isNotNull();
     }
 
     @Test

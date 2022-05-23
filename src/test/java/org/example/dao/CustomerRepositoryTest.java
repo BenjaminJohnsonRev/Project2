@@ -21,15 +21,15 @@ class CustomerRepositoryTest {
 
     @BeforeEach
     public void setup(){
-        test_customer1 = new Customer(1l, "tom_username", "tom_password", "tom", "mot", false);
-        test_customer2 = new Customer(2l, "mat_username", "mat_password", "mat", "tam", false);
+        test_customer1 = new Customer(1l, "tom_username", "tom_password", "tom", "mot", "tom@gmail.com", false);
+        test_customer2 = new Customer(2l, "mat_username", "mat_password", "mat", "tam", "mat@gmail.com",false);
     }
 
     @Test
     public void injectedComponentsAreNotNull(){
         Customer savedCustomer = customer_repository.save(test_customer1);
 
-        assertThat(test_customer1).isNotNull();
+        assertThat(savedCustomer).isNotNull();
     }
 
     @Test

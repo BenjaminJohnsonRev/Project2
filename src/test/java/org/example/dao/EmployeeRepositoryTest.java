@@ -29,7 +29,7 @@ class EmployeeRepositoryTest {
     public void injectedComponentsAreNotNull(){
         Employee savedEmployee = employee_repository.save(test_employee1);
 
-        assertThat(test_employee1).isNotNull();
+        assertThat(savedEmployee).isNotNull();
     }
 
     @Test
