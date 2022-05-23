@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 
@@ -18,10 +15,11 @@ import javax.persistence.Id;
 @Data
 @ToString
 @Entity
+@Table(name = "customers")
 public class Customer {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long customer_id;
     @Column
     private String username;
     @Column
@@ -31,13 +29,16 @@ public class Customer {
     @Column
     private String last_name;
     @Column
+    private String email;
+    @Column
     private boolean banned;
 
-    public Customer(String username, String password, String first_name, String last_name, boolean banned){
+    public Customer(String username, String password, String first_name, String last_name, String email, boolean banned){
         this.username = username;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
+        this.email = email;
         this.banned = banned;
     }
 }
