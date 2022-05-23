@@ -5,11 +5,28 @@ body{
 .wrapper{
     display: grid;
     grid-template-columns:repeat(3, 1fr);
-    gap: 10x;
-    grid-template-columns: auto auto auto;;
+    grid-template-columns: auto auto auto;
+    max-width: 750px;
+    min-width:700px;
+}
+
+.block{
+    grid-auto-columns: minmax(500px, 800px);
+    /* gap: 10x; */
     text-align: center;
 }
 
 #or{
-    padding: 50%;
+    padding-top: 35%;
+    margin: 0%;
+}
+
+#test{
+    height: 500px;
+    width: 800px;
+    border: 2px solid black;
+    position: absolute;
+    top: -500px;
+
+
 }
