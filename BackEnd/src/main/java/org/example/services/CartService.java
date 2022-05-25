@@ -36,10 +36,6 @@ public class CartService {
         cartRepository.deleteById(id);
     }
 
-    public List<Sandwich> get_all_sandwiches_by_cart_id (Long id){
-        return cartRepository.get_all_sandwich_by_cart_id(id);
-    }
-
     public double sum_cart(Long id){
         double sum = 0;
         Cart cart = cartRepository.getById(id);

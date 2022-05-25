@@ -34,6 +34,7 @@ public class Sandwich {
     private Seasoning seasoning;
 
 
+
     public Sandwich(Bread bread, Meat meat, Vegetable vegetable, Sauce sauce, Seasoning seasoning) {
         this.bread = bread;
         this.meat = meat;
@@ -41,4 +42,5 @@ public class Sandwich {
         this.sauce = sauce;
         this.seasoning = seasoning;
     }
+
 }
