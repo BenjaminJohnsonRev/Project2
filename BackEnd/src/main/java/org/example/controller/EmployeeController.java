@@ -12,27 +12,27 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PostMapping
     public Employee add_employee(@RequestBody Employee employee){
         return employeeService.add_employee(employee);
     }
 
-    @GetMapping("/get")
+    @GetMapping
     public List<Employee> get_all_employees(){
         return employeeService.get_all_employees();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public Employee get_employee_by_id(@PathVariable("id") long id){
         return employeeService.get_employee_by_id(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public Employee update_employee(@RequestBody Employee employee, @PathVariable("id") long id){
         return employeeService.update_employee(employee, id);
     }
 
-    @DeleteMapping("/delete/{id_to_delete}")
+    @DeleteMapping("/{id_to_delete}")
     public void delete_employee(@PathVariable("id_to_delete") Long id){
         employeeService.delete_employee(id);
     }
