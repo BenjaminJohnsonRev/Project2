@@ -20,24 +20,6 @@ public class CartService {
     }
 
     public List<Cart> get_all_carts(){
-<<<<<<< HEAD
-
-        return cartRepository.findAll();
-    }
-
-
-
-    public Cart get_cart(Long id){
-        System.out.println("passed in id: " + id);
-
-        return cartRepository.findById(id).get();
-    }
-
-    public Cart update_cart(Cart cart){
-        System.out.println("Updating cart with id: " + cart.getCart_id());
-        System.out.println(cart);
-        return cartRepository.save(cart);
-=======
         return cartRepository.findAll();
     }
 
@@ -48,7 +30,6 @@ public class CartService {
     public Cart update_cart(Cart cart){
         cartRepository.save(cart);
         return cart;
->>>>>>> d87d450d11cba95554d9fd7c98c5b849fc4e22b8
     }
 
     public void delete_cart(Long id){

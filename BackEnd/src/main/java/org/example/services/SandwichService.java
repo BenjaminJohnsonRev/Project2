@@ -20,18 +20,6 @@ public class SandwichService {
 
 
     public List<Sandwich> get_all_sandwiches(){
-<<<<<<< HEAD
-//        Sandwich sandwich1 = new Sandwich(1l, 1l, 1l, 1l, 1l , 1l);
-//        Sandwich sandwich2 = new Sandwich(2l, 2l, 2l, 2l, 2l , 2l);
-//        Sandwich sandwich3 = new Sandwich(3l, 3l, 3l, 3l, 3l , 3l);
-
-//        List<Sandwich> sandwiches = new ArrayList<>();
-//        sandwiches.add(sandwich1);
-//        sandwiches.add(sandwich2);
-//        sandwiches.add(sandwich3);
-
-=======
->>>>>>> d87d450d11cba95554d9fd7c98c5b849fc4e22b8
         return sandwichRepository.findAll();
     }
 
@@ -40,14 +28,8 @@ public class SandwichService {
     }
 
     public Sandwich update_sandwich(Sandwich sandwich, Long id){
-<<<<<<< HEAD
-        System.out.println("Updating sandwich with id: " + id);
-        System.out.println(sandwich);
-        return sandwichRepository.save(sandwich);
-=======
         sandwichRepository.save(sandwich);
         return sandwich;
->>>>>>> d87d450d11cba95554d9fd7c98c5b849fc4e22b8
     }
 
     public void delete_sandwich(long id){

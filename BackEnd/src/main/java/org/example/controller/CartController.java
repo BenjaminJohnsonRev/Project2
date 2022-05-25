@@ -27,17 +27,10 @@ public class CartController {
 
     @GetMapping("/{id}")
     public Cart get_cart_by_id(@PathVariable("id") long id){
-        return cartService.get_cart(id);
+        return cartService.get_cart_by_id(id);
     }
 
-<<<<<<< HEAD
-//    @GetMapping("/get/sandwiches/{id}")
-//    public List<Sandwich> get_all_sandwiches_by_cart_id(@PathVariable("id") long id) {return cartService.get_all_sandwiches_by_cart_id(id);}
-
-    @PutMapping("/update/{id}")
-=======
     @PutMapping
->>>>>>> d87d450d11cba95554d9fd7c98c5b849fc4e22b8
     public Cart update_cart(@RequestBody Cart cart){
         return cartService.update_cart(cart);
     }
@@ -47,11 +40,8 @@ public class CartController {
         cartService.delete_cart(id);
     }
 
-<<<<<<< HEAD
-    @GetMapping("/cost/{id}")
-=======
+
     @GetMapping("/cost/{id}}")
->>>>>>> d87d450d11cba95554d9fd7c98c5b849fc4e22b8
     public double get_sum_carts(@PathVariable("id") long id){
         return cartService.sum_cart(id);
     }
