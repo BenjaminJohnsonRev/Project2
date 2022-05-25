@@ -27,7 +27,7 @@ public class SandwichService {
         return sandwichRepository.get_sandwich_by_id(id);
     }
 
-    public Sandwich update_sandwich(Sandwich sandwich, Long id){
+    public Sandwich update_sandwich(Sandwich sandwich){
         sandwichRepository.save(sandwich);
         return sandwich;
     }
