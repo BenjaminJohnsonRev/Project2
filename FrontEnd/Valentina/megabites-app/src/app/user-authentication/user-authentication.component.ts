@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from 'src/customer';
+import { Customer } from 'src/app/customer';
+import { CustomerService } from '../services/customer.service';
 
 @Component({
   selector: 'app-user-authentication',
@@ -12,7 +13,7 @@ import { Customer } from 'src/customer';
 export class UserAuthenticationComponent implements OnInit {
   customer!: Customer;
 
-  constructor() { }
+  constructor(private customerService:CustomerService) { }
 
 
   ngOnInit(): void {
@@ -24,11 +25,21 @@ export class UserAuthenticationComponent implements OnInit {
       email: ''
     }
   }
-  display = "none";
+  display = "grid";
 
-openModal() {
-    this.display = "grid";
+  login(){
+    this.display = "none";
+
   }
+
+  register(){
+    this.customerService.register(this.customer).subscribe(
+      customer=>console.log(customer)
+      )
+    this.display = "none";
+
+  }
+
   onCloseHandled() {
     this.display = "none";
   }
