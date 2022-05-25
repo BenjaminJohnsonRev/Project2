@@ -25,12 +25,12 @@ public class SandwichService {
 //        Sandwich sandwich2 = new Sandwich(2l, 2l, 2l, 2l, 2l , 2l);
 //        Sandwich sandwich3 = new Sandwich(3l, 3l, 3l, 3l, 3l , 3l);
 
-        List<Sandwich> sandwiches = new ArrayList<>();
+//        List<Sandwich> sandwiches = new ArrayList<>();
 //        sandwiches.add(sandwich1);
 //        sandwiches.add(sandwich2);
 //        sandwiches.add(sandwich3);
 
-        return sandwiches;
+        return sandwichRepository.findAll();
     }
 
     public Sandwich get_sandwich_by_id(Long id){
@@ -43,7 +43,7 @@ public class SandwichService {
     public Sandwich update_sandwich(Sandwich sandwich, Long id){
         System.out.println("Updating sandwich with id: " + id);
         System.out.println(sandwich);
-        return sandwich;
+        return sandwichRepository.save(sandwich);
     }
 
     public void delete_sandwich(Long id){

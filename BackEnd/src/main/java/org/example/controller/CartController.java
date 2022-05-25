@@ -2,6 +2,7 @@ package org.example.controller;
 
 
 import org.example.entity.Cart;
+import org.example.entity.menu.Sandwich;
 import org.example.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +27,15 @@ public class CartController {
 
     @GetMapping("/get/{id}")
     public Cart get_cart_by_id(@PathVariable("id") long id){
-        return cartService.get_cart_by_id(id);
+        return cartService.get_cart(id);
     }
 
+//    @GetMapping("/get/sandwiches/{id}")
+//    public List<Sandwich> get_all_sandwiches_by_cart_id(@PathVariable("id") long id) {return cartService.get_all_sandwiches_by_cart_id(id);}
+
     @PutMapping("/update/{id}")
-    public Cart update_cart(@RequestBody Cart cart, @PathVariable("id") long id){
-        return cartService.update_cart(cart, id);
+    public Cart update_cart(@RequestBody Cart cart){
+        return cartService.update_cart(cart);
     }
 
     @DeleteMapping("/delete/{id_to_delete}")
@@ -39,7 +43,7 @@ public class CartController {
         cartService.delete_cart(id);
     }
 
-    @GetMapping("/cost")
+    @GetMapping("/cost/{id}")
     public double get_sum_carts(@PathVariable("id") long id){
         return cartService.sum_cart(id);
     }
