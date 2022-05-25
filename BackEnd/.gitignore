@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### Angular ###
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
