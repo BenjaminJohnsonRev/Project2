@@ -1,6 +1,7 @@
 package org.example.services;
 
 import org.example.dao.CartRepository;
+import org.example.dao.SandwichRepository;
 import org.example.entity.Cart;
 import org.example.entity.menu.Sandwich;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,9 @@ import java.util.Set;
 public class CartService {
     @Autowired
     CartRepository cartRepository;
+
+    @Autowired
+    SandwichRepository sandwichRepository;
 
     public Cart add_cart(Cart cart){
         cartRepository.save(cart);
@@ -49,5 +53,21 @@ public class CartService {
         }
         cartRepository.getById(id).setCost_sum(sum);
         return sum;
+    }
+
+    public Cart addSandwichToCart(long sandwich_id, long cart_id){
+        Cart cart = cartRepository.getById(cart_id);
+        Sandwich sandwich = sandwichRepository.get_sandwich_by_id(sandwich_id);
+        cart.addSandwich(sandwich);
+        cartRepository.save(cart);
+        return cart;
+    }
+
+    public Cart removeSandwichToCart(long sandwich_id, long cart_id){
+        Cart cart = cartRepository.getById(cart_id);
+        Sandwich sandwich = sandwichRepository.get_sandwich_by_id(sandwich_id);
+        cart.removeSandwich(sandwich);
+        cartRepository.save(cart);
+        return cart;
     }
 }

@@ -37,4 +37,5 @@ public class Cart {
     public Cart() {this.sandwiches = new HashSet<>();}
 
     public void addSandwich(Sandwich sandwich) {this.sandwiches.add(sandwich);}
+    public void removeSandwich(Sandwich sandwich) {this.sandwiches.remove(sandwich);}
 }

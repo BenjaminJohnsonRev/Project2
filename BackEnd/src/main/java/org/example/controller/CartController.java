@@ -41,7 +41,7 @@ public class CartController {
     }
 
 
-    @GetMapping("/cost/{id}}")
+    @GetMapping("/cost/{id}")
     public double get_sum_carts(@PathVariable("id") long id){
         return cartService.sum_cart(id);
     }
