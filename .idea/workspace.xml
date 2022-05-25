@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ffac8e3-87b8-423c-9b69-2e389cd93c61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/Valentina/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/Valentina/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd/Valentina/homeStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd/Valentina/homeStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/CartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/IngredientController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/controller/SandwichController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/BreadRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/CartRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/MeatRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/SandwichRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/SauceRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/SeasoningRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dao/VegetableRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/dto/SandwichOrderIdObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/Cart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/menu/ingredients/Bread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/menu/ingredients/Meat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/menu/ingredients/Sauce.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/menu/ingredients/Seasoning.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/entity/menu/ingredients/Vegetable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/services/CartService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/services/IngredientService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/services/SandwichService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/Project2HaruApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/data/BreadRepositoryTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="7ffac8e3-87b8-423c-9b69-2e389cd93c61" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
