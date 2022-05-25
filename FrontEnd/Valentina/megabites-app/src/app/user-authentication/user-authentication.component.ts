@@ -28,6 +28,9 @@ export class UserAuthenticationComponent implements OnInit {
   display = "grid";
 
   login(){
+    this.customerService.login(this.customer).subscribe(
+      customer=>console.log(customer)
+    )
     this.display = "none";
 
   }
@@ -42,6 +45,7 @@ export class UserAuthenticationComponent implements OnInit {
 
   onCloseHandled() {
     this.display = "none";
+    window.open('http://localhost:4200/');
   }
   getCustomer(){
     console.log(this.customer);

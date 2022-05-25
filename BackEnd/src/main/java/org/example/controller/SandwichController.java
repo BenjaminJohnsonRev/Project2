@@ -14,28 +14,28 @@ public class SandwichController {
     @Autowired
     SandwichService sandwichService;
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PostMapping
     public Sandwich add_sandwich(@RequestBody Sandwich sandwich){
         return sandwichService.add_sandwich(sandwich);
     }
 
-    @GetMapping("/get")
+    @GetMapping
     public List<Sandwich> get_all_sandwiches(){
         return sandwichService.get_all_sandwiches();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public Sandwich get_sandwich_by_id(@PathVariable("id") long id){
         return sandwichService.get_sandwich_by_id(id);
     }
 
-    @PutMapping("/update/{id}")
-    public Sandwich update_sandwich(@RequestBody Sandwich sandwich, @PathVariable("id") long id){
-        return sandwichService.update_sandwich(sandwich, id);
+    @PutMapping
+    public Sandwich update_sandwich(@RequestBody Sandwich sandwich){
+        return sandwichService.update_sandwich(sandwich);
     }
 
-    @DeleteMapping("/delete/{id_to_delete}")
-    public void delete_sandwich(@PathVariable("id_to_delete") Long id){
+    @DeleteMapping("/{id_to_delete}")
+    public void delete_sandwich(@PathVariable("id_to_delete") long id){
         sandwichService.delete_sandwich(id);
     }
 

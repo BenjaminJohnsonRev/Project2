@@ -1,0 +1,34 @@
+User Stories:
+
+Customers can create an account
+Customers can login
+Customers can logout
+Customers can choose pickup or delivery
+Customers can choose an address for delivery (GPS map possibly)
+Customers can add menu items to cart
+Customer can customize a sandwich :
+Type of sandwich
+Type of meat
+Type of vegetable
+Type of seasonings(salt/pepper)
+Type of sauces
+Customer can change quantity of ingredients
+Customer can change quantity of items
+Customers can view their order in a cart
+Customers can view current total in cart
+Customers can choose a payment method
+Customers can choose a tip amount
+Customers can view purchase history in account
+Customers can view receipt after purchase
+Customers can submit complaints
+Employee randomly assigned to sandwich being made (% of failure, accumulating)
+Managers can ban customers
+Managers can apply discounts
+Managers can choose feature menu items
+Managers can respond to complaints
+Managers can hire employees
+
+Managers can view all orders:
+By customer
+By date
+By employee

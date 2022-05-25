@@ -32,7 +32,7 @@ public class Sandwich {
     @ManyToOne
     @JoinColumn(name = "seasoning_id")
     private Seasoning seasoning;
-    //private long price;
+
 
 
     public Sandwich(Bread bread, Meat meat, Vegetable vegetable, Sauce sauce, Seasoning seasoning) {
@@ -42,4 +42,5 @@ public class Sandwich {
         this.sauce = sauce;
         this.seasoning = seasoning;
     }
+
 }

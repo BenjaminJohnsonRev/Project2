@@ -1,3 +1,4 @@
+import windo
 <!-- <p>user-authentication works!</p> -->
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
@@ -21,11 +22,11 @@
                    <div class="block">
                        <form class="login">
                            <h6>Login</h6>
-                           <label for="username">Username</label>
-                           <input required id="username" type="text" name="username" [(ngModel)]="customer.username"/>
+                           <label for="login-username">Username</label>
+                           <input required id="login-username" type="text" name="login-username" [(ngModel)]="customer.username"/>
                            <br/>
-                           <label for="password">Password</label>
-                           <input required id="password" type="password" name="password" [(ngModel)]="customer.password"/>
+                           <label for="login-password">Password</label>
+                           <input required id="login-password" type="password" name="login-password" [(ngModel)]="customer.password"/>
                            <br/>
                            <button (click) = "login()">Login</button>
                        </form>
@@ -45,11 +46,11 @@
                            <label for="LastName">Last Name</label>
                            <input required id="LastName" type="text" name="LastName" [(ngModel)]="customer.last_name"/>
                            <br/>
-                           <label for="username">Username</label>
-                           <input required id="username" type="text" name="username" [(ngModel)]="customer.username"/>
+                           <label for="reg-username">Username</label>
+                           <input required id="reg-username" type="text" name="reg-username" [(ngModel)]="customer.username"/>
                            <br/>
-                           <label for="password">Password</label>
-                           <input required id="password" type="password" name="password" [(ngModel)]="customer.password"/>
+                           <label for="reg-password">Password</label>
+                           <input required id="reg-password" type="password" name="reg-password" [(ngModel)]="customer.password"/>
                            <br/>
                            <label for="email">Email</label>
                            <input required id="email" type="text" name="email" [(ngModel)]="customer.email"/>
