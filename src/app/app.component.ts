@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MegaBites-app';
+
+  isShow = true;
+
+  toggleDisplay() {
+    this.isShow = !this.isShow;
+  }
+
 }
