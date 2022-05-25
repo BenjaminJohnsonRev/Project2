@@ -13,27 +13,27 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PostMapping
     public Customer add_customer(@RequestBody Customer customer){
         return customerService.add_customer(customer);
     }
 
-    @GetMapping("/get")
+    @GetMapping
     public List<Customer> get_all_customers(){
         return customerService.get_all_customers();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public Customer get_customer_by_id(@PathVariable("id") long id){
         return customerService.get_customer_by_id(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/{id}")
     public Customer update_customer(@RequestBody Customer customer, @PathVariable("id") long id){
         return customerService.update_customer(customer, id);
     }
 
-    @DeleteMapping("/delete/{id_to_delete}")
+    @DeleteMapping("/{id_to_delete}")
     public void delete_customer(@PathVariable("id_to_delete") Long id){
         customerService.delete_customer(id);
     }
