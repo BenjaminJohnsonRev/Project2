@@ -29,9 +29,9 @@ public class SandwichController {
         return sandwichService.get_sandwich_by_id(id);
     }
 
-    @PutMapping("/{id}")
-    public Sandwich update_sandwich(@RequestBody Sandwich sandwich, @PathVariable("id") long id){
-        return sandwichService.update_sandwich(sandwich, id);
+    @PutMapping
+    public Sandwich update_sandwich(@RequestBody Sandwich sandwich){
+        return sandwichService.update_sandwich(sandwich);
     }
 
     @DeleteMapping("/{id_to_delete}")

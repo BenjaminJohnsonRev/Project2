@@ -14,9 +14,17 @@ public class CustomerService {
 
     public Customer add_customer(Customer customer){
         customerRepository.save(customer);
-        System.out.println("Customer: " + customer.toString());
-        return customer;
+        if (customer.getUsername() ==null || customer.getPassword() ==null){
+            return null;
+        } else {
+            System.out.println("Customer: " + customer.toString());
+            return customerRepository.save(customer);
+        }
     }
+
+//    public CustomerService(CustomerRepository customerRepository) {
+//        this.customerRepository = customerRepository;
+//    }
 
     public List<Customer> get_all_customers(){
         return customerRepository.findAll();
@@ -26,12 +34,13 @@ public class CustomerService {
         return customerRepository.getById(id);
     }
 
-    public Customer update_customer(Customer customer, Long id){
-        Customer customerDB = customerRepository.findById(id).get();
-        customerDB.setUsername(customer.getUsername());
-        customerDB.setPassword(customer.getPassword());
-        customerRepository.save(customerDB);
-        return customerDB;
+    public Customer update_customer(Customer customer){
+        return customerRepository.save(customer);
+    }
+
+
+    public Customer authenticate(String username, String password){
+        return customerRepository.getByUsernameAndPassword(username, password).orElse(null);
     }
 
     public void delete_customer(Long id){
@@ -39,22 +48,3 @@ public class CustomerService {
     }
 }
 
-
-
-
-/*
-//this is an example from Rory's demo, I kept it just in case it could be useful later
-    public List<Customer> get_customers_custom(String flag){
-        switch(flag){
-            case "new":
-                return customerRepository.findByYearGreaterThan(2000);
-            case "old":
-                return customerRepository.findByYearLessThan(2001);
-            case "suez":
-                return customerRepository.findByAuthorName("authorrrr");
-            default:
-                return get_all_customers();
-        }
-    }
-
- */

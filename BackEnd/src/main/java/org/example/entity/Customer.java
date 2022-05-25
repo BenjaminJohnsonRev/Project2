@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 
@@ -41,4 +42,15 @@ public class Customer {
         this.email = email;
         this.banned = banned;
     }
+
+    public Customer(String username, String password){
+        this.username = username;
+        this.password = password;
+    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, login, email, password, first_name, last_name);
+//    }
+
 }

@@ -32,8 +32,6 @@ public class Sandwich {
     @ManyToOne
     @JoinColumn(name = "seasoning_id")
     private Seasoning seasoning;
-    //private long price;
-    private long cart_fk;
 
 
 
@@ -45,12 +43,4 @@ public class Sandwich {
         this.seasoning = seasoning;
     }
 
-    public Sandwich(long sandwich_id, Bread bread, Meat meat, Vegetable vegetable, Sauce sauce, Seasoning seasoning) {
-        this.sandwich_id = sandwich_id;
-        this.bread = bread;
-        this.meat = meat;
-        this.vegetable = vegetable;
-        this.sauce = sauce;
-        this.seasoning = seasoning;
-    }
 }
