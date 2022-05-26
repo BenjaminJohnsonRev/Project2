@@ -17,7 +17,7 @@ import { AddSandwichComponent } from './add-sandwich/add-sandwich.component';
     AppComponent,
     UserAuthenticationComponent,
     BuildSandwichComponent,
-    AddSandwichComponent
+    AddSandwichComponent,
   ],
   imports: [
     BrowserModule,

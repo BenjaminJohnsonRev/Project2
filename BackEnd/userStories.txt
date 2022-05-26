@@ -29,7 +29,7 @@ User Stories:
 [X]Managers can see complaints
 [X]Managers can delete complaints
 [ ]Managers can respond to complaints
-[ ]Managers can hire employees
+[X]Managers can hire employees
 
 
 [X]Managers can view all orders:
