@@ -28,6 +28,9 @@ public class CartController {
         return cartService.addSandwichToCart(sandwichId, cartId);
     }
 
+//    @GetMapping("/history/{id}")
+//    public List<Cart> getAllByCustomer_id(@PathVariable("id") long id) {return cartService.getAllByCustomer_id(id);}
+
     @GetMapping
     public List<Cart> get_all_carts(){
         return cartService.get_all_carts();
