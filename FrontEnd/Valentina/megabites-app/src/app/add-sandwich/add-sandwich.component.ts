@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Bread } from '../bread';
 import { Sandwich } from '../sandwich';
 import { SandwichService } from '../services/sandwich.service';
+import { BreadService } from '../services/bread.service';
 
 @Component({
   selector: 'app-add-sandwich',
@@ -10,8 +12,9 @@ import { SandwichService } from '../services/sandwich.service';
 export class AddSandwichComponent implements OnInit {
 
   sandwich!: Sandwich;
+  breads!: Bread[];
 
-  constructor(private sandwichService:SandwichService) { }
+  constructor(private sandwichService:SandwichService, private breadService:BreadService) { }
 
   ngOnInit(): void {
     this.sandwich = {
@@ -57,4 +60,11 @@ export class AddSandwichComponent implements OnInit {
     // );
   }
 
+  getAllBread(){
+    this.breadService.getAllBread().subscribe((breads:Bread[])=>{
+      this.breads = breads;
+      console.log(breads);
+      document.getElementById("bread-dropdown").innerHTML="working";
+    })
+  }
 }
