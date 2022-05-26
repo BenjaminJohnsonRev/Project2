@@ -83,6 +83,6 @@ class CustomerServiceTest {
     void authenticate() {
         Customer saved_customer = customer_service.add_customer(test_customer1);
 
-        assertThat(customer_service.authenticate(saved_customer.getUsername(), saved_customer.getPassword())).isNotNull();
+        assertThat(customer_service.authenticate("tom_username", "tom_password")).isNotNull();
     }
 }
