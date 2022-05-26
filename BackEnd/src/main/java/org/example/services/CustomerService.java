@@ -13,7 +13,6 @@ public class CustomerService {
     CustomerRepository customerRepository;
 
     public Customer add_customer(Customer customer){
-        customerRepository.save(customer);
         if (customer.getUsername() ==null || customer.getPassword() ==null){
             return null;
         } else {
