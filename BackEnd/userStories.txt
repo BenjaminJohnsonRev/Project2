@@ -18,8 +18,8 @@ User Stories:
 [X]Customers can view current total in cart
 [ ]Customers can choose a payment method
 [ ]Customers can choose a tip amount
-[ ]Customers can view purchase history in account
-[ ]Customers can view receipt after purchase
+[X]Customers can view purchase history in account
+[X]Customers can view receipt after purchase
 [ ]Customers can submit complaints
 [ ]Employee randomly assigned to sandwich being made (% of failure, accumulating)
 [ ]Managers can ban customers
@@ -28,7 +28,7 @@ User Stories:
 [ ]Managers can respond to complaints
 [ ]Managers can hire employees
 
-Managers can view all orders:
-By customer
-By date
-By employee
+[X]Managers can view all orders:
+[X]By customer
+[X]By date
+[X]By employee
