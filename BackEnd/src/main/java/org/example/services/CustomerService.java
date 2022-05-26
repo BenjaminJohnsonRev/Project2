@@ -27,6 +27,12 @@ public class CustomerService {
 //        this.customerRepository = customerRepository;
 //    }
 
+    public Customer ban_hammer(long id){
+        Customer bannedCustomer = customerRepository.getById(id);
+        bannedCustomer.setBanned(true);
+        return customerRepository.save(bannedCustomer);
+    }
+
     public List<Customer> get_all_customers(){
         return customerRepository.findAll();
     }

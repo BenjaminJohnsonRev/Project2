@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 // we specify that our repository is for the Ingredient object with id's being stored as longs
 @Repository
 public interface BreadRepository extends JpaRepository<Bread, Long> {

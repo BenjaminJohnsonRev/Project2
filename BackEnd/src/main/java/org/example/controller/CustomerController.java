@@ -35,10 +35,13 @@ public class CustomerController {
         return customerService.get_customer_by_id(id);
     }
 
-
-    @PutMapping("/{id}")
+    @PutMapping
     public Customer update_customer(@RequestBody Customer customer){
         return customerService.update_customer(customer);
+    }
+
+    @PutMapping("banHammer/{id}")
+    public Customer ban_customer(@PathVariable("id") long id){ return customerService.ban_hammer(id);
     }
 
     @DeleteMapping("/{id_to_delete}")
