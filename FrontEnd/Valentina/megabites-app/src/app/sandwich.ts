@@ -1,10 +1,10 @@
 export interface Sandwich {
-    cart_id: number,
-    cost: number,
-    cart_date: Date,
+    cart_id?: number,
+    cost?: number,
+    cart_date?: Date,
     sandwiches: [
         {
-            "sandwich_id": number,
+            "sandwich_id"?: number,
             "bread": {
                 "id": number,
                 "name": string,
