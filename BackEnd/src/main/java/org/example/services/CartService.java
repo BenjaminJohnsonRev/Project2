@@ -23,7 +23,7 @@ public class CartService {
     }
 
     public Cart addSandwichToCart(Long sandwichId, Long cartId) {
-        Cart cartDB = cartRepository.getById(cartId);
+        Cart cartDB = cartRepository.findById(cartId).get();
         Sandwich sandwich = sandwichService.get_sandwich_by_id(sandwichId);
         cartDB.addSandwich(sandwich);
         cartRepository.save(cartDB);
