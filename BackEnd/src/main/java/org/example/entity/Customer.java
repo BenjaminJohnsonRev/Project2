@@ -9,11 +9,14 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.util.Objects;
 
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
 @Entity
+//Using this annotation causing the ID to not properly generate @Table(name = "customers")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

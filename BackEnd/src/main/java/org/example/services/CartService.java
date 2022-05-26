@@ -14,9 +14,20 @@ public class CartService {
     @Autowired
     CartRepository cartRepository;
 
+    @Autowired
+    SandwichService sandwichService;
+
     public Cart add_cart(Cart cart){
         cartRepository.save(cart);
         return cart;
+    }
+
+    public Cart addSandwichToCart(Long sandwichId, Long cartId) {
+        Cart cartDB = cartRepository.getById(cartId);
+        Sandwich sandwich = sandwichService.get_sandwich_by_id(sandwichId);
+        cartDB.addSandwich(sandwich);
+        cartRepository.save(cartDB);
+        return cartDB;
     }
 
     public List<Cart> get_all_carts(){
