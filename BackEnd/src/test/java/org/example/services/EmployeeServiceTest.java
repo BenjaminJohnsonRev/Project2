@@ -73,4 +73,16 @@ class EmployeeServiceTest {
         Employee deleted_employee = employee_service.get_employee_by_id(test_employee1.getEmployee_id());
         assertThat(deleted_employee).isNull();
     }
+
+    @Test
+    void update_employee() {
+        employee_service.add_employee(test_employee1);
+        
+        given(employee_repository.getById(1L)).willReturn(test_employee1);
+        
+        Employee new_employee = new Employee(1,1, "dave", 1000);
+        employee_service.update_employee(new_employee,1L);
+
+        assertThat(employee_service.get_employee_by_id(1L)).isEqualTo(new_employee);
+    }
 }

@@ -36,7 +36,7 @@ public class CartService {
 
 
     public Cart get_cart_by_id(Long id){
-        return cartRepository.findById(id).get();
+        return cartRepository.getById(id);
     }
 
     public Cart update_cart(Cart cart){

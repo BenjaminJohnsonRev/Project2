@@ -13,6 +13,7 @@ import org.mockito.Mock;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -44,8 +45,8 @@ class CartServiceTest {
 
     @BeforeEach
     public void setup(){
-        test_cart1 = new Cart(1L,1,1,10.00, Timestamp.valueOf("2018-09-01 09:01:16"));
-        test_cart2 = new Cart(2L,2,2,20.00, Timestamp.valueOf("2022-01-14 09:01:16"));
+        test_cart1 = new Cart(1L,1L,1L,10.00,Timestamp.valueOf("2222-01-14 09:01:16"));
+        test_cart2 = new Cart(2L,2L,2L,20.00,Timestamp.valueOf("2222-01-14 09:01:16"));
 
         Bread bread1 = new Bread(1L,"White",1);
         Bread bread2 = new Bread(2L,"Multigrain",2);
@@ -86,7 +87,7 @@ class CartServiceTest {
 
         given(cartRepository.getById(1l)).willReturn(test_cart1);
 
-        assertThat(cartRepository.getById(1l)).isEqualTo(test_cart1);
+        assertThat(cartService.get_cart_by_id(1l)).isEqualTo(test_cart1);
     }
 
     @Test
@@ -116,9 +117,10 @@ class CartServiceTest {
     void delete_cart() {
         cartService.add_cart(test_cart1);
 
-        cartService.delete_cart(1l);
+        cartService.delete_cart(1L);
 
-        assertThat(cartService.get_cart_by_id(1l)).isNull();
+        Cart cart = cartService.get_cart_by_id(1L);
+        assertThat(cart).isNull();
     }
 
     @Test
@@ -167,5 +169,36 @@ class CartServiceTest {
         cart = cartService.get_cart_by_id(1L);
 
         assertThat(cart.getSandwiches().size()).isEqualTo(0);
+    }
+
+    @Test
+    void get_all_carts_by_customer_id() {
+        cartService.add_cart(test_cart1);
+        cartService.add_cart(test_cart2);
+
+        given(cartRepository.getAllByCustomer_id(2l)).willReturn(List.of(test_cart2));
+
+        assertThat(cartService.get_all_carts_by_customer_id(2L).size()).isEqualTo(1);
+        
+    }
+
+    @Test
+    void get_all_carts_by_employee_id() {
+        cartService.add_cart(test_cart1);
+        cartService.add_cart(test_cart2);
+
+        given(cartRepository.getAllByEmployee_id(2l)).willReturn(List.of(test_cart2));
+
+        assertThat(cartService.get_all_carts_by_employee_id(2L).size()).isEqualTo(1);
+    }
+
+    @Test
+    void get_all_carts_by_date() {
+        cartService.add_cart(test_cart1);
+        cartService.add_cart(test_cart2);
+
+        given(cartRepository.getAllByDate(Date.valueOf("2222-01-14"))).willReturn(List.of(test_cart1, test_cart2));
+
+        assertThat(cartService.get_all_carts_by_date(Date.valueOf("2222-01-14")).size()).isEqualTo(2);
     }
 }

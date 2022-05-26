@@ -42,7 +42,14 @@ public class CustomerService {
     }
 
     public Customer update_customer(Customer customer){
-        return customerRepository.save(customer);
+        Customer customerDB = customerRepository.getById(customer.getCustomer_id());
+        customerDB.setFirst_name(customer.getFirst_name());
+        customerDB.setLast_name(customer.getLast_name());
+        customerDB.setEmail(customer.getEmail());
+        customerDB.setUsername(customer.getUsername());
+        customerDB.setPassword(customer.getPassword());
+        customerRepository.save(customer);
+        return customer;
     }
 
 

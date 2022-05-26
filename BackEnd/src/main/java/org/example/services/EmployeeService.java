@@ -27,7 +27,7 @@ public class EmployeeService {
     }
 
     public Employee update_employee(Employee employee, Long id){
-        Employee employeeDB = employeeRepository.findById(id).get();
+        Employee employeeDB = employeeRepository.getById(id);
         employeeDB.setEmployee_name(employee.getEmployee_name());
         employeeDB.setManager_id(employee.getManager_id());
         employeeDB.setYears_of_experience(employee.getYears_of_experience());
