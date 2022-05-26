@@ -8,17 +8,17 @@ INSERT INTO vegetable (id, name, price) VALUES (DEFAULT, 'Lettuce', 10.0), (DEFA
 
 --Customer
 
-INSERT INTO customers
+INSERT INTO customer
 (customer_id, banned, email, first_name, last_name, "password", username)
 VALUES(1, false, 'sandwichEater33@bigmunch.com', 'Susan', 'Angles', 'dinefine', 'finediner');
 
 --Manager
 
-INSERT INTO managers (manager_id, manager_name, years_of_experience) values (1, 'Carol', 0);
+INSERT INTO manager (manager_id, manager_name, years_of_experience) values (1, 'Carol', 0);
 
 --Employee (must come before Cart)
 
-INSERT INTO employees (employee_id, employee_name, manager_id, years_of_experience) VALUES (1, 'Bob', 1, 1);
+INSERT INTO employee (employee_id, employee_name, manager_id, years_of_experience) VALUES (1, 'Bob', 1, 1);
 
 --Cart (must be created before Sandwich)
 
