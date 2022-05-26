@@ -29,7 +29,9 @@ export class UserAuthenticationComponent implements OnInit {
 
   login(){
     this.customerService.login(this.customer).subscribe(
-      customer=>console.log(customer)
+      customer=>{this.customer=customer;
+      console.log(customer);
+    }
     )
     this.display = "none";
 
@@ -47,6 +49,7 @@ export class UserAuthenticationComponent implements OnInit {
     this.display = "none";
     window.open('http://localhost:4200/');
   }
+
   getCustomer(){
     console.log(this.customer);
   }

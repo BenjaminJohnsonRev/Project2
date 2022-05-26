@@ -18,16 +18,16 @@ public class CustomerController {
 //        return customerService.add_customer(customer);
 //    }
 
-    @PostMapping("/register")
+    @RequestMapping(value="/register", method=RequestMethod.POST)
 //    public String register(@ModelAttribute Customer customer){
-    public String register(@RequestBody Customer customer){
+    public Customer register(@RequestBody Customer customer){
         System.out.println("register request: " + customer);
         Customer registeredCustomer = customerService.add_customer(customer);
-        return registeredCustomer == null ? "error_page" : "redirect:/login";
+        return registeredCustomer;// == null ? "error_page" : "redirect:/login";
     }
 
-    @GetMapping("/login")
-    public Customer login(@RequestParam String username, @RequestParam String password){
+    @GetMapping("/login/?{username}&{password}")
+    public Customer login(@PathVariable("username") String username, @PathVariable("password") String password){
         return customerService.authenticate(username, password);
     }
 
