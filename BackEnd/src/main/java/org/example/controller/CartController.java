@@ -1,6 +1,7 @@
 package org.example.controller;
 
 
+import org.example.dto.SandwichOrderIdObject;
 import org.example.entity.Cart;
 import org.example.entity.menu.Sandwich;
 import org.example.services.CartService;
@@ -40,8 +41,7 @@ public class CartController {
         cartService.delete_cart(id);
     }
 
-
-    @GetMapping("/cost/{id}}")
+    @GetMapping("/cost/{id}")
     public double get_sum_carts(@PathVariable("id") long id){
         return cartService.sum_cart(id);
     }
