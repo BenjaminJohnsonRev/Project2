@@ -14,20 +14,20 @@
     </select>
 </div> -->
 
-<!-- <div>
+<div>
     <label for="sandwich.sandwiches[0].meat">Meat:</label>
     <select id="sandwich.sandwiches[0].meat" [(ngModel)]="sandwich.sandwiches[0].meat" >
     <option *ngFor="let meat of meats" [value]="meat">{{meat.name}}</option>
     </select>
-</div> -->
+</div>
 
 <div>
-    <label for="sandwiches[0].bread.name">Bread:</label>
-    <select id="sandwiches[0].bread.name" [(ngModel)]="sandwiches[0].bread" >
-    <option *ngFor="let bread of breads" [value]="bread">{{bread.name}}</option>
+    <label for="sandwich.sandwiches[0].bread">Bread:</label>
+    <select id="sandwich.sandwiches[0].bread" [(ngModel)]="sandwich.sandwiches[0].bread" >
+    <option *ngFor="let bread of breads" [value]="bread.name">{{bread.name}}</option>
     </select>
 </div>
-<!-- 
+
 <div>
     <label for="sandwich.sandwiches[0].vegetable.name">Vegetable:</label>
     <select id="sandwich.sandwiches[0].vegetable.name" [(ngModel)]="sandwich.sandwiches[0].vegetable.name" >
@@ -56,18 +56,18 @@
       <option value="pepper">Pepper</option>
       <option value="spice">Spice</option>
     </select>
-</div> -->
+</div>
 <button type = "button" (click) = "addSandwich()">Add Sandwich</button>
 <button type = "button" (click) = "getAllBread()">all bread</button>
 
 
-<!-- <h3>Cart ID: {{sandwich.cart_id}}</h3>
+<h3>Cart ID: {{sandwich.cart_id}}</h3>
 <h3>Cart Cost: {{sandwich.cost}}</h3>
 <h3>Cart Date: {{sandwich.cart_date}}</h3>
 <h3>Sandwich ID: {{sandwich.sandwiches[0].sandwich_id}}</h3>
-<h3>Bread ID: {{sandwich.sandwiches[0].bread.id}}</h3> -->
-<h3>Bread Name: {{sandwiches[0].bread.name}}</h3>
-<!-- <h3>Bread Price: {{sandwich.sandwiches[0].bread.price}}</h3>
+<h3>Bread ID: {{sandwich.sandwiches[0].bread.id}}</h3>
+<h3>Bread Name: {{sandwich.sandwiches[0].bread.name}}</h3>
+<h3>Bread Price: {{sandwich.sandwiches[0].bread.price}}</h3>
 <h3>Meat ID: {{sandwich.sandwiches[0].meat.id}}</h3>
 <h3>Meat Name: {{sandwich.sandwiches[0].meat.name}}</h3>
 <h3>Meat Price: {{sandwich.sandwiches[0].meat.price}}</h3>
@@ -79,4 +79,4 @@
 <h3>Sauce Price: {{sandwich.sandwiches[0].sauce.price}}</h3>
 <h3>Seasoning ID: {{sandwich.sandwiches[0].seasoning.id}}</h3>
 <h3>Seasoning Name: {{sandwich.sandwiches[0].seasoning.name}}</h3>
-<h3>Seasoning Price: {{sandwich.sandwiches[0].seasoning.price}}</h3> -->
+<h3>Seasoning Price: {{sandwich.sandwiches[0].seasoning.price}}</h3>
