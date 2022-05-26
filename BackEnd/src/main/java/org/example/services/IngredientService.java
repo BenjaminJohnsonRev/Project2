@@ -1,7 +1,7 @@
 package org.example.services;
 
 
-import org.example.dao.*;
+import org.example.dao.ingredients.*;
 import org.example.entity.menu.Sandwich;
 import org.example.entity.menu.ingredients.*;
 import org.springframework.beans.factory.annotation.Autowired;
