@@ -1,6 +1,7 @@
 package org.example.services;
 
 import org.example.dao.CartRepository;
+import org.example.dao.SandwichRepository;
 import org.example.entity.Cart;
 import org.example.entity.menu.Sandwich;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,21 +17,12 @@ public class CartService {
     CartRepository cartRepository;
 
     @Autowired
-    SandwichService sandwichService;
+    SandwichRepository sandwichRepository;
 
     public Cart add_cart(Cart cart){
         cartRepository.save(cart);
         return cart;
     }
-
-    public Cart addSandwichToCart(Long sandwichId, Long cartId) {
-        Cart cartDB = cartRepository.findById(cartId).get();
-        Sandwich sandwich = sandwichService.get_sandwich_by_id(sandwichId);
-        cartDB.addSandwich(sandwich);
-        cartRepository.save(cartDB);
-        return cartDB;
-    }
-
 
     public List<Cart> get_all_carts(){
         return cartRepository.findAll();
@@ -69,5 +61,21 @@ public class CartService {
         }
         cartRepository.getById(id).setCost_sum(sum);
         return sum;
+    }
+
+    public Cart add_sandwich_to_cart(long sandwich_id, long cart_id){
+        Cart cart = cartRepository.getById(cart_id);
+        Sandwich sandwich = sandwichRepository.get_sandwich_by_id(sandwich_id);
+        cart.addSandwich(sandwich);
+        cartRepository.save(cart);
+        return cart;
+    }
+
+    public Cart remove_sandwich_to_cart(long sandwich_id, long cart_id){
+        Cart cart = cartRepository.getById(cart_id);
+        Sandwich sandwich = sandwichRepository.get_sandwich_by_id(sandwich_id);
+        cart.removeSandwich(sandwich);
+        cartRepository.save(cart);
+        return cart;
     }
 }

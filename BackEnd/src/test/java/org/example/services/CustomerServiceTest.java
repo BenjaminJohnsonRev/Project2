@@ -1,11 +1,14 @@
 package org.example.services;
 
+import org.aspectj.lang.annotation.Before;
 import org.example.dao.CustomerRepository;
 import org.example.entity.Customer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.stereotype.Service;
@@ -16,6 +19,7 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.verify;
 
 @DataJpaTest
 class CustomerServiceTest {
@@ -29,17 +33,11 @@ class CustomerServiceTest {
     Customer test_customer1;
     Customer test_customer2;
 
+
     @BeforeEach
     public void setup(){
         test_customer1 = new Customer(1l, "tom_username", "tom_password", "tom", "mot", "tom@gmail.com", false);
         test_customer2 = new Customer(2l, "mat_username", "mat_password", "mat", "tam", "mat@gmail.com",false);
-    }
-
-    @Test
-    void add_customer_test() {
-        Customer savedCustomer1 = customer_service.add_customer(test_customer1);
-
-        assertThat(savedCustomer1).isNotNull();
     }
 
     @Test
@@ -72,5 +70,19 @@ class CustomerServiceTest {
 
         Customer deleted_customer = customer_service.get_customer_by_id(test_customer1.getCustomer_id());
         assertThat(deleted_customer).isNull();
+    }
+
+    @Test
+    public void add_customer() {
+        Customer saved_customer = customer_service.add_customer(test_customer1);
+
+        assertThat(saved_customer).isNotNull();
+    }
+
+    @Test
+    void authenticate() {
+        Customer saved_customer = customer_service.add_customer(test_customer1);
+
+        assertThat(customer_service.authenticate("tom_username", "tom_password")).isNotNull();
     }
 }
