@@ -21,6 +21,13 @@ public class CartController {
         return cartService.add_cart(cart);
     }
 
+    @PutMapping("/add")
+    public Cart addSandwichToCart(@RequestBody SandwichOrderIdObject sandwichOrderIdObject) {
+        Long sandwichId = sandwichOrderIdObject.getSandwich_id();
+        Long cartId = sandwichOrderIdObject.getOrder_id();
+        return cartService.addSandwichToCart(sandwichId, cartId);
+    }
+
     @GetMapping
     public List<Cart> get_all_carts(){
         return cartService.get_all_carts();
