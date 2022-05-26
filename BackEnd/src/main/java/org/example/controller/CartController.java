@@ -25,7 +25,7 @@ public class CartController {
     public Cart addSandwichToCart(@RequestBody SandwichOrderIdObject sandwichOrderIdObject) {
         Long sandwichId = sandwichOrderIdObject.getSandwich_id();
         Long cartId = sandwichOrderIdObject.getOrder_id();
-        return cartService.addSandwichToCart(sandwichId, cartId);
+        return cartService.add_sandwich_to_cart(sandwichId, cartId);
     }
 
 //    @GetMapping("/history/{id}")

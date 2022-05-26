@@ -2,6 +2,7 @@ package org.example.services;
 
 
 import org.example.dao.CartRepository;
+import org.example.dao.SandwichRepository;
 import org.example.entity.Cart;
 import org.example.entity.menu.Sandwich;
 import org.example.entity.menu.ingredients.*;
@@ -26,6 +27,12 @@ class CartServiceTest {
     @Mock
     CartRepository cartRepository;
 
+    @Mock
+    SandwichRepository sandwichRepository;
+
+    @InjectMocks
+    SandwichService sandwichService;
+
     @InjectMocks
     CartService cartService;
 
@@ -37,19 +44,19 @@ class CartServiceTest {
 
     @BeforeEach
     public void setup(){
-        test_cart1 = new Cart(1,1,1,10.00, Timestamp.valueOf("2018-09-01 09:01:16"));
-        test_cart2 = new Cart(2,2,2,20.00, Timestamp.valueOf("2022-01-14 09:01:16"));
+        test_cart1 = new Cart(1L,1,1,10.00, Timestamp.valueOf("2018-09-01 09:01:16"));
+        test_cart2 = new Cart(2L,2,2,20.00, Timestamp.valueOf("2022-01-14 09:01:16"));
 
-        Bread bread1 = new Bread(1,"White",1);
-        Bread bread2 = new Bread(2,"Multigrain",2);
-        Meat meat1 = new Meat(1,"Beef", 1);
-        Meat meat2 = new Meat(2,"Chicken", 2);
+        Bread bread1 = new Bread(1L,"White",1);
+        Bread bread2 = new Bread(2L,"Multigrain",2);
+        Meat meat1 = new Meat(1L,"Beef", 1);
+        Meat meat2 = new Meat(2L,"Chicken", 2);
         Vegetable vegetable1 = new Vegetable(1,"Carrot",1);
         Vegetable vegetable2 = new Vegetable(2,"Lettuce",2);
-        Sauce sauce1 = new Sauce(1, "Ketchup", 1);
-        Sauce sauce2 = new Sauce(2, "Mayonnaise", 2);
-        Seasoning seasoning1 = new Seasoning(1,"Salt",1);
-        Seasoning seasoning2 = new Seasoning(2,"Salt",2);
+        Sauce sauce1 = new Sauce(1L, "Ketchup", 1);
+        Sauce sauce2 = new Sauce(2L, "Mayonnaise", 2);
+        Seasoning seasoning1 = new Seasoning(1L,"Salt",1);
+        Seasoning seasoning2 = new Seasoning(2L,"Salt",2);
 
         sandwich1 = new Sandwich(bread1,meat1,vegetable1,sauce1,seasoning1);
         sandwich2 = new Sandwich(bread2,meat2,vegetable2,sauce2,seasoning2);
@@ -88,13 +95,18 @@ class CartServiceTest {
         sandwichSet.add(sandwich1);
         sandwichSet.add(sandwich2);
 
-        Cart test_cart3 = new Cart(1,6,6,12.00,Timestamp.valueOf("2222-01-14 09:01:16"),sandwichSet);
+        Cart test_cart3 = new Cart(1L,6,6,12.00,Timestamp.valueOf("2222-01-14 09:01:16"),sandwichSet);
         cartService.add_cart(test_cart1);
+
+        given(cartRepository.getById(1L)).willReturn(test_cart1);
         Cart cart_save = cartRepository.getById(1L);
 
-        assertThat(cart_save).isNotNull();
+        assertThat(cart_save).isEqualTo(test_cart1);
 
         cartService.update_cart(test_cart3);
+
+        given(cartRepository.getById(1L)).willReturn(test_cart3);
+        cart_save = cartService.get_cart_by_id(1L);
 
         assertThat(cart_save).isEqualTo(test_cart3);
 
@@ -115,36 +127,45 @@ class CartServiceTest {
         cart.addSandwich(sandwich1);
         cart.addSandwich(sandwich2);
 
+        given(cartRepository.getById(cart.getCart_id())).willReturn(test_cart1);
+
+        cartService.sum_cart(cart.getCart_id());
+
         assertThat(cart.getCost_sum()).isEqualTo(15.00);
     }
 
     @Test
     void add_sandwich_to_cart() {
         Cart cart = cartService.add_cart(test_cart1);
-        SandwichService sandwichService = new SandwichService();
-        sandwichService.add_sandwich(sandwich1);
+
         sandwichService.add_sandwich(sandwich2);
 
-        cartService.add_sandwich_to_cart(1,1);
-        cartService.add_sandwich_to_cart(2,1);
+        given(cartRepository.getById(cart.getCart_id())).willReturn(cart);
+        cartService.add_sandwich_to_cart(1L,1L);
 
-        assertThat(cart.getCost_sum()).isEqualTo(15.00);
+        cart = cartService.get_cart_by_id(1L);
+
+        assertThat(cart.getSandwiches().size()).isEqualTo(1);
     }
 
     @Test
     void remove_sandwich_to_cart() {
         Cart cart = cartService.add_cart(test_cart1);
-        SandwichService sandwichService = new SandwichService();
         sandwichService.add_sandwich(sandwich1);
         sandwichService.add_sandwich(sandwich2);
 
-        cartService.add_sandwich_to_cart(1,1);
-        cartService.add_sandwich_to_cart(2,1);
+        given(cartRepository.getById(cart.getCart_id())).willReturn(cart);
 
-        assertThat(cart.getCost_sum()).isEqualTo(15.00);
+        cartService.add_sandwich_to_cart(1L,1L);
 
-        cartService.remove_sandwich_to_cart(2,1);
+        cart = cartService.get_cart_by_id(1L);
 
-        assertThat(cart.getCost_sum()).isEqualTo(5.00);
+        assertThat(cart.getSandwiches().size()).isEqualTo(1);
+
+        cartService.remove_sandwich_to_cart(2L,1L);
+
+        cart = cartService.get_cart_by_id(1L);
+
+        assertThat(cart.getSandwiches().size()).isEqualTo(0);
     }
 }

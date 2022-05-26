@@ -8,6 +8,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 
@@ -66,6 +68,19 @@ class IngredientServiceTest {
     }
 
     @Test
+    void get_all_bread() {
+        ingredientService.add_bread(bread1);
+        ingredientService.add_bread(bread2);
+
+        given(breadRepository.findAll()).willReturn(List.of(bread1,bread2));
+
+        List<Bread> breadList = ingredientService.get_all_bread();
+
+        assertThat(breadList).isNotNull();
+        assertThat(breadList.size()).isEqualTo(2);
+    }
+
+    @Test
     void update_bread() {
         ingredientService.add_bread(bread1);
         given(breadRepository.getById(1L)).willReturn(bread1);
@@ -98,6 +113,19 @@ class IngredientServiceTest {
     }
 
     @Test
+    void get_all_meat() {
+        ingredientService.add_meat(meat1);
+        ingredientService.add_meat(meat2);
+
+        given(meatRepository.findAll()).willReturn(List.of(meat1,meat2));
+
+        List<Meat> meatList = ingredientService.get_all_meat();
+
+        assertThat(meatList).isNotNull();
+        assertThat(meatList.size()).isEqualTo(2);
+    }
+
+    @Test
     void update_meat() {
         ingredientService.add_meat(meat1);
         given(meatRepository.getById(1L)).willReturn(meat1);
@@ -112,7 +140,7 @@ class IngredientServiceTest {
         ingredientService.add_meat(meat1);
         given(meatRepository.getById(1L)).willReturn(meat1);
         assertThat(meatRepository.getById(1L)).isEqualTo(meat1);
-        ingredientService.delete_meat(1);
+        ingredientService.delete_meat(1L);
         Meat meat = ingredientService.get_meat_by_id(meat1.getId());
         assertThat(meat).isNull();
     }
@@ -130,6 +158,19 @@ class IngredientServiceTest {
     }
 
     @Test
+    void get_all_sauce() {
+        ingredientService.add_sauce(sauce1);
+        ingredientService.add_sauce(sauce2);
+
+        given(sauceRepository.findAll()).willReturn(List.of(sauce1,sauce2));
+
+        List<Sauce> sauceList = ingredientService.get_all_sauce();
+
+        assertThat(sauceList).isNotNull();
+        assertThat(sauceList.size()).isEqualTo(2);
+    }
+
+    @Test
     void update_sauce() {
         ingredientService.add_sauce(sauce1);
         given(sauceRepository.getById(1L)).willReturn(sauce1);
@@ -144,7 +185,7 @@ class IngredientServiceTest {
         ingredientService.add_sauce(sauce1);
         given(sauceRepository.getById(1L)).willReturn(sauce1);
         assertThat(sauceRepository.getById(1L)).isEqualTo(sauce1);
-        ingredientService.delete_sauce(1);
+        ingredientService.delete_sauce(1L);
         Sauce sauce = ingredientService.get_sauce_by_id(sauce1.getId());
         assertThat(sauce).isNull();
     }
@@ -162,6 +203,19 @@ class IngredientServiceTest {
     }
 
     @Test
+    void get_all_seasoning() {
+        ingredientService.add_seasoning(seasoning1);
+        ingredientService.add_seasoning(seasoning2);
+
+        given(seasoningRepository.findAll()).willReturn(List.of(seasoning1,seasoning2));
+
+        List<Seasoning> seasoningList = ingredientService.get_all_seasoning();
+
+        assertThat(seasoningList).isNotNull();
+        assertThat(seasoningList.size()).isEqualTo(2);
+    }
+
+    @Test
     void update_seasoning() {
         ingredientService.add_seasoning(seasoning1);
         given(seasoningRepository.getById(1L)).willReturn(seasoning1);
@@ -176,7 +230,7 @@ class IngredientServiceTest {
         ingredientService.add_seasoning(seasoning1);
         given(seasoningRepository.getById(1L)).willReturn(seasoning1);
         assertThat(seasoningRepository.getById(1L)).isEqualTo(seasoning1);
-        ingredientService.delete_seasoning(1);
+        ingredientService.delete_seasoning(1L);
         Seasoning seasoning = ingredientService.get_seasoning_by_id(seasoning1.getId());
         assertThat(seasoning).isNull();
     }
@@ -194,6 +248,19 @@ class IngredientServiceTest {
     }
 
     @Test
+    void get_all_vegetable() {
+        ingredientService.add_vegetable(vegetable1);
+        ingredientService.add_vegetable(vegetable2);
+
+        given(vegetableRepository.findAll()).willReturn(List.of(vegetable1,vegetable2));
+
+        List<Vegetable> vegetableList = ingredientService.get_all_vegetable();
+
+        assertThat(vegetableList).isNotNull();
+        assertThat(vegetableList.size()).isEqualTo(2);
+    }
+
+    @Test
     void update_vegetable() {
         ingredientService.add_vegetable(vegetable1);
         given(vegetableRepository.getById(1L)).willReturn(vegetable1);
@@ -208,8 +275,9 @@ class IngredientServiceTest {
         ingredientService.add_vegetable(vegetable1);
         given(vegetableRepository.getById(1L)).willReturn(vegetable1);
         assertThat(vegetableRepository.getById(1L)).isEqualTo(vegetable1);
-        ingredientService.delete_vegetable(1);
+        ingredientService.delete_vegetable(1L);
         Vegetable vegetable = ingredientService.get_vegetable_by_id(vegetable1.getId());
         assertThat(vegetable).isNull();
     }
+
 }

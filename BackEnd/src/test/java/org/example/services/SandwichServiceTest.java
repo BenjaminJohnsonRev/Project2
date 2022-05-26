@@ -86,9 +86,12 @@ class SandwichServiceTest {
 
         assertThat(sandwich).isNotNull();
 
-        sandwich2 = new Sandwich(1, bread2,meat2,vegetable2,sauce2,seasoning2);
+        sandwich2 = new Sandwich(1L, bread2,meat2,vegetable2,sauce2,seasoning2);
 
         sandwichService.update_sandwich(sandwich2);
+
+        given(sandwichRepository.getById(1L)).willReturn(sandwich2);
+        sandwich = sandwichRepository.getById(1L);
 
         assertThat(sandwich).isEqualTo(sandwich2);
     }
