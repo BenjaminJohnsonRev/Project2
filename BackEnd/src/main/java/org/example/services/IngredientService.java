@@ -1,7 +1,7 @@
 package org.example.services;
 
 
-import org.example.dao.*;
+import org.example.dao.ingredients.*;
 import org.example.entity.menu.ingredients.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,14 +43,14 @@ public class IngredientService {
         return meat;
     }
 
-    public Meat get_meat_by_id(Long id) {return meatRepository.findByMeat_id(id);}
+    public Meat get_meat_by_id(long id) {return meatRepository.findByMeat_id(id);}
 
     public Meat update_meat(Meat meat) {
         meatRepository.save(meat);
         return meat;
     }
 
-    public void delete_meat(Long id) {meatRepository.deleteById(id);}
+    public void delete_meat(long id) {meatRepository.deleteById(id);}
 
     //
     public Sauce add_sauce(Sauce sauce) {
@@ -58,14 +58,14 @@ public class IngredientService {
         return sauce;
     }
 
-    public Sauce get_sauce_by_id(Long id) {return sauceRepository.findBySauce_id(id);}
+    public Sauce get_sauce_by_id(long id) {return sauceRepository.findBySauce_id(id);}
 
     public Sauce update_sauce(Sauce sauce) {
         sauceRepository.save(sauce);
         return sauce;
     }
 
-    public void delete_sauce(Long id) {sauceRepository.deleteById(id);}
+    public void delete_sauce(long id) {sauceRepository.deleteById(id);}
 
     //
     public Seasoning add_seasoning(Seasoning seasoning) {
@@ -73,14 +73,14 @@ public class IngredientService {
         return seasoning;
     }
 
-    public Seasoning get_seasoning_by_id(Long id) {return seasoningRepository.findBySeasoning_id(id);}
+    public Seasoning get_seasoning_by_id(long id) {return seasoningRepository.findBySeasoning_id(id);}
 
     public Seasoning update_seasoning(Seasoning seasoning) {
         seasoningRepository.save(seasoning);
         return seasoning;
     }
 
-    public void delete_seasoning(Long id) {seasoningRepository.deleteById(id);}
+    public void delete_seasoning(long id) {seasoningRepository.deleteById(id);}
 
 
     //
@@ -89,14 +89,14 @@ public class IngredientService {
         return vegetable;
     }
 
-    public Vegetable get_vegetable_by_id(Long id) {return vegetableRepository.findByVegetable_id(id);}
+    public Vegetable get_vegetable_by_id(long id) {return vegetableRepository.findByVegetable_id(id);}
 
     public Vegetable update_vegetable(Vegetable vegetable) {
         vegetableRepository.save(vegetable);
         return vegetable;
     }
 
-    public void delete_vegetable(Long id) {vegetableRepository.deleteById(id);}
+    public void delete_vegetable(long id) {vegetableRepository.deleteById(id);}
 
 
 }

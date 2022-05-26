@@ -23,16 +23,26 @@ public class Cart {
     private double cost_sum;
     private Timestamp cart_date;
 
-    public Cart(long customer_id, long employee_id, int cost_sum, Timestamp cart_date) {
+    @OneToMany(targetEntity = Sandwich.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "cart_fk", referencedColumnName = "cart_id")
+    private Set<Sandwich> sandwiches;
+
+    public Cart(long customer_id, long employee_id, double cost_sum, Timestamp cart_date) {
         this.customer_id = customer_id;
         this.employee_id = employee_id;
         this.cost_sum = cost_sum;
         this.cart_date = cart_date;
+        this.sandwiches = new HashSet<>();
     }
 
-    @OneToMany(targetEntity = Sandwich.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "cart_fk", referencedColumnName = "cart_id")
-    private Set<Sandwich> sandwiches;
+    public Cart(long cart_id, long customer_id, long employee_id, double cost_sum, Timestamp cart_date) {
+        this.cart_id = cart_id;
+        this.customer_id = customer_id;
+        this.employee_id = employee_id;
+        this.cost_sum = cost_sum;
+        this.cart_date = cart_date;
+        this.sandwiches = new HashSet<>();
+    }
 
     public Cart() {this.sandwiches = new HashSet<>();}
 

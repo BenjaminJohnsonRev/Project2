@@ -1,4 +1,4 @@
-package org.example.dao;
+package org.example.dao.ingredients;
 
 import org.example.entity.menu.ingredients.Bread;
 import org.springframework.data.jpa.repository.JpaRepository;

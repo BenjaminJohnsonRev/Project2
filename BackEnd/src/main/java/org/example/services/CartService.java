@@ -55,7 +55,7 @@ public class CartService {
         return sum;
     }
 
-    public Cart addSandwichToCart(long sandwich_id, long cart_id){
+    public Cart add_sandwich_to_cart(long sandwich_id, long cart_id){
         Cart cart = cartRepository.getById(cart_id);
         Sandwich sandwich = sandwichRepository.get_sandwich_by_id(sandwich_id);
         cart.addSandwich(sandwich);
@@ -63,7 +63,7 @@ public class CartService {
         return cart;
     }
 
-    public Cart removeSandwichToCart(long sandwich_id, long cart_id){
+    public Cart remove_sandwich_to_cart(long sandwich_id, long cart_id){
         Cart cart = cartRepository.getById(cart_id);
         Sandwich sandwich = sandwichRepository.get_sandwich_by_id(sandwich_id);
         cart.removeSandwich(sandwich);
