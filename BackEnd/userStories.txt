@@ -22,7 +22,7 @@ User Stories:
 [X]Customers can view receipt after purchase
 [ ]Customers can submit complaints
 [ ]Employee randomly assigned to sandwich being made (% of failure, accumulating)
-[ ]Managers can ban customers
+[X]Managers can ban customers
 [ ]Managers can apply discounts
 [ ]Managers can choose feature menu items
 [ ]Managers can respond to complaints
