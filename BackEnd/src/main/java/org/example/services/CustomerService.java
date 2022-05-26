@@ -4,8 +4,10 @@ import org.example.dao.CustomerRepository;
 import org.example.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
+@CrossOrigin(origins="*")
 
 @Service
 public class CustomerService {
@@ -13,7 +15,6 @@ public class CustomerService {
     CustomerRepository customerRepository;
 
     public Customer add_customer(Customer customer){
-        customerRepository.save(customer);
         if (customer.getUsername() ==null || customer.getPassword() ==null){
             return null;
         } else {

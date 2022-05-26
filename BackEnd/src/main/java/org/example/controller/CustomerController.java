@@ -13,17 +13,11 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-//    @PostMapping
-//    public Customer add_customer(@RequestBody Customer customer){
-//        return customerService.add_customer(customer);
-//    }
-
     @PostMapping("/register")
-//    public String register(@ModelAttribute Customer customer){
-    public String register(@RequestBody Customer customer){
+    public Customer register(@RequestBody Customer customer){
         System.out.println("register request: " + customer);
-        Customer registeredCustomer = customerService.add_customer(customer);
-        return registeredCustomer == null ? "error_page" : "redirect:/login";
+//        return registeredCustomer == null ? "error_page" : "redirect:/login";
+        return customerService.add_customer(customer);
     }
 
     @GetMapping("/login")
