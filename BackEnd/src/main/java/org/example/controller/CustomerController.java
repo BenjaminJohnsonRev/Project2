@@ -13,13 +13,6 @@ public class CustomerController {
     @Autowired
     CustomerService customerService;
 
-//    @PostMapping
-//    public Customer add_customer(@RequestBody Customer customer){
-//        return customerService.add_customer(customer);
-//    }
-
-
-    //    public String register(@ModelAttribute Customer customer){
     @PostMapping("/register")
     public Customer register(@RequestBody Customer customer){
         System.out.println("register request: " + customer);
