@@ -8,6 +8,7 @@ import org.example.services.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -28,12 +29,21 @@ public class CartController {
         return cartService.addSandwichToCart(sandwichId, cartId);
     }
 
-//    @GetMapping("/history/{id}")
-//    public List<Cart> getAllByCustomer_id(@PathVariable("id") long id) {return cartService.getAllByCustomer_id(id);}
+    @GetMapping("/history/customer/{id}")
+    public List<Cart> get_all_carts_by_customer_id(@PathVariable("id") long id) {return cartService.get_all_carts_by_customer_id(id);}
+
+    @GetMapping("/history/employee/{id}")
+    public List<Cart> get_all_carts_by_employee_id(@PathVariable("id") long id) {return cartService.get_all_carts_by_employee_id(id);}
 
     @GetMapping
     public List<Cart> get_all_carts(){
         return cartService.get_all_carts();
+    }
+
+    //"time" has format YYYY-MM-DD
+    @GetMapping("/history/{time}")
+    public List<Cart> get_all_carts_by_date(@PathVariable("time") Date time){
+        return cartService.get_all_carts_by_date(time);
     }
 
     @GetMapping("/{id}")

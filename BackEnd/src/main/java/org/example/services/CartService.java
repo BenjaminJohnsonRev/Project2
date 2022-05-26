@@ -6,6 +6,7 @@ import org.example.entity.menu.Sandwich;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -35,10 +36,15 @@ public class CartService {
         return cartRepository.findAll();
     }
 
-//    public List<Cart> getAllByCustomer_id(long id) {return cartRepository.getAllByCustomer_id(id);}
+    public List<Cart> get_all_carts_by_customer_id(long id) {return cartRepository.getAllByCustomer_id(id);}
+
+    public List<Cart> get_all_carts_by_employee_id(long id) {return cartRepository.getAllByEmployee_id(id);}
+
+    public List<Cart> get_all_carts_by_date(Date time) {return cartRepository.getAllByDate(time);}
+
 
     public Cart get_cart_by_id(Long id){
-        return cartRepository.getById(id);
+        return cartRepository.findById(id).get();
     }
 
     public Cart update_cart(Cart cart){
