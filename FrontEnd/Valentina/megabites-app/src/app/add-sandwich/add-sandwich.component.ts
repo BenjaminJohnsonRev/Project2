@@ -13,7 +13,7 @@ import { MeatService } from '../services/meat.service';
 })
 export class AddSandwichComponent implements OnInit {
 
-  sandwich!: Sandwich[];
+  sandwich!: Sandwich;
   breads!: Bread[];
   meats!: Meat[];
 
