@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins="*")
+
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -18,16 +18,17 @@ public class CustomerController {
 //        return customerService.add_customer(customer);
 //    }
 
-    @RequestMapping(value="/register", method=RequestMethod.POST)
-//    public String register(@ModelAttribute Customer customer){
+
+    //    public String register(@ModelAttribute Customer customer){
+    @PostMapping("/register")
     public Customer register(@RequestBody Customer customer){
         System.out.println("register request: " + customer);
-        Customer registeredCustomer = customerService.add_customer(customer);
-        return registeredCustomer;// == null ? "error_page" : "redirect:/login";
+//        return registeredCustomer == null ? "error_page" : "redirect:/login";
+        return customerService.add_customer(customer);
     }
 
-    @GetMapping("/login/?{username}&{password}")
-    public Customer login(@PathVariable("username") String username, @PathVariable("password") String password){
+    @GetMapping("/login")
+    public Customer login(@RequestParam String username, @RequestParam String password){
         return customerService.authenticate(username, password);
     }
 
