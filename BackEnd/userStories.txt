@@ -20,13 +20,17 @@ User Stories:
 [ ]Customers can choose a tip amount
 [X]Customers can view purchase history in account
 [X]Customers can view receipt after purchase
-[ ]Customers can submit complaints
+[X]Customers can submit complaints
+[X]Customers can edit complaints
 [ ]Employee randomly assigned to sandwich being made (% of failure, accumulating)
 [X]Managers can ban customers
 [ ]Managers can apply discounts
 [ ]Managers can choose feature menu items
+[X]Managers can see complaints
+[X]Managers can delete complaints
 [ ]Managers can respond to complaints
 [ ]Managers can hire employees
+
 
 [X]Managers can view all orders:
 [X]By customer
