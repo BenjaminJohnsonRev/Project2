@@ -17,6 +17,6 @@ export class CustomerService {
 
   register(customer:Customer){
     console.log(customer);
-    return this.http.post<Customer>('http://localhost:9002/customers/register',customer);
+    return this.http.post('http://localhost:9002/customers/register',customer);
   }
 }

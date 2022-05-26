@@ -8,6 +8,7 @@ import { Routes, RouterModule, ActivatedRoute} from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserAuthenticationComponent } from './user-authentication/user-authentication.component';
 import { BuildSandwichComponent } from './build-sandwich/build-sandwich.component';
+import { AddSandwichComponent } from './add-sandwich/add-sandwich.component';
 
 
 
@@ -15,7 +16,8 @@ import { BuildSandwichComponent } from './build-sandwich/build-sandwich.componen
   declarations: [
     AppComponent,
     UserAuthenticationComponent,
-    BuildSandwichComponent
+    BuildSandwichComponent,
+    AddSandwichComponent
   ],
   imports: [
     BrowserModule,

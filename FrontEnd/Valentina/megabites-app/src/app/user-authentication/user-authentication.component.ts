@@ -38,9 +38,7 @@ export class UserAuthenticationComponent implements OnInit {
   }
 
   register(){
-    this.customerService.register(this.customer).subscribe(
-      customer=>console.log(customer)
-      )
+    this.customerService.register(this.customer);
     this.display = "none";
 
   }
