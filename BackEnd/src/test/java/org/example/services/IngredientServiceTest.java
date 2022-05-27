@@ -84,19 +84,18 @@ class IngredientServiceTest {
     void update_bread() {
         ingredientService.add_bread(bread1);
         given(breadRepository.getById(1L)).willReturn(bread1);
-        assertThat(breadRepository.getById(1L)).isEqualTo(bread1);
+        assertThat(ingredientService.get_bread_by_id(1L)).isEqualTo(bread1);
+        bread2.setId(1L);
         ingredientService.update_bread(bread2);
-        given(breadRepository.getById(1L)).willReturn(bread2);
-        assertThat(breadRepository.getById(1L)).isEqualTo(bread2);
+
+        assertThat(ingredientService.get_bread_by_id(1L)).isEqualTo(bread2);
     }
 
     @Test
     void delete_bread() {
         ingredientService.add_bread(bread1);
-        given(breadRepository.getById(1L)).willReturn(bread1);
-        assertThat(breadRepository.getById(1L)).isEqualTo(bread1);
-        ingredientService.delete_bread(1);
-        Bread bread = ingredientService.get_bread_by_id(bread1.getId());
+        ingredientService.delete_bread(1L);
+        Bread bread = ingredientService.get_bread_by_id(1L);
         assertThat(bread).isNull();
     }
 
@@ -129,19 +128,18 @@ class IngredientServiceTest {
     void update_meat() {
         ingredientService.add_meat(meat1);
         given(meatRepository.getById(1L)).willReturn(meat1);
-        assertThat(meatRepository.getById(1L)).isEqualTo(meat1);
+        assertThat(ingredientService.get_meat_by_id(1L)).isEqualTo(meat1);
+        meat2.setId(1L);
         ingredientService.update_meat(meat2);
-        given(meatRepository.getById(1L)).willReturn(meat2);
-        assertThat(meatRepository.getById(1L)).isEqualTo(meat2);
+
+        assertThat(ingredientService.get_meat_by_id(1L)).isEqualTo(meat2);
     }
 
     @Test
     void delete_meat() {
         ingredientService.add_meat(meat1);
-        given(meatRepository.getById(1L)).willReturn(meat1);
-        assertThat(meatRepository.getById(1L)).isEqualTo(meat1);
         ingredientService.delete_meat(1L);
-        Meat meat = ingredientService.get_meat_by_id(meat1.getId());
+        Meat meat = ingredientService.get_meat_by_id(1L);
         assertThat(meat).isNull();
     }
 
@@ -154,7 +152,7 @@ class IngredientServiceTest {
     void get_sauce_by_id() {
         ingredientService.add_sauce(sauce1);
         given(sauceRepository.getById(1L)).willReturn(sauce1);
-        assertThat(sauceRepository.getById(1L)).isEqualTo(sauce1);
+        assertThat(ingredientService.get_sauce_by_id(1L)).isEqualTo(sauce1);
     }
 
     @Test
@@ -174,19 +172,18 @@ class IngredientServiceTest {
     void update_sauce() {
         ingredientService.add_sauce(sauce1);
         given(sauceRepository.getById(1L)).willReturn(sauce1);
-        assertThat(sauceRepository.getById(1L)).isEqualTo(sauce1);
+        assertThat(ingredientService.get_sauce_by_id(1L)).isEqualTo(sauce1);
+        sauce2.setId(1L);
         ingredientService.update_sauce(sauce2);
-        given(sauceRepository.getById(1L)).willReturn(sauce2);
-        assertThat(sauceRepository.getById(1L)).isEqualTo(sauce2);
+
+        assertThat(ingredientService.get_sauce_by_id(1L)).isEqualTo(sauce2);
     }
 
     @Test
     void delete_sauce() {
         ingredientService.add_sauce(sauce1);
-        given(sauceRepository.getById(1L)).willReturn(sauce1);
-        assertThat(sauceRepository.getById(1L)).isEqualTo(sauce1);
         ingredientService.delete_sauce(1L);
-        Sauce sauce = ingredientService.get_sauce_by_id(sauce1.getId());
+        Sauce sauce = ingredientService.get_sauce_by_id(1L);
         assertThat(sauce).isNull();
     }
 
@@ -219,19 +216,18 @@ class IngredientServiceTest {
     void update_seasoning() {
         ingredientService.add_seasoning(seasoning1);
         given(seasoningRepository.getById(1L)).willReturn(seasoning1);
-        assertThat(seasoningRepository.getById(1L)).isEqualTo(seasoning1);
+        assertThat(ingredientService.get_seasoning_by_id(1L)).isEqualTo(seasoning1);
+        seasoning2.setId(1L);
         ingredientService.update_seasoning(seasoning2);
-        given(seasoningRepository.getById(1L)).willReturn(seasoning2);
-        assertThat(seasoningRepository.getById(1L)).isEqualTo(seasoning2);
+
+        assertThat(ingredientService.get_seasoning_by_id(1L)).isEqualTo(seasoning2);
     }
 
     @Test
     void delete_seasoning() {
         ingredientService.add_seasoning(seasoning1);
-        given(seasoningRepository.getById(1L)).willReturn(seasoning1);
-        assertThat(seasoningRepository.getById(1L)).isEqualTo(seasoning1);
         ingredientService.delete_seasoning(1L);
-        Seasoning seasoning = ingredientService.get_seasoning_by_id(seasoning1.getId());
+        Seasoning seasoning = ingredientService.get_seasoning_by_id(1L);
         assertThat(seasoning).isNull();
     }
 
@@ -264,19 +260,18 @@ class IngredientServiceTest {
     void update_vegetable() {
         ingredientService.add_vegetable(vegetable1);
         given(vegetableRepository.getById(1L)).willReturn(vegetable1);
-        assertThat(vegetableRepository.getById(1L)).isEqualTo(vegetable1);
+        assertThat(ingredientService.get_vegetable_by_id(1L)).isEqualTo(vegetable1);
+        vegetable2.setId(1L);
         ingredientService.update_vegetable(vegetable2);
-        given(vegetableRepository.getById(1L)).willReturn(vegetable2);
-        assertThat(vegetableRepository.getById(1L)).isEqualTo(vegetable2);
+
+        assertThat(ingredientService.get_vegetable_by_id(1L)).isEqualTo(vegetable2);
     }
 
     @Test
     void delete_vegetable() {
         ingredientService.add_vegetable(vegetable1);
-        given(vegetableRepository.getById(1L)).willReturn(vegetable1);
-        assertThat(vegetableRepository.getById(1L)).isEqualTo(vegetable1);
         ingredientService.delete_vegetable(1L);
-        Vegetable vegetable = ingredientService.get_vegetable_by_id(vegetable1.getId());
+        Vegetable vegetable = ingredientService.get_vegetable_by_id(1L);
         assertThat(vegetable).isNull();
     }
 

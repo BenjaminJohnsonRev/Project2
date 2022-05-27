@@ -27,7 +27,7 @@ public class ManagerService {
     }
 
     public Manager update_manager(Manager manager, Long id){
-        Manager managerDB = managerRepository.findById(id).get();
+        Manager managerDB = managerRepository.getById(manager.getManager_id());
         managerDB.setManager_name(manager.getManager_name());
         managerDB.setManager_id(manager.getManager_id());
         managerDB.setYears_of_experience(manager.getYears_of_experience());

@@ -85,4 +85,27 @@ class CustomerServiceTest {
 
         assertThat(customer_service.authenticate("tom_username", "tom_password")).isNotNull();
     }
+
+    @Test
+    void ban_hammer() {
+        customer_service.add_customer(test_customer1);
+
+        given(customer_repository.getById(1L)).willReturn(test_customer1);
+
+        customer_service.ban_hammer(1L);
+
+        assertThat(customer_service.get_customer_by_id(1L).isBanned()).isTrue();
+    }
+
+    @Test
+    void update_customer() {
+        customer_service.add_customer(test_customer1);
+
+        given(customer_repository.getById(1L)).willReturn(test_customer1);
+
+        Customer new_customer = new Customer(1l, "dave_username", "dave_password", "dave", "evad", "dave@gmail.com", false);
+        customer_service.update_customer(new_customer);
+
+        assertThat(customer_service.get_customer_by_id(1L)).isEqualTo(new_customer);
+    }
 }

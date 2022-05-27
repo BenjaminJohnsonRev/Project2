@@ -1,6 +1,7 @@
 package org.example.services;
 
 import org.example.dao.ManagerRepository;
+import org.example.entity.Employee;
 import org.example.entity.Manager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -72,5 +73,17 @@ class ManagerServiceTest {
 
         Manager deleted_manager = manager_service.get_manager_by_id(test_manager1.getManager_id());
         assertThat(deleted_manager).isNull();
+    }
+
+    @Test
+    void update_manager() {
+        manager_service.add_manager(test_manager1);
+
+        given(manager_repository.getById(1L)).willReturn(test_manager1);
+
+        Manager new_manager = new Manager(1, "dave", 1000);
+        manager_service.update_manager(new_manager,1L);
+
+        assertThat(manager_service.get_manager_by_id(1L)).isEqualTo(new_manager);
     }
 }
