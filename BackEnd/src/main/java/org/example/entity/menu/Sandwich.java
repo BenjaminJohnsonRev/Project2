@@ -5,9 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.example.entity.menu.ingredients.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 
+@CrossOrigin(origins="*")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

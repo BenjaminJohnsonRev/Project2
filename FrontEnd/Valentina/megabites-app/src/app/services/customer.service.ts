@@ -17,6 +17,15 @@ export class CustomerService {
 
   register(customer:Customer){
     console.log(customer);
-    return this.http.post('http://localhost:9002/customers/register',customer);
+    return this.http.post<Customer>('http://localhost:9002/customers/register', customer).subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err));
+  }
+
+  ban(id: number){
+    console.log("ban id: " + id);
+    return this.http.put<any>('http://localhost:9002/customers/banHammer/' + id, "").subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err));
   }
 }

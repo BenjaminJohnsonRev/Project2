@@ -1,5 +1,5 @@
 export interface Vegetable {
     id: number,
-    name: String,
+    name: string,
     price: number
 }
