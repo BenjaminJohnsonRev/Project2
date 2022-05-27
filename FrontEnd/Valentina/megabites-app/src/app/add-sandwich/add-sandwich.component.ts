@@ -20,18 +20,14 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AddSandwichComponent implements OnInit {
 
-  sandwich!: Sandwich;
+  
   breads!: Bread[];
   meats!: Meat[];
   vegetables!: Vegetable[];
   seasonings!: Seasoning[];
   sauces!: Sauce[];
 
-  bread!:Bread;
-  meat! :Meat;
-  vegetable!:Vegetable;
-  seasoning!:Seasoning;
-  sauce!:Sauce;
+  
 
   constructor(private sandwichService:SandwichService,
      private breadService:BreadService,
@@ -41,35 +37,34 @@ export class AddSandwichComponent implements OnInit {
      private sauceService:SauceService) { }
 
   ngOnInit(): void {
-    // this.sandwich = {
-    //     sandwich_id: 0,
-    //     bread: {
-    //         id: 0,
-    //         name: '',
-    //         price: 0.0
-    //     },
-    //     meat: {
-    //         id: 0,
-    //         name: '',
-    //         price: 0.0
-    //     },
-    //     vegetable: {
-    //         id: 0,
-    //         name: '',
-    //         price: 0.0
-    //     },
-    //     sauce: {
-    //         id: 0,
-    //         name: '',
-    //         price: 0.0
-    //     },
-    //     seasoning: {
-    //         id: 0,
-    //         name: '',
-    //         price: 0.0
-    //     }
-    // }
-
+    this.sandwich = {
+        bread: {
+            id: 0,
+            name: '',
+            price: 0.0
+        },
+        meat: {
+            id: 0,
+            name: '',
+            price: 0.0
+        },
+        vegetable: {
+            id: 0,
+            name: '',
+            price: 0.0
+        },
+        sauce: {
+            id: 0,
+            name: '',
+            price: 0.0
+        },
+        seasoning: {
+            id: 0,
+            name: '',
+            price: 0.0
+        }
+        
+    }
     this.getAllBread();
     this.getAllMeat();
     this.getAllSauce();
@@ -117,9 +112,29 @@ export class AddSandwichComponent implements OnInit {
   // buildSandwich() {
   //   this.sandwichService.buildSandwich(this.bread, this.meat, this.vegetable, this.sauce, this.seasoning);
   // }
-
+  sandwich!: Sandwich;
+  meat! :Meat;
+  bread!:Bread;
+  vegetable!:Vegetable;
+  seasoning!:Seasoning;
+  sauce!:Sauce;
+  ids! : number[];
+  
   addSandwich() {
-    console.log(this.sandwich);
+    console.log("this.sandwich");
+    console.log(this.meat);
+    // this.sandwich.bread  = {id: 0, name: '', price: 0.0};
+    this.sandwich.bread = this.bread;
+    this.sandwich.meat = this.meat;
+    this.sandwich.vegetable =  this.vegetable;
+    this.sandwich.sauce = this.sauce;
+    this.sandwich.seasoning = this.seasoning;
+    
+    
+    
+    console.log("add Sandwich ids");
+    // this.sandwichService.addSandwich(this.Sbread, this.Smeat, this.Svegetable, this.Sseasoning, this.Ssauce);
+    this.sandwichService.addSandwich(this.sandwich);
     // buildSandwich();
   }
 }

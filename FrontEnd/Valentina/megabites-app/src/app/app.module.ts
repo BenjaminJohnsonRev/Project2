@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { UserAuthenticationComponent } from './user-authentication/user-authentication.component';
 import { BuildSandwichComponent } from './build-sandwich/build-sandwich.component';
 import { AddSandwichComponent } from './add-sandwich/add-sandwich.component';
+import { ManagementComponent } from './management/management.component';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { AddSandwichComponent } from './add-sandwich/add-sandwich.component';
     UserAuthenticationComponent,
     BuildSandwichComponent,
     AddSandwichComponent,
+    ManagementComponent,
   ],
   imports: [
     BrowserModule,
