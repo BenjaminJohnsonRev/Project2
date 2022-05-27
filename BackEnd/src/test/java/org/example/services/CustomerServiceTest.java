@@ -90,11 +90,11 @@ class CustomerServiceTest {
     void ban_hammer() {
         customer_service.add_customer(test_customer1);
 
-        given(customer_repository.getById(1L)).willReturn(test_customer1);
+//        given(customer_repository.getById(1L)).willReturn(test_customer1);
 
-        customer_service.ban_hammer(1L);
+        customer_service.ban_hammer(test_customer1);
 
-        assertThat(customer_service.get_customer_by_id(1L).isBanned()).isTrue();
+        assertThat(customer_service.get_customer_by_id(test_customer1.getCustomer_id()).isBanned()).isTrue();
     }
 
     @Test

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from '../customer';
+import { CustomerService } from '../services/customer.service';
+import { ManagementService } from '../services/management.service';
 
 @Component({
   selector: 'app-management',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagementComponent implements OnInit {
 
-  constructor() { }
+  constructor(private managementService:ManagementService, 
+    private customerService:CustomerService ) { }
 
+
+  customers!: Customer[];
+  id?: number;
   ngOnInit(): void {
+    
+    this.getAllCustomers();
   }
 
+  getAllCustomers(){
+    this.customerService.getAllCustomers().subscribe((customers:Customer[])=>{
+      this.customers = customers;
+      console.log(customers);
+    })
+  }
+
+  customer!:Customer;
+  ban(){
+    console.log(this.customer)
+    this.managementService.ban(this.customer);
+  }
 }

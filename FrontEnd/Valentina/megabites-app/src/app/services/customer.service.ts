@@ -17,15 +17,11 @@ export class CustomerService {
 
   register(customer:Customer){
     console.log(customer);
-    return this.http.post<Customer>('http://localhost:9002/customers/register', customer).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err));
+    return this.http.post<Customer>('http://localhost:9002/customers/register', customer)
   }
 
-  ban(id: number){
-    console.log("ban id: " + id);
-    return this.http.put<any>('http://localhost:9002/customers/banHammer/' + id, "").subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err));
+  getAllCustomers(){
+    return this.http.get<Customer[]>('http://localhost:9002/customers')
   }
+
 }
