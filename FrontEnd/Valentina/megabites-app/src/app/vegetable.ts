@@ -1,4 +1,4 @@
-export interface Vegatable {
+export interface Vegetable {
     id: number,
     name: String,
     price: number

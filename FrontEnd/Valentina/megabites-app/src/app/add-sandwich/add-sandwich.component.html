@@ -13,55 +13,48 @@
     <option value="Salami">Salami</option>
     </select>
 </div> -->
+<form #bindProject="ngForm" (ngSubmit)="addSandwich()">
+    <div class = "ingredients">
+        <label for="meat">Meat:</label>
+            <select id="meat" [(ngModel)]="sandwich.meat" >
+                <option *ngFor="let meat of meats" [value]="meat">{{meat.name}}</option>
+            </select>
+    </div>
 
-<div>
-    <label for="sandwich.sandwiches[0].meat">Meat:</label>
-    <select id="sandwich.sandwiches[0].meat" [(ngModel)]="sandwich.sandwiches[0].meat" >
-    <option *ngFor="let meat of meats" [value]="meat">{{meat.name}}</option>
-    </select>
-</div>
+    <div class = "ingredients">
+        <label for="bread">Bread:</label>
+        <select id="bread" [(ngModel)]="sandwich.bread" >
+        <option *ngFor="let bread of breads" [value]="bread">{{bread.name}}</option>
+        </select>
+    </div>
 
-<div>
-    <label for="sandwich.sandwiches[0].bread">Bread:</label>
-    <select id="sandwich.sandwiches[0].bread" [(ngModel)]="sandwich.sandwiches[0].bread" >
-    <option *ngFor="let bread of breads" [value]="bread.name">{{bread.name}}</option>
-    </select>
-</div>
+    <div class = "ingredients">
+        <label for="vegetable">Vegetable:</label>
+        <select id="vegetable" [(ngModel)]="sandwich.vegetable" >
+        <option *ngFor="let vegetable of vegetables" [value]="vegetable">{{vegetable.name}}</option>
+        </select>
+    </div>
 
-<div>
-    <label for="sandwich.sandwiches[0].vegetable.name">Vegetable:</label>
-    <select id="sandwich.sandwiches[0].vegetable.name" [(ngModel)]="sandwich.sandwiches[0].vegetable.name" >
-      <option value="lettuce">Lettuce</option>
-      <option value="tomato">Tomato</option>
-      <option value="onion">Onion</option>
-      <option value="peppers">Peppers</option>
-    </select>
-</div>
+    <div class = "ingredients">
+        <label for="sauce">Sauce:</label>
+        <select id="sauce" [(ngModel)]="sandwich.sauce" >
+        <option *ngFor="let sauce of sauces" [value]="sauce">{{sauce.name}}</option>
+        </select>
+    </div>
 
-<div>
-    <label for="sandwich.sandwiches[0].sauce.name">Sauce:</label>
-    <select id="sandwich.sandwiches[0].sauce.name" [(ngModel)]="sandwich.sandwiches[0].sauce.name" >
-      <option value="mayo">Mayo</option>
-      <option value="vinegar">Vinegar</option>
-      <option value="chipolte">Chipolte</option>
-      <option value="mustard">Mustard</option>
-    </select>
-</div>
+    <div class = "ingredients">
+        <label for="seasoning">Seasoning:</label>
+        <select id="seasoning" [(ngModel)]="sandwich.seasoning" >
+        <option *ngFor="let seasoning of seasonings" [value]="seasoning">{{seasoning.name}}</option>
+        </select>
+    </div>
+    <button  type="submit" >Add Sandwich</button>
 
-<div>
-    <label for="sandwich.sandwiches[0].seasoning.name">Seasoning:</label>
-    <select id="sandwich.sandwiches[0].seasoning.name" [(ngModel)]="sandwich.sandwiches[0].seasoning.name" >
-      <option value="oragano">Oragano</option>
-      <option value="salt">Salt</option>
-      <option value="pepper">Pepper</option>
-      <option value="spice">Spice</option>
-    </select>
-</div>
-<button type = "button" (click) = "addSandwich()">Add Sandwich</button>
-<button type = "button" (click) = "getAllBread()">all bread</button>
+</form>
+<!-- <button type = "button" (click) = "getAllBread()">all bread</button> -->
 
 
-<h3>Cart ID: {{sandwich.cart_id}}</h3>
+<!-- <h3>Cart ID: {{sandwich.cart_id}}</h3>
 <h3>Cart Cost: {{sandwich.cost}}</h3>
 <h3>Cart Date: {{sandwich.cart_date}}</h3>
 <h3>Sandwich ID: {{sandwich.sandwiches[0].sandwich_id}}</h3>
@@ -79,4 +72,4 @@
 <h3>Sauce Price: {{sandwich.sandwiches[0].sauce.price}}</h3>
 <h3>Seasoning ID: {{sandwich.sandwiches[0].seasoning.id}}</h3>
 <h3>Seasoning Name: {{sandwich.sandwiches[0].seasoning.name}}</h3>
-<h3>Seasoning Price: {{sandwich.sandwiches[0].seasoning.price}}</h3>
+<h3>Seasoning Price: {{sandwich.sandwiches[0].seasoning.price}}</h3> -->
