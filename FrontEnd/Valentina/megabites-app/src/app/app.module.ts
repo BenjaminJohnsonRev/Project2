@@ -10,8 +10,6 @@ import { UserAuthenticationComponent } from './user-authentication/user-authenti
 import { BuildSandwichComponent } from './build-sandwich/build-sandwich.component';
 import { AddSandwichComponent } from './add-sandwich/add-sandwich.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
