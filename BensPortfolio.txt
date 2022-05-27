@@ -1,0 +1,15 @@
+Benjamin Johnson
+
+Roles/Responsibilities:
+-Responsible for Sandwich functionality on backend
+-Responsible for Cart functionality on backend
+-Leader in group project meetings
+-Utilized Spring Boot to develop backend
+-Created Spring controllers, services and repos
+-Brought Angular driven sandwich building tool to fruition
+-Used HTML, CSS, and TypeScript to improve look of sandwich building component
+-Managed the GitHub repository for the project
+-Took advantage of ManyToOne relationships in Spring to create Sandwich object
+made of Ingredient objects.
+
+
