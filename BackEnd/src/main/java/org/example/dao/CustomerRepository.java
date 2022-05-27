@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Optional;
 @CrossOrigin(origins="*")
-
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 

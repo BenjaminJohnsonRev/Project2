@@ -108,34 +108,23 @@ export class AddSandwichComponent implements OnInit {
     })
   }
     
-
-  // buildSandwich() {
-  //   this.sandwichService.buildSandwich(this.bread, this.meat, this.vegetable, this.sauce, this.seasoning);
-  // }
   sandwich!: Sandwich;
   meat! :Meat;
   bread!:Bread;
   vegetable!:Vegetable;
   seasoning!:Seasoning;
   sauce!:Sauce;
-  ids! : number[];
+
   
   addSandwich() {
     console.log("this.sandwich");
     console.log(this.meat);
-    // this.sandwich.bread  = {id: 0, name: '', price: 0.0};
     this.sandwich.bread = this.bread;
     this.sandwich.meat = this.meat;
     this.sandwich.vegetable =  this.vegetable;
     this.sandwich.sauce = this.sauce;
     this.sandwich.seasoning = this.seasoning;
-    
-    
-    
-    console.log("add Sandwich ids");
-    // this.sandwichService.addSandwich(this.Sbread, this.Smeat, this.Svegetable, this.Sseasoning, this.Ssauce);
     this.sandwichService.addSandwich(this.sandwich);
-    // buildSandwich();
   }
 }
 

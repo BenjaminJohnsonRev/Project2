@@ -1,18 +1,8 @@
+<body>
+    
+
 <h1>Sandwich</h1>
 
-<!-- <div>
-    <label for="sandwich-cart_id">Cart_ID</label>
-    <input type="text" id="sandwich-cart-id" [(ngModel)]="sandwich.cart_id" />
-</div> -->
-<!-- <div>
-    <label for="sandwich.sandwiches[0].meat.name">Meat</label>
-    <select id="sandwich.sandwiches[0].meat.name" [(ngModel)]="sandwich.sandwiches[0].meat.name" >
-    <option value="Ham">Ham</option>
-    <option value="Baccon">Baccon</option>
-    <option value="Turkey">Turkey</option>
-    <option value="Salami">Salami</option>
-    </select>
-</div> -->
 <form #bindProject="ngForm" (ngSubmit)="addSandwich()" >
     <div class = "ingredients">
         <label for="meat">Meat:</label>
@@ -51,8 +41,8 @@
     <button  type="submit" >Add Sandwich</button>
 
 </form>
+</body>
 <!-- <button type = "button" (click) = "getAllBread()">all bread</button> -->
-
 
 <!-- <h3>Cart ID: {{sandwich.cart_id}}</h3>
 <h3>Cart Cost: {{sandwich.cost}}</h3>

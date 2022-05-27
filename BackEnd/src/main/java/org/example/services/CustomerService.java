@@ -5,10 +5,10 @@ import org.example.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 @CrossOrigin(origins="*")
-
 @Service
 public class CustomerService {
     @Autowired
@@ -27,10 +27,9 @@ public class CustomerService {
 //        this.customerRepository = customerRepository;
 //    }
 
-    public Customer ban_hammer(long id){
-        Customer bannedCustomer = customerRepository.getById(id);
-        bannedCustomer.setBanned(true);
-        return customerRepository.save(bannedCustomer);
+    public Customer ban_hammer(Customer customer){
+        customer.setBanned(true);
+        return customerRepository.save(customer);
     }
 
     public List<Customer> get_all_customers(){
