@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+    background-color: mediumaquamarine;
+    border: rgb(62, 144, 169) 10px solid;
+    padding: 20px;
+}
+h1{
+    text-decoration: underline rgb(62, 144, 169);
+}
