@@ -1,8 +1,8 @@
 # Project2
-##Megabites Sandwich Shop
+## Megabites Sandwich Shop
 
 ***
-###An Explanation and Overview of the project:
+### An Explanation and Overview of the project:
 
 We are building a sandwich restaurant website that allows customers to place their orders online.
 Examples of things users should be able to do:
@@ -13,7 +13,7 @@ Examples of things users should be able to do:
 see BackEnd\groupReferences\userStories.txt for full list of user interactions
 
 ***
-###List of features implemented:
+### List of features implemented:
 
 * [X]Customers can create an account (register)
 * [X]Customers can login
@@ -43,7 +43,7 @@ see BackEnd\groupReferences\userStories.txt for full list of user interactions
 * *not accessible on website (only through Postman currently)
 
 ***
-###Technologies used:
+### Technologies used:
 
 Back-End built using Spring Boot.
 Front-End built with Angular.
@@ -53,7 +53,7 @@ Lombok and JPA within Spring.
 Mockito for testing HTTP requests.
 
 ***
-###How to set up / get started using it:
+### How to set up / get started using it:
 
 1. Open project from BackEnd folder. If you attempt to start MegabitesApplication from Project2 folder, it may not compile.
 2. Double check your applications.properties to ensure you have proper connection settings.
@@ -69,17 +69,17 @@ Mockito for testing HTTP requests.
 11. Welcome to Megabites Sandwich Shop.
 
 ***
-###Usage of the project:
+### Usage of the project:
 
 This project is to be used as a learning tool and is not intended for commercial usage.
 
 ***
-###Contributors: 
+### Contributors: 
 
 Haruya Maeda, Benjamin Johnson, Valentina Genty, Nicholas Olshansky, Clyde Christian, Daniel Heck
 
 ***
-###License information:
+### License information:
 
 MIT License
 
