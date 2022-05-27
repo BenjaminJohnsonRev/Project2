@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ffac8e3-87b8-423c-9b69-2e389cd93c61" name="Changes" comment="" />
+    <list default="true" id="7ffac8e3-87b8-423c-9b69-2e389cd93c61" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/PostmanEntries.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/setupDocs/PostmanEntries.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/Requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/groupReferences/Requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/dBeaverScript.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/setupDocs/dBeaverScript.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/minutes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/groupReferences/minutes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/userStories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/groupReferences/userStories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,10 +65,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\johns\IdeaProjects\Project2" />
+      <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd\groupReferences" />
+      <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd\setupDocs" />
       <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd\target" />
       <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd\src\test\java\org\example" />
-      <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd" />
-      <recent name="C:\Users\johns\IdeaProjects\Project2\BackEnd\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
