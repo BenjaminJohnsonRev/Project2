@@ -10,6 +10,8 @@ import { UserAuthenticationComponent } from './user-authentication/user-authenti
 import { BuildSandwichComponent } from './build-sandwich/build-sandwich.component';
 import { AddSandwichComponent } from './add-sandwich/add-sandwich.component';
 import { ManagementComponent } from './management/management.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { ManagementComponent } from './management/management.component';
     BuildSandwichComponent,
     AddSandwichComponent,
     ManagementComponent,
+    NavbarComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

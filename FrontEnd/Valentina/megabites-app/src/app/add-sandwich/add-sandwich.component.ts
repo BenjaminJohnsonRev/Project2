@@ -71,8 +71,6 @@ export class AddSandwichComponent implements OnInit {
     this.getAllVegetable();
     this.getAllSeasoning();
     
-    // this.getAllVegetable();
-
   }
 
   getAllBread(){
