@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/customer';
+import { LogoutComponent } from '../logout/logout.component';
 import { CustomerService } from '../services/customer.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { CustomerService } from '../services/customer.service';
 })
 export class UserAuthenticationComponent implements OnInit {
   customer!: Customer;
+  table_customer!: Customer;
 
   constructor(private customerService:CustomerService) { }
 
@@ -29,18 +31,24 @@ export class UserAuthenticationComponent implements OnInit {
 
   login(){
     this.customerService.login(this.customer).subscribe(
-      customer=>{this.customer=customer;
-      console.log(customer);
+      table_customer=>{this.customer=table_customer;
+      console.log(table_customer);
+      if(table_customer==null){
+        window.open('http://localhost:4200/','_self')?.focus();
+      }
+      else{
+        this.display = "none";
+      }
     }
     )
-    this.display = "none";
+
+    
 
   }
 
   register(){
     this.customerService.register(this.customer);
     this.display = "none";
-
   }
 
   onCloseHandled() {

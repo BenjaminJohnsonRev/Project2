@@ -11,6 +11,7 @@ import { BuildSandwichComponent } from './build-sandwich/build-sandwich.componen
 import { AddSandwichComponent } from './add-sandwich/add-sandwich.component';
 import { ManagementComponent } from './management/management.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddSandwichComponent,
     ManagementComponent,
     NavbarComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
