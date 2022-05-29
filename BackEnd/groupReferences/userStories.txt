@@ -2,7 +2,7 @@ User Stories:
 
 [X]Customers can create an account (register)
 [X]Customers can login
-[ ]Customers can logout
+[X]Customers can logout
 [ ]Customers can choose pickup or delivery
 [ ]Customers can choose an address for delivery (GPS map possibly)
 [X]Customers can add menu items to cart
