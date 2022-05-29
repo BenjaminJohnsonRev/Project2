@@ -45,7 +45,7 @@ export class UserAuthenticationComponent implements OnInit {
 
   onCloseHandled() {
     this.display = "none";
-    window.open('http://localhost:4200/');
+    window.open('http://localhost:4200/','_self')?.focus();
   }
 
   getCustomer(){
