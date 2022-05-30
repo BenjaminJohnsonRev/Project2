@@ -21,8 +21,8 @@ class ManagerRepositoryTest {
 
     @BeforeEach
     public void setup(){
-        test_manager1 = new Manager(1, "tom", 1);
-        test_manager2 = new Manager(2, "mat", 2);
+        test_manager1 = new Manager(1, "tevans","1234","tom","evans", 1);
+        test_manager2 = new Manager(2, "echris","2234","ed","chris", 4);
     }
 
     @Test
@@ -57,11 +57,17 @@ class ManagerRepositoryTest {
         manager_repository.save(test_manager1);
 
         Manager saved_manager = manager_repository.findById(test_manager1.getManager_id()).get();
-        saved_manager.setManager_name("new_name");
+        saved_manager.setFirst_name("new_name");
 
         Manager updated_manager = manager_repository.save(saved_manager);
 
-        assertThat(updated_manager.getManager_name()).isEqualTo("new_name");
+        assertThat(updated_manager.getFirst_name()).isEqualTo("new_name");
+
+        saved_manager.setLast_name("new_name");
+
+        updated_manager = manager_repository.save(saved_manager);
+
+        assertThat(updated_manager.getLast_name()).isEqualTo("new_name");
 
     }
 

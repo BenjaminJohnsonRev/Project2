@@ -47,8 +47,11 @@ export class UserAuthenticationComponent implements OnInit {
   }
 
   register(){
-    this.customerService.register(this.customer);
+    this.customerService.register(this.customer).subscribe(
+      customer=>{this.customer=customer;
+      console.log(customer);
     this.display = "none";
+      })
   }
 
   onCloseHandled() {
