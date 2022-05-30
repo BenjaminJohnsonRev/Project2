@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.entity.Customer;
 import org.example.entity.Manager;
 import org.example.services.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,11 @@ public class ManagerController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public Manager add_manager(@RequestBody Manager manager){
         return managerService.add_manager(manager);
+    }
+
+    @GetMapping("/login")
+    public Manager login(@RequestParam String username, @RequestParam String password){
+        return managerService.authenticate(username, password);
     }
 
     @GetMapping("/get")

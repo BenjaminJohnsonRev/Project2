@@ -11,7 +11,6 @@ export class CustomerService {
 
   login(customer:Customer){
     console.log(customer);
-    console.log(customer.username);
     return this.http.get<Customer>('http://localhost:9002/customers/login/?username='+customer.username+'&password='+customer.password);
   }
 
