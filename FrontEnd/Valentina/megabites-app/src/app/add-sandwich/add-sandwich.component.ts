@@ -17,6 +17,7 @@ import { CartService } from '../services/cart.service';
 import { Customer } from '../customer';
 import { Cart } from '../cart';
 import { CustomerService } from '../services/customer.service';
+import { SandwichOrderIDObject } from '../sandwichOrderIDObject';
 
 @Component({
   selector: 'app-add-sandwich',
@@ -34,8 +35,15 @@ export class AddSandwichComponent implements OnInit {
   seasonings!: Seasoning[];
   sauces!: Sauce[];
   customer!:Customer;
-  child_customer!:Customer;
   cart!:Cart;
+  soid_object!:SandwichOrderIDObject;
+  sandwich!: Sandwich;
+  meat! :Meat;
+  bread!:Bread;
+  vegetable!:Vegetable;
+  seasoning!:Seasoning;
+  sauce!:Sauce;
+  empty_sandwich!:Sandwich;
 
   
 
@@ -50,6 +58,35 @@ export class AddSandwichComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.empty_sandwich={
+      sandwich_id:0,
+      bread: {
+        id: 0,
+        name: '',
+        price: 0.0
+    },
+    meat: {
+        id: 0,
+        name: '',
+        price: 0.0
+    },
+    vegetable: {
+        id: 0,
+        name: '',
+        price: 0.0
+    },
+    sauce: {
+        id: 0,
+        name: '',
+        price: 0.0
+    },
+    seasoning: {
+        id: 0,
+        name: '',
+        price: 0.0
+    }
+    }
+
     this.sandwich = {
         bread: {
             id: 0,
@@ -78,6 +115,18 @@ export class AddSandwichComponent implements OnInit {
         }
         
     }
+
+    this.cart={
+      customer_id:0,
+      employee_id:0,
+      cost_sum:0
+    }
+
+    this.soid_object={
+      order_id:0,
+      sandwich_id:0
+    }
+
     this.getAllBread();
     this.getAllMeat();
     this.getAllSauce();
@@ -86,14 +135,11 @@ export class AddSandwichComponent implements OnInit {
     
   }
 
-  // onLogin(customer:Customer){
-  //   this.customer=customer;
-  // }
+
   getCustomer(){
-    this.child_customer=this.customerComponent.customer;
-    // return this.customer;
+    this.customer=this.customerComponent.customer;
     console.log("here is the new customer")
-    console.log(this.child_customer);
+    console.log(this.customer);
   }
 
   getAllBread(){
@@ -129,32 +175,37 @@ export class AddSandwichComponent implements OnInit {
     })
   }
     
-  sandwich!: Sandwich;
-  meat! :Meat;
-  bread!:Bread;
-  vegetable!:Vegetable;
-  seasoning!:Seasoning;
-  sauce!:Sauce;
+  
 
   
   addSandwich() {
     this.getCustomer();
 
-    console.log("this.sandwich");
-    console.log(this.meat);
+    this.cart.customer_id=this.customer.customer_id;
+
+    this.cartService.addCart(this.cart).subscribe(
+        cart=>{this.cart = cart;
+        console.log(cart);
+      });
+
     this.sandwich.bread = this.bread;
     this.sandwich.meat = this.meat;
     this.sandwich.vegetable =  this.vegetable;
     this.sandwich.sauce = this.sauce;
     this.sandwich.seasoning = this.seasoning;
-    this.sandwichService.addSandwich(this.sandwich);
+    this.sandwichService.addSandwich(this.sandwich).subscribe(
+        sandwich=>{this.empty_sandwich = sandwich;
+        console.log(sandwich);
+      });
 
-
-    console.log(this.child_customer);
-    this.cartService.getCart(this.child_customer).subscribe(
-      cart=>{this.cart = cart;
-      console.log(cart);
-    });
+      console.log("this is an empty sandwich");
+      console.log(this.empty_sandwich);
+    // console.log(this.child_customer);
+    // this.cartService.getCart(this.child_customer).subscribe(
+    //   cart=>{this.cart = cart;
+    //   console.log(cart);
+    // });
+    
     
     if(this.cart==null){
       console.log("This user has no carts");
@@ -163,7 +214,16 @@ export class AddSandwichComponent implements OnInit {
       console.log("This user has at least one cart");
     }
 
-    // this.sandwichService.addSandwichToCart(this.sandwich);
+    this.soid_object.order_id=this.cart.cart_id;
+    this.soid_object.sandwich_id=this.empty_sandwich.sandwich_id;
+
+    console.log(this.cart.cart_id);
+    console.log(this.sandwich.sandwich_id);
+
+    this.cartService.addSandwichToCart(this.soid_object).subscribe(
+      cart=>{this.cart = cart;
+      console.log(cart);
+    });
   }
 }
 

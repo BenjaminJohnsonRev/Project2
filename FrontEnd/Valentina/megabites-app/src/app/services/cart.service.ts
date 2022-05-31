@@ -2,28 +2,28 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Cart } from '../cart';
 import { Sandwich } from '../sandwich';
-import { SandwichOrerIDObject } from '../sandwichOrderIDObject';
+import { SandwichOrderIDObject } from '../sandwichOrderIDObject';
 import { Customer } from '../customer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  cart!:Cart;
-  sandwich!:SandwichOrerIDObject;
-  // customer!:Customer;
+  // cart!:Cart;
+  // sandwich!:SandwichOrerIDObject;
+  // // customer!:Customer;
 
   constructor(private http:HttpClient) { }
 
 
   //addCart()-creates an empty cart
   addCart(cart:Cart){
-    return this.http.post<Cart>('http://localhost:9002/carts', cart)
+    return this.http.post<Cart>('http://localhost:9002/carts', cart);
   }
 
   //addSnawichtoCart - adds following sandwiches to existing cart
-  addSandwichToCart(cart:Cart){
-    return this.http.put<SandwichOrerIDObject>('http://localhost:9002/carts/add', this.sandwich);
+  addSandwichToCart(soid_object:SandwichOrderIDObject){
+    return this.http.put<Cart>('http://localhost:9002/carts/add', soid_object);
   }
 
   getCart(customer:Customer){

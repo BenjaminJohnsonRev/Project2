@@ -19,12 +19,10 @@ export class SandwichService {
   seasoning!:Seasoning;
   sauce!:Sauce;
   addSandwich(sandwich:Sandwich){
-    console.log("services");
-    console.log(JSON.stringify(sandwich));
+    // console.log("services");
+    // console.log(JSON.stringify(sandwich));
   
-    this.http.post<Sandwich>('http://localhost:9002/sandwiches', sandwich).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err));
+   return this.http.post<Sandwich>('http://localhost:9002/sandwiches', sandwich);
   }
 
 
