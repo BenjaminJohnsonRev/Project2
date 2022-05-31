@@ -1,6 +1,5 @@
 package org.example.controller;
 
-import org.example.entity.Customer;
 import org.example.entity.Manager;
 import org.example.services.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-<<<<<<< HEAD
 @CrossOrigin(origins = "*")
-=======
-@CrossOrigin(origins="*")
->>>>>>> 133dd6434590c25bdeb7fac7f2f13afb639281e4
 @RestController
 @RequestMapping("/managers")
 public class ManagerController {

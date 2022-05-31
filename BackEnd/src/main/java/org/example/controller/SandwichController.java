@@ -10,26 +10,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-<<<<<<< HEAD
 @CrossOrigin(origins = "*")
-=======
-@CrossOrigin(origins="*")
->>>>>>> 133dd6434590c25bdeb7fac7f2f13afb639281e4
 @RestController
 @RequestMapping("/sandwiches")
 public class SandwichController {
     @Autowired
     SandwichService sandwichService;
 
-<<<<<<< HEAD
-    @Autowired
-    IngredientService ingredientService;
 
-    @PostMapping
-    @ResponseBody
-=======
     @PostMapping()
->>>>>>> 133dd6434590c25bdeb7fac7f2f13afb639281e4
     public Sandwich add_sandwich(@RequestBody Sandwich sandwich){
         return sandwichService.add_sandwich(sandwich);
     }
