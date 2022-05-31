@@ -16,8 +16,6 @@ import {  EventEmitter} from '@angular/core';
 export class UserAuthenticationComponent implements OnInit {
   customer!: Customer;
 
-  @Output() loginEvent = new EventEmitter<Customer>();
-
   constructor(private customerService:CustomerService) { }
 
 
@@ -40,7 +38,6 @@ export class UserAuthenticationComponent implements OnInit {
         window.open('http://localhost:4200/','_self')?.focus();
       }
       else{
-        this.loginEvent.emit(this.customer);
         this.display = "none";
       }
     }

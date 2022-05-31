@@ -90,10 +90,10 @@ export class AddSandwichComponent implements OnInit {
   //   this.customer=customer;
   // }
   getCustomer(){
-    this.child_customer=this.customerComponent.getCustomer();
+    this.child_customer=this.customerComponent.customer;
     // return this.customer;
     console.log("here is the new customer")
-    console.log(this.customer);
+    console.log(this.child_customer);
   }
 
   getAllBread(){

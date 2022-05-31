@@ -27,7 +27,7 @@ export class CartService {
   }
 
   getCart(customer:Customer){
-    console.log(customer.id);
-    return this.http.get<Cart>('http://localhost:9002/carts/history/customer/'+customer.id);
+    console.log(customer.customer_id);
+    return this.http.get<Cart>('http://localhost:9002/carts/history/customer/'+customer.customer_id);
   }
 }
