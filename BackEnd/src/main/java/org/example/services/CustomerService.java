@@ -52,7 +52,12 @@ public class CustomerService {
 
 
     public Customer authenticate(String username, String password){
-        return customerRepository.getByUsernameAndPassword(username, password).orElse(null);
+        Customer customer = customerRepository.getByUsernameAndPassword(username, password).orElse(null);
+
+        if(customer == null || customer.isBanned()){
+            customer = null;
+        }
+        return customer;
     }
 
     public void delete_customer(Long id){

@@ -32,8 +32,8 @@ class ManagerServiceTest {
 
     @BeforeEach
     public void setup(){
-        test_manager1 = new Manager(1, "tom", 1);
-        test_manager2 = new Manager(2, "mat", 2);
+        test_manager1 = new Manager(1, "tevans","1234","tom","evans", 1);
+        test_manager1 = new Manager(1, "jmichael","2234","janice","michael", 4);
     }
 
     @Test
@@ -81,7 +81,7 @@ class ManagerServiceTest {
 
         given(manager_repository.getById(1L)).willReturn(test_manager1);
 
-        Manager new_manager = new Manager(1, "dave", 1000);
+        Manager new_manager = new Manager(1, "dandrew","3334","david","Andrew", 1000);
         manager_service.update_manager(new_manager,1L);
 
         assertThat(manager_service.get_manager_by_id(1L)).isEqualTo(new_manager);
