@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Customer } from 'src/app/customer';
 import { LogoutComponent } from '../logout/logout.component';
 import { CustomerService } from '../services/customer.service';
+import {  EventEmitter} from '@angular/core';
+
 
 @Component({
   selector: 'app-user-authentication',
@@ -13,7 +15,6 @@ import { CustomerService } from '../services/customer.service';
 })
 export class UserAuthenticationComponent implements OnInit {
   customer!: Customer;
-  table_customer!: Customer;
 
   constructor(private customerService:CustomerService) { }
 
@@ -27,13 +28,13 @@ export class UserAuthenticationComponent implements OnInit {
       email: ''
     }
   }
-  display = "grid";
+  display = "block";
 
   login(){
     this.customerService.login(this.customer).subscribe(
-      table_customer=>{this.customer=table_customer;
-      console.log(table_customer);
-      if(table_customer==null){
+      customer=>{this.customer=customer;
+      console.log(customer);
+      if(customer==null){
         window.open('http://localhost:4200/','_self')?.focus();
       }
       else{
@@ -61,6 +62,7 @@ export class UserAuthenticationComponent implements OnInit {
 
   getCustomer(){
     console.log(this.customer);
+    return this.customer;
   }
 
 
