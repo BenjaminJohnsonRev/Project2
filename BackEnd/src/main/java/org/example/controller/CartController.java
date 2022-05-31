@@ -10,8 +10,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.util.List;
+<<<<<<< HEAD
 
 @CrossOrigin(origins = "*")
+=======
+@CrossOrigin(origins="*")
+>>>>>>> 133dd6434590c25bdeb7fac7f2f13afb639281e4
 @RestController
 @RequestMapping("/carts")
 public class CartController {

@@ -3,13 +3,14 @@ import org.example.entity.menu.Sandwich;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
-
+@CrossOrigin(origins="*")
 @AllArgsConstructor
 @Data
 @ToString

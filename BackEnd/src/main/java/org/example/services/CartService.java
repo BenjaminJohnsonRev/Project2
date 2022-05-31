@@ -6,11 +6,13 @@ import org.example.entity.Cart;
 import org.example.entity.menu.Sandwich;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.sql.Date;
 import java.util.List;
 import java.util.Set;
 
+@CrossOrigin(origins="*")
 @Service
 public class CartService {
     @Autowired

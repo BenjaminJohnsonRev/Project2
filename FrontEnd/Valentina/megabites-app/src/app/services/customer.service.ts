@@ -11,12 +11,16 @@ export class CustomerService {
 
   login(customer:Customer){
     console.log(customer);
-    console.log(customer.username);
     return this.http.get<Customer>('http://localhost:9002/customers/login/?username='+customer.username+'&password='+customer.password);
   }
 
   register(customer:Customer){
     console.log(customer);
-    return this.http.post('http://localhost:9002/customers/register',customer);
+    return this.http.post<Customer>('http://localhost:9002/customers/register', customer)
   }
+
+  getAllCustomers(){
+    return this.http.get<Customer[]>('http://localhost:9002/customers')
+  }
+
 }

@@ -1,0 +1,32 @@
+<app-manager-authentication>
+
+</app-manager-authentication>
+
+<body>
+    <form #banUsers="ngForm" (ngSubmit)="ban()" >
+        <div class = "bans">
+            <label for="user">Customers:</label>
+                <select id="user" [(ngModel)]="customer" name= "customer">
+                    <option *ngFor="let customer of customers" [ngValue]="customer">{{customer.username}}</option>
+                </select>
+        </div>
+    <button type = "submit" (click) = "ban()">Ban Customer</button>
+    </form>
+</body>
+<!-- <h6>Hire Employee</h6>
+    <label for="FirstName">First Name</label>
+    <input required id="FirstName" type="text" name="FirstName" [(ngModel)]="customer.first_name"/>
+    <br/>
+    <label for="LastName">Last Name</label>
+    <input required id="LastName" type="text" name="LastName" [(ngModel)]="customer.last_name"/>
+    <br/>
+    <label for="reg-username">Username</label>
+    <input required id="reg-username" type="text" name="reg-username" [(ngModel)]="customer.username"/>
+    <br/>
+    <label for="reg-password">Password</label>
+    <input required id="reg-password" type="password" name="reg-password" [(ngModel)]="customer.password"/>
+    <br/>
+    <label for="email">Email</label>
+    <input required id="email" type="text" name="email" [(ngModel)]="customer.email"/>
+    <br/>
+    <button (click) = "register()">Register</button> -->

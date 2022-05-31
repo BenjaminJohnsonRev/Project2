@@ -1,5 +1,5 @@
 export interface Bread {
     id: number,
-    name: String,
+    name: string,
     price: number
 }

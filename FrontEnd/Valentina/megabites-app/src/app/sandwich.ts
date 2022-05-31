@@ -4,7 +4,7 @@ export interface Sandwich {
     // cart_date: Date,
     // sandwiches: [
     //     {
-    sandwich_id: number,
+    sandwich_id?: number,
     bread: {
         "id": number,
         "name": string,

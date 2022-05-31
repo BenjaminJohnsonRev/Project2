@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 
+@CrossOrigin(origins="*")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data

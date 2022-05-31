@@ -13,4 +13,8 @@ export class BuildSandwichComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout(){
+    window.open('http://localhost:4200/','_self')?.focus();
+  }
+
 }

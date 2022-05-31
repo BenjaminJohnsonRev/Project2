@@ -11,29 +11,21 @@ import { Sauce } from '../sauce';
   providedIn: 'root'
 })
 export class SandwichService {
-
+  sandwich! : Sandwich;
   constructor(private http:HttpClient) { }
-
-  addSandwich(){
-   // console.log("Service");
-    console.log("Sandwich services here!");
-   //add your link from postman "http://localhost:9001/endpoint"
-   //return this.http.post<Sandwich>('http://localhost:9002/sandwiches', sandwich);
-  }
-
-  sandwich!: Sandwich;
-
-  // buildSandwich(bread : Bread, meat: Meat, vegetable: Vegetable, seasoning : Seasoning, sauce : Sauce){
-    
-  //   sandwich.bread = bread;
-  //   this.meat = meat;
-  //   this.vegetable = vegetable;
-  //   this.seasoning = seasoning;
-  //   this.sauce = sauce;
-
-
-  // }
+  meat! :Meat;
+  bread!:Bread;
+  vegetable!:Vegetable;
+  seasoning!:Seasoning;
+  sauce!:Sauce;
+  addSandwich(sandwich:Sandwich){
+    console.log("services");
+    console.log(JSON.stringify(sandwich));
   
+    this.http.post<Sandwich>('http://localhost:9002/sandwiches', sandwich).subscribe(
+      (res) => console.log(res),
+      (err) => console.log(err));
+  }
 
 
   getAllMeat(){

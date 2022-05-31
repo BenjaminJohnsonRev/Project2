@@ -1,5 +1,5 @@
 export interface Sauce {
     id: number,
-    name: String,
+    name: string,
     price: number
 }

@@ -41,8 +41,8 @@ public class CustomerController {
         return customerService.update_customer(customer);
     }
 
-    @PutMapping("banHammer/{id}")
-    public Customer ban_customer(@PathVariable("id") long id){ return customerService.ban_hammer(id);
+    @PutMapping("banHammer")
+    public Customer ban_customer(@RequestBody Customer customer){ return customerService.ban_hammer(customer);
     }
 
     @DeleteMapping("/{id_to_delete}")
