@@ -1,5 +1,5 @@
 export interface Customer{
-    id?: number,
+    id?: Number,
     username: String,
     password: String,
     first_name?: String,
