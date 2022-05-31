@@ -11,7 +11,7 @@ import { Customer } from '../customer';
 export class CartService {
   cart!:Cart;
   sandwich!:SandwichOrerIDObject;
-  customer!:Customer;
+  // customer!:Customer;
 
   constructor(private http:HttpClient) { }
 
