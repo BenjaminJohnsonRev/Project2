@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UserAuthenticationComponent } from '../user-authentication/user-authentication.component';
 import { Sandwich } from '../sandwich';
 import { SandwichService } from '../services/sandwich.service';
 import { Meat } from '../meat';
@@ -12,6 +13,11 @@ import { VegetableService } from '../services/vegetable.service';
 import { SeasoningService } from '../services/seasoning.service';
 import { SauceService } from '../services/sauce.service';
 import { FormBuilder } from '@angular/forms';
+import { CartService } from '../services/cart.service';
+import { Customer } from '../customer';
+import { Cart } from '../cart';
+import { CustomerService } from '../services/customer.service';
+import { SandwichOrderIDObject } from '../sandwichOrderIDObject';
 
 @Component({
   selector: 'app-add-sandwich',
@@ -20,12 +26,24 @@ import { FormBuilder } from '@angular/forms';
 })
 export class AddSandwichComponent implements OnInit {
 
+  @ViewChild(UserAuthenticationComponent)
+  private customerComponent!: UserAuthenticationComponent;
   
   breads!: Bread[];
   meats!: Meat[];
   vegetables!: Vegetable[];
   seasonings!: Seasoning[];
   sauces!: Sauce[];
+  customer!:Customer;
+  cart!:Cart;
+  soid_object!:SandwichOrderIDObject;
+  sandwich!: Sandwich;
+  meat! :Meat;
+  bread!:Bread;
+  vegetable!:Vegetable;
+  seasoning!:Seasoning;
+  sauce!:Sauce;
+  empty_sandwich!:Sandwich;
 
   
 
@@ -34,9 +52,41 @@ export class AddSandwichComponent implements OnInit {
      private meatService:MeatService,
      private vegetableService:VegetableService,
      private seasoningService:SeasoningService,
-     private sauceService:SauceService) { }
+     private sauceService:SauceService,
+     private cartService:CartService
+    //  
+    ) { }
 
   ngOnInit(): void {
+    this.empty_sandwich={
+      sandwich_id:0,
+      bread: {
+        id: 0,
+        name: '',
+        price: 0.0
+    },
+    meat: {
+        id: 0,
+        name: '',
+        price: 0.0
+    },
+    vegetable: {
+        id: 0,
+        name: '',
+        price: 0.0
+    },
+    sauce: {
+        id: 0,
+        name: '',
+        price: 0.0
+    },
+    seasoning: {
+        id: 0,
+        name: '',
+        price: 0.0
+    }
+    }
+
     this.sandwich = {
         bread: {
             id: 0,
@@ -65,12 +115,31 @@ export class AddSandwichComponent implements OnInit {
         }
         
     }
+
+    this.cart={
+      customer_id:0,
+      employee_id:0,
+      cost_sum:0
+    }
+
+    this.soid_object={
+      order_id:0,
+      sandwich_id:0
+    }
+
     this.getAllBread();
     this.getAllMeat();
     this.getAllSauce();
     this.getAllVegetable();
     this.getAllSeasoning();
     
+  }
+
+
+  getCustomer(){
+    this.customer=this.customerComponent.customer;
+    console.log("here is the new customer")
+    console.log(this.customer);
   }
 
   getAllBread(){
@@ -106,23 +175,55 @@ export class AddSandwichComponent implements OnInit {
     })
   }
     
-  sandwich!: Sandwich;
-  meat! :Meat;
-  bread!:Bread;
-  vegetable!:Vegetable;
-  seasoning!:Seasoning;
-  sauce!:Sauce;
+  
 
   
   addSandwich() {
-    console.log("this.sandwich");
-    console.log(this.meat);
+    this.getCustomer();
+
+    this.cart.customer_id=this.customer.customer_id;
+
+    this.cartService.addCart(this.cart).subscribe(
+        cart=>{this.cart = cart;
+        console.log(cart);
+      });
+
     this.sandwich.bread = this.bread;
     this.sandwich.meat = this.meat;
     this.sandwich.vegetable =  this.vegetable;
     this.sandwich.sauce = this.sauce;
     this.sandwich.seasoning = this.seasoning;
-    this.sandwichService.addSandwich(this.sandwich);
+    this.sandwichService.addSandwich(this.sandwich).subscribe(
+        sandwich=>{this.empty_sandwich = sandwich;
+        console.log(sandwich);
+      });
+
+      console.log("this is an empty sandwich");
+      console.log(this.empty_sandwich);
+    // console.log(this.child_customer);
+    // this.cartService.getCart(this.child_customer).subscribe(
+    //   cart=>{this.cart = cart;
+    //   console.log(cart);
+    // });
+    
+    
+    if(this.cart==null){
+      console.log("This user has no carts");
+    }
+    else{
+      console.log("This user has at least one cart");
+    }
+
+    this.soid_object.order_id=this.cart.cart_id;
+    this.soid_object.sandwich_id=this.empty_sandwich.sandwich_id;
+
+    console.log(this.cart.cart_id);
+    console.log(this.sandwich.sandwich_id);
+
+    this.cartService.addSandwichToCart(this.soid_object).subscribe(
+      cart=>{this.cart = cart;
+      console.log(cart);
+    });
   }
 }
 

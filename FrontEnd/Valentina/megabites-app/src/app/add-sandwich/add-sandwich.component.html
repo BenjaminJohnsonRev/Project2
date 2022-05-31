@@ -1,3 +1,7 @@
+<app-user-authentication>
+
+</app-user-authentication>
+
 <body>
     
 
@@ -38,10 +42,14 @@
         <option *ngFor="let seasoning of seasonings" [ngValue]="seasoning">{{seasoning.name}}</option>
         </select>
     </div>
-    <button  type="submit" >Add Sandwich</button>
+    <button  type="submit" >Add Sandwich To Cart</button>
 
 </form>
 </body>
+
+<div>
+    Cart
+</div>
 <!-- <button type = "button" (click) = "getAllBread()">all bread</button> -->
 
 <!-- <h3>Cart ID: {{sandwich.cart_id}}</h3>
