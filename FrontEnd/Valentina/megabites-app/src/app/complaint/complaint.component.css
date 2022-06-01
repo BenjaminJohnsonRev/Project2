@@ -1,0 +1,11 @@
+body{
+    text-align: center;
+    background-color: mediumaquamarine;
+    border: rgb(62, 144, 169) 10px solid;
+    padding: 20px;
+}
+
+label{
+    font-size: 24pt;
+    font-weight: 500;
+}

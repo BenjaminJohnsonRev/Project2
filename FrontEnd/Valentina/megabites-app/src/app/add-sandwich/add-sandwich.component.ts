@@ -54,7 +54,7 @@ export class AddSandwichComponent implements OnInit {
     private seasoningService: SeasoningService,
     private sauceService: SauceService,
     private cartService: CartService
-    //  
+    //
   ) { }
 
   ngOnInit(): void {
@@ -228,8 +228,8 @@ export class AddSandwichComponent implements OnInit {
                   });
               });
 
-            
-            
+
+
 
           });
       });

@@ -30,6 +30,8 @@ public class ComplaintsController {
     @PutMapping
     public Complaints update_complaints(@RequestBody Complaints complaints) {return complaintsService.update_complaints(complaints);}
 
-    @DeleteMapping("{id}")
-    public void delete_complaints(@PathVariable("id") long id) {complaintsService.delete_complaints(id);}
+    @DeleteMapping("/{id}")
+    public void delete_complaints(@PathVariable("id") long id) {
+        System.out.println("Deleting id: " + id);
+        complaintsService.delete_complaints(id);}
 }
