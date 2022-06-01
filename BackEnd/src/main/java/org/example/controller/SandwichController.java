@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/sandwiches")
 public class SandwichController {
     @Autowired
     SandwichService sandwichService;
+
 
     @PostMapping()
     public Sandwich add_sandwich(@RequestBody Sandwich sandwich){

@@ -34,14 +34,14 @@ public class IngredientService {
         return bread;
     }
 
-    public Bread get_bread_by_id(long id) {return breadRepository.getById(id);}
+    public Bread get_bread_by_id(long id) {return breadRepository.findById(id).get();}
 
     public List<Bread> get_all_bread(){
         return breadRepository.findAll();
     }
 
     public Bread update_bread(Bread bread) {
-        Bread breadDB = breadRepository.getById(bread.getId());
+        Bread breadDB = breadRepository.findById(bread.getId()).get();
         breadDB.setName(bread.getName());
         breadDB.setPrice(bread.getPrice());
         breadRepository.save(bread);
@@ -56,14 +56,14 @@ public class IngredientService {
         return meat;
     }
 
-    public Meat get_meat_by_id(Long id) {return meatRepository.getById(id);}
+    public Meat get_meat_by_id(Long id) {return meatRepository.findById(id).get();}
 
     public List<Meat> get_all_meat(){
         return meatRepository.findAll();
     }
 
     public Meat update_meat(Meat meat) {
-        Meat meatDB = meatRepository.getById(meat.getId());
+        Meat meatDB = meatRepository.findById(meat.getId()).get();
         meatDB.setName(meat.getName());
         meatDB.setPrice(meat.getPrice());
         meatRepository.save(meat);
@@ -78,14 +78,14 @@ public class IngredientService {
         return sauce;
     }
 
-    public Sauce get_sauce_by_id(Long id) {return sauceRepository.getById(id);}
+    public Sauce get_sauce_by_id(Long id) {return sauceRepository.findById(id).get();}
 
     public List<Sauce> get_all_sauce(){
         return sauceRepository.findAll();
     }
 
     public Sauce update_sauce(Sauce sauce) {
-        Sauce sauceDB = sauceRepository.getById(sauce.getId());
+        Sauce sauceDB = sauceRepository.findById(sauce.getId()).get();
         sauceDB.setName(sauce.getName());
         sauceDB.setPrice(sauce.getPrice());
         sauceRepository.save(sauce);
@@ -100,14 +100,14 @@ public class IngredientService {
         return seasoning;
     }
 
-    public Seasoning get_seasoning_by_id(Long id) {return seasoningRepository.getById(id);}
+    public Seasoning get_seasoning_by_id(Long id) {return seasoningRepository.findById(id).get();}
 
     public List<Seasoning> get_all_seasoning(){
         return seasoningRepository.findAll();
     }
 
     public Seasoning update_seasoning(Seasoning seasoning) {
-        Seasoning seasoningDB = seasoningRepository.getById(seasoning.getId());
+        Seasoning seasoningDB = seasoningRepository.findById(seasoning.getId()).get();
         seasoningDB.setName(seasoning.getName());
         seasoningDB.setPrice(seasoning.getPrice());
         seasoningRepository.save(seasoning);
@@ -123,14 +123,14 @@ public class IngredientService {
         return vegetable;
     }
 
-    public Vegetable get_vegetable_by_id(Long id) {return vegetableRepository.getById(id);}
+    public Vegetable get_vegetable_by_id(Long id) {return vegetableRepository.findById(id).get();}
 
     public List<Vegetable> get_all_vegetable(){
         return vegetableRepository.findAll();
     }
 
     public Vegetable update_vegetable(Vegetable vegetable) {
-        Vegetable vegetableDB = vegetableRepository.getById(vegetable.getId());
+        Vegetable vegetableDB = vegetableRepository.findById(vegetable.getId()).get();
         vegetableDB.setName(vegetable.getName());
         vegetableDB.setPrice(vegetable.getPrice());
         vegetableRepository.save(vegetable);

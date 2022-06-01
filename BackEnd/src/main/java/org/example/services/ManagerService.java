@@ -31,11 +31,11 @@ public class ManagerService {
     }
 
     public Manager get_manager_by_id(Long id){
-        return managerRepository.getById(id);
+        return managerRepository.findById(id).get();
     }
 
     public Manager update_manager(Manager manager, Long id){
-        Manager managerDB = managerRepository.getById(manager.getManager_id());
+        Manager managerDB = managerRepository.findById(manager.getManager_id()).get();
         managerDB.setFirst_name(manager.getFirst_name());
         managerDB.setLast_name(manager.getLast_name());
         managerDB.setManager_id(manager.getManager_id());

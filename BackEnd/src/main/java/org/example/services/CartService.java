@@ -38,7 +38,7 @@ public class CartService {
 
 
     public Cart get_cart_by_id(Long id){
-        return cartRepository.getById(id);
+        return cartRepository.findById(id).get();
     }
 
     public Cart update_cart(Cart cart){
@@ -50,10 +50,10 @@ public class CartService {
         cartRepository.deleteById(id);
     }
 
-    public double sum_cart(Long id){
+    public Cart sum_cart(Long id){
         double sum = 0;
-        Cart cart = cartRepository.getById(id);
-        Set<Sandwich> sandwiches = cart.getSandwiches();
+        Cart cart = cartRepository.findById(id).get();
+        List<Sandwich> sandwiches = cart.getSandwiches();
         for (Sandwich sandwich: sandwiches) {
             sum += sandwich.getBread().getPrice();
             sum += sandwich.getMeat().getPrice();
@@ -61,20 +61,20 @@ public class CartService {
             sum += sandwich.getSeasoning().getPrice();
             sum += sandwich.getVegetable().getPrice();
         }
-        cartRepository.getById(id).setCost_sum(sum);
-        return sum;
+        cartRepository.findById(id).get().setCost_sum(sum);
+        return cart;
     }
 
     public Cart add_sandwich_to_cart(long sandwich_id, long cart_id){
-        Cart cart = cartRepository.getById(cart_id);
-        Sandwich sandwich = sandwichRepository.get_sandwich_by_id(sandwich_id);
+        Cart cart = cartRepository.findById(cart_id).get();
+        Sandwich sandwich = sandwichRepository.findById(sandwich_id).get();
         cart.addSandwich(sandwich);
         cartRepository.save(cart);
         return cart;
     }
 
     public Cart remove_sandwich_to_cart(long sandwich_id, long cart_id){
-        Cart cart = cartRepository.getById(cart_id);
+        Cart cart = cartRepository.findById(cart_id).get();
         Sandwich sandwich = sandwichRepository.get_sandwich_by_id(sandwich_id);
         cart.removeSandwich(sandwich);
         cartRepository.save(cart);

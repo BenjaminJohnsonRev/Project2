@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @CrossOrigin(origins="*")
@@ -26,7 +27,7 @@ public class Cart {
 
     @OneToMany(targetEntity = Sandwich.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_fk", referencedColumnName = "cart_id")
-    private Set<Sandwich> sandwiches;
+    private List<Sandwich> sandwiches;
 
 
     public Cart(long customer_id, long employee_id, double cost_sum) {
@@ -35,7 +36,7 @@ public class Cart {
         this.cost_sum = cost_sum;
         this.cart_date = new Timestamp(System.currentTimeMillis());
         System.out.println(cart_date);
-        this.sandwiches = new HashSet<>();
+        this.sandwiches = new ArrayList<>();
     }
 
     public Cart(long cart_id, long customer_id, long employee_id, double cost_sum, Timestamp cart_date) {
@@ -44,10 +45,10 @@ public class Cart {
         this.employee_id = employee_id;
         this.cost_sum = cost_sum;
         this.cart_date = cart_date;
-        this.sandwiches = new HashSet<>();
+        this.sandwiches = new ArrayList<>();
     }
 
-    public Cart() {this.sandwiches = new HashSet<>();
+    public Cart() {this.sandwiches = new ArrayList<>();
         this.cart_date = new Timestamp(System.currentTimeMillis());
         System.out.println(cart_date);}
 

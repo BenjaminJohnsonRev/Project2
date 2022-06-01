@@ -30,4 +30,8 @@ export class CartService {
     console.log(customer.customer_id);
     return this.http.get<Cart>('http://localhost:9002/carts/history/customer/'+customer.customer_id);
   }
+
+  getSumCart(cart:Cart){
+    return this.http.get<Cart>('http://localhost:9002/carts/cost/'+cart.cart_id);
+  }
 }

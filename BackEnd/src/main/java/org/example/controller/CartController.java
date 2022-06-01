@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.util.List;
-@CrossOrigin(origins="*")
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/carts")
 public class CartController {
@@ -62,7 +63,7 @@ public class CartController {
     }
 
     @GetMapping("/cost/{id}")
-    public double get_sum_carts(@PathVariable("id") long id){
+    public Cart get_sum_carts(@PathVariable("id") long id){
         return cartService.sum_cart(id);
     }
 

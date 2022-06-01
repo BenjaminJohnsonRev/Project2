@@ -25,11 +25,11 @@ public class EmployeeService {
     }
 
     public Employee get_employee_by_id(Long id){
-        return employeeRepository.getById(id);
+        return employeeRepository.findById(id).get();
     }
 
     public Employee update_employee(Employee employee, Long id){
-        Employee employeeDB = employeeRepository.getById(id);
+        Employee employeeDB = employeeRepository.findById(id).get();
         employeeDB.setEmployee_name(employee.getEmployee_name());
         employeeDB.setManager_id(employee.getManager_id());
         employeeDB.setYears_of_experience(employee.getYears_of_experience());

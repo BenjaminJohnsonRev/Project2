@@ -41,7 +41,7 @@ public class CustomerController {
         return customerService.update_customer(customer);
     }
 
-    @PutMapping("banHammer")
+    @PutMapping("/banHammer")
     public Customer ban_customer(@RequestBody Customer customer){ return customerService.ban_hammer(customer);
     }
 
