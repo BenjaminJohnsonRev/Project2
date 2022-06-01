@@ -13,6 +13,7 @@ import { ManagementComponent } from './management/management.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ManagerAuthenticationComponent } from './manager-authentication/manager-authentication.component';
+import { ComplaintComponent } from './complaint/complaint.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ManagerAuthenticationComponent } from './manager-authentication/manager
     NavbarComponent,
     LogoutComponent,
     ManagerAuthenticationComponent,
+    ComplaintComponent,
   ],
   imports: [
     BrowserModule,
