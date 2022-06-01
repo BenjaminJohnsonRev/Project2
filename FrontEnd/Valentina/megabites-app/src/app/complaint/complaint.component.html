@@ -1,18 +1,39 @@
+<app-user-authentication>
+
+</app-user-authentication>
+
 <body>
-    <form #makeComplaint="ngForm" (ngSubmit)="complain()" >
-        <div class = "bans" [(ngModel)]="complaint">
+    <form #makeComplaint="ngForm">
+        <div>
+            <label>Enter the cart id for your complaint:</label>
+            <br>
+            <input #cartIdInput type="number" name="id" placeholder="Enter Cart ID" ngModel> 
+        </div>
+
+        <div>
             <label>Enter complaint:</label>
             <br>
-            <input type="text" id="c" name="c" style="height:50px;width:600px;font-size:14pt;text-align:justify;">
+            <input #complaintInput type="text" id="c" name="c" style="height:50px;width:600px;font-size:14pt;text-align:justify;">
         </div>
-        <button type = "submit" (click) = "complain()">Send Complaint</button>
+        <button type= "submit" (click)= "complain(complaintInput.value, cartIdInput.value)">Send Complaint</button>
     </form>
+
     <br><br><br>
+
     <div>
         <label>Here are your past complaints:</label>
-        <div *ngFor="let complaint of complaints">
-            <br>
-            <p>{{complaint?.complaints}}</p>
-        </div>
+        <table class="table">
+            <thead>
+                <th scope="col">Id</th>
+                <th scope="col">Message</th>
+            </thead>
+            <tbody>
+                <tr scope="row" class = "message" *ngFor="let complaint of complaints">
+                    <td>{{complaint.complaints_id}}</td>
+                    <td>{{complaint.complaints}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    
 </body>

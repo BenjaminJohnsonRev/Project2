@@ -8,6 +8,8 @@
 <h1>Sandwich</h1>
 
 <form #bindProject="ngForm" (ngSubmit)="addSandwich()" >
+    
+
     <div class = "ingredients">
         <label for="meat">Meat:</label>
             <select id="meat" [(ngModel)]="meat" name= "ingredients">
@@ -41,6 +43,13 @@
         <select id="seasoning" [(ngModel)]="seasoning" name= "ingredients" >
         <option *ngFor="let seasoning of seasonings" [ngValue]="seasoning">{{seasoning.name}}</option>
         </select>
+    </div>
+
+    <div class = "ingredients">
+        <label for="quantity">Quantity:</label>
+            <select id="quantity" [(ngModel)]="quantity" name= "ingredients">
+                <option *ngFor="let quantity of numbers" [ngValue]="quantity">{{quantity}}</option>
+            </select>
     </div>
     <button  type="submit" >Add Sandwich To Cart</button>
 

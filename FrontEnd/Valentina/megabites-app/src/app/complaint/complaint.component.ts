@@ -3,6 +3,7 @@ import { UserAuthenticationComponent } from './../user-authentication/user-authe
 import { Complaint } from './../complaint';
 import { ComplaintService } from './../services/complaint.service';
 import { Component, OnInit } from '@angular/core';
+import { find } from 'rxjs';
 
 @Component({
   selector: 'app-complaint',
@@ -10,30 +11,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./complaint.component.css']
 })
 export class ComplaintComponent implements OnInit {
-  complaints:Complaint[] = [];
-  currentCustomerId!: Number;
+
+  customer!: Customer;
+  complaint!: Complaint;
+  complaints: Complaint[] = [];
+  currentCustomer!: Customer;
   customerComponent!: UserAuthenticationComponent;
   
 
   constructor(private complaintService:ComplaintService) { }
 
   ngOnInit(): void {
-    this.currentCustomerId = this.customerComponent.getCustomer().customer_id!;
+    this.complaint = {
+      cart_id: 0,
+      customer_id: Number(localStorage.getItem('customerId')),
+      complaints: ''
+    }
+
     this.getComplaintsByCustomerId();
   }
 
  
   getComplaintsByCustomerId(){
-    this.complaintService.getComplaintsByCustomerId(this.currentCustomerId).subscribe((complaints:Complaint[])=>{
+    this.complaintService.getComplaintsByCustomerId(this.complaint.customer_id).subscribe((complaints:Complaint[])=>{
       this.complaints = complaints;
-      console.log(complaints);
     })
   }
 
 
-  complaint!:Complaint;
-  complain(){
-    this.complaintService.addComplaint(this.complaint);
+  
+  complain(complaintInput: string, cartIdInput: string){
+    this.complaint.complaints = complaintInput;
+    this.complaint.cart_id = Number(cartIdInput);
+    this.complaintService.addComplaint(this.complaint).subscribe((complaint:Complaint)=>{
+      console.log(complaint);
+    })
   }
 
 }
