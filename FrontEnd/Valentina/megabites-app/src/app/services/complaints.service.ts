@@ -13,8 +13,9 @@ export class ComplaintsService {
     return this.http.get<Complaints[]>('http://localhost:9002/complaints');
   }
 
-  deleteComplaints(complaints_id?: Number){
-    return this.http.delete('http://localhost:9002/complaints' + '/' + complaints_id);
+  deleteComplaints(id: number){
+    console.log("Delete Function: "+ id)
+    return this.http.delete('http://localhost:9002/complaints/' + id).subscribe();
   }
 
   // viewComplaints(customer_id){

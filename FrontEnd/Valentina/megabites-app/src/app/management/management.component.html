@@ -14,27 +14,49 @@
     </form>
 </body>
 
-<body>
-    <form #viewComplaints="ngForm" (ngSubmit)="getAllComplaints()" >
-        <div class = "complaints">
-            <label for="complaints">Complaints:</label>
-                <select id="complaints" [(ngModel)]="complaint" name= "complaints">
-                    <option *ngFor="let complaints of complaints" [ngValue]="complaints">{{complaints.complaints}}</option>
-                </select>
-        </div>
-    <button type = "submit" (click) = "getAllComplaints()">View Complaints</button>
-    </form>
-</body>
+    <body>
+        <table class="table">
+            <thead>
+                <th scope="col">Complaint Id</th>
+                <th scope="col">Order Id</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date</th>
+            </thead>
+            <tbody>
+                <tr scope="row" class = "message" *ngFor="let complaint of complaints">
+                    <td>{{complaint.complaints_id}}</td>
+                    <td>{{complaint.cart_id}}</td>
+                    <td>{{complaint.customer_id}}</td>
+                    <td>{{complaint.complaints}}</td>
+                    <td>{{complaint.complaints_date}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+
     
 <body>
-    <form #deleteComplaint="ngForm" (ngSubmit)="removeComplaint()" >
+    <form  #eliminiateComplaint="ngForm">
         <div>
-            <input type="Number" name="complaints_id" placeholder="complaints_id" ngModel> 
+            <input #removeComplaints type="number" name="id" placeholder="complaints_id" ngModel> 
         </div>
-    <button type = "submit" (click) = "removeComplaint()">Delete Complaint</button>
+    <button type = "submit" (click) = 'removeComplaint(removeComplaints.valueAsNumber)'>Delete Complaint</button>
     </form>
 </body>
     
+<!-- <body>
+    <form #makeComplaint="ngForm">
+        <div class = "bans">
+            <label>Enter complaint:</label>
+            <br>
+            <input #complaintInput type="text" id="c" name="c" style="height:50px;width:600px;font-size:14pt;text-align:justify;">
+        </div>
+        <button type= "submit" (click)= "complain(complaintInput.value)">Send Complaint</button>
+    </form>
+</body> -->
+
+
 <!-- <h6>Hire Employee</h6>
     <label for="FirstName">First Name</label>
     <input required id="FirstName" type="text" name="FirstName" [(ngModel)]="customer.first_name"/>

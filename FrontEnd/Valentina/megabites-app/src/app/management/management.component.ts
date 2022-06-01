@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { waitForAsync } from '@angular/core/testing';
 import { Complaints } from '../complaints';
 import { Customer } from '../customer';
 import { ComplaintsService } from '../services/complaints.service';
@@ -20,29 +22,30 @@ export class ManagementComponent implements OnInit {
   complaints!:Complaints[];
   customers!: Customer[];
   customer!:Customer;
-  id?: number;
   ngOnInit(): void {
     this.complaint = {
-      complaints_id: 0,
       cart_id: 0,
       customer_id: 0,
       complaints: "0",
     }
-    this.complaints_id = 0;
+    // this.id = 0;
     this.getAllComplaints();
     this.getAllCustomers();
-    // this.removeComplaint();
   }
 
   getAllComplaints(){
     this.complaintsService.viewComplaints().subscribe((complaints:Complaints[])=>{
+      this.complaints = complaints;
       console.log(complaints);
     })
   }
 
-  removeComplaint(){
-    console.log(this.complaints_id)
-    this.complaintsService.deleteComplaints(this.complaints_id);
+  removeComplaint(id:number){
+    
+    console.log(id);
+    this.complaintsService.deleteComplaints(id);
+    setTimeout(()=>{ this.ngOnInit()}, 500)
+   
   }
 
   getAllCustomers(){
