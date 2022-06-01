@@ -46,6 +46,8 @@ export class ComplaintComponent implements OnInit {
     this.complaintService.addComplaint(this.complaint).subscribe((complaint:Complaint)=>{
       console.log(complaint);
     })
+
+    this.ngOnInit();
   }
 
 }
