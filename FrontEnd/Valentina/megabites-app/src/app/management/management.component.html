@@ -13,6 +13,28 @@
     <button type = "submit" (click) = "ban()">Ban Customer</button>
     </form>
 </body>
+
+<body>
+    <form #viewComplaints="ngForm" (ngSubmit)="getAllComplaints()" >
+        <div class = "complaints">
+            <label for="complaints">Complaints:</label>
+                <select id="complaints" [(ngModel)]="complaint" name= "complaints">
+                    <option *ngFor="let complaints of complaints" [ngValue]="complaints">{{complaints.complaints}}</option>
+                </select>
+        </div>
+    <button type = "submit" (click) = "getAllComplaints()">View Complaints</button>
+    </form>
+</body>
+    
+<body>
+    <form #deleteComplaint="ngForm" (ngSubmit)="removeComplaint()" >
+        <div>
+            <input type="Number" name="complaints_id" placeholder="complaints_id" ngModel> 
+        </div>
+    <button type = "submit" (click) = "removeComplaint()">Delete Complaint</button>
+    </form>
+</body>
+    
 <!-- <h6>Hire Employee</h6>
     <label for="FirstName">First Name</label>
     <input required id="FirstName" type="text" name="FirstName" [(ngModel)]="customer.first_name"/>
