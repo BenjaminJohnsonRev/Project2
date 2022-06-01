@@ -26,11 +26,13 @@
             <thead>
                 <th scope="col">Id</th>
                 <th scope="col">Message</th>
+                <th scope="col">Date of complaint</th>
             </thead>
             <tbody>
                 <tr scope="row" class = "message" *ngFor="let complaint of complaints">
-                    <td>{{complaint.complaints_id}}</td>
+                    <td>{{complaint.cart_id}}</td>
                     <td>{{complaint.complaints}}</td>
+                    <td>{{complaint.complaints_date}}</td>
                 </tr>
             </tbody>
         </table>
