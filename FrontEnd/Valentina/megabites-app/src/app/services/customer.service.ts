@@ -16,11 +16,11 @@ export class CustomerService {
 
   register(customer:Customer){
     console.log(customer);
-    return this.http.post<Customer>('http://localhost:9002/customers/register', customer)
+    return this.http.post<Customer>('http://localhost:9002/customers/register', customer);
   }
 
   getAllCustomers(){
-    return this.http.get<Customer[]>('http://localhost:9002/customers')
+    return this.http.get<Customer[]>('http://localhost:9002/customers');
   }
 
 }
