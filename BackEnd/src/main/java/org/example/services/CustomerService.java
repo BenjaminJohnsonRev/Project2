@@ -37,11 +37,11 @@ public class CustomerService {
     }
 
     public Customer get_customer_by_id(Long id){
-        return customerRepository.getById(id);
+        return customerRepository.findById(id).get();
     }
 
     public Customer update_customer(Customer customer){
-        Customer customerDB = customerRepository.getById(customer.getCustomer_id());
+        Customer customerDB = customerRepository.findById(customer.getCustomer_id()).get();
         customerDB.setFirst_name(customer.getFirst_name());
         customerDB.setLast_name(customer.getLast_name());
         customerDB.setEmail(customer.getEmail());

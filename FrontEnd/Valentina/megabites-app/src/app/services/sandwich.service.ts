@@ -25,6 +25,9 @@ export class SandwichService {
    return this.http.post<Sandwich>('http://localhost:9002/sandwiches', sandwich);
   }
 
+  getAllSandWiches(){
+    return this.http.get<Sandwich[]>('http://localhost:9002/sandwiches');
+  }
 
   getAllMeat(){
 
