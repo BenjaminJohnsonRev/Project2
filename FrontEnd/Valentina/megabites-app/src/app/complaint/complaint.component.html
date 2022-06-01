@@ -1,0 +1,18 @@
+<body>
+    <form #makeComplaint="ngForm" (ngSubmit)="complain()" >
+        <div class = "bans" [(ngModel)]="complaint">
+            <label>Enter complaint:</label>
+            <br>
+            <input type="text" id="c" name="c" style="height:50px;width:600px;font-size:14pt;text-align:justify;">
+        </div>
+        <button type = "submit" (click) = "complain()">Send Complaint</button>
+    </form>
+    <br><br><br>
+    <div>
+        <label>Here are your past complaints:</label>
+        <div *ngFor="let complaint of complaints">
+            <br>
+            <p>{{complaint?.complaints}}</p>
+        </div>
+    </div>
+</body>
