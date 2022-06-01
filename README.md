@@ -17,7 +17,7 @@ see BackEnd\groupReferences\userStories.txt for full list of user interactions
 
 * [X]Customers can create an account (register)
 * [X]Customers can login
-* [X]Customers can add menu items to cart*
+* [X]Customers can add menu items to cart* H
 * [X]Customer can customize a sandwich:
 * [X]Type of bread
 * [X]Type of meat
@@ -25,21 +25,21 @@ see BackEnd\groupReferences\userStories.txt for full list of user interactions
 * [X]Type of seasonings(salt/pepper)
 * [X]Type of sauces
 * [X]Customer can change quantity of ingredients
-* [X]Customer can change quantity of sandwiches*
-* [X]Customers can view their order in a cart*
-* [X]Customers can view current total in cart*
-* [X]Customers can view purchase history in account*
-* [X]Customers can view receipt after purchase*
-* [X]Customers can submit complaints*
-* [X]Customers can edit complaints*
+* [X]Customer can change quantity of sandwiches* V
+* [X]Customers can view their order in a cart* V
+* [X]Customers can view current total in cart* H
+* [X]Customers can view purchase history in account* V
+* [X]Customers can view receipt after purchase* N
+* [X]Customers can submit complaints* N
+* [X]Customers can edit complaints* N
 * [X]Managers can ban customers
-* [X]Managers can see complaints*
-* [X]Managers can delete complaints*
-* [X]Managers can hire employees*
-* [X]Managers can view all orders:*
-* [X]By customer*
-* [X]By date*
-* [X]By employee*
+* [X]Managers can see complaints* B
+* [X]Managers can delete complaints* B
+* [X]Managers can hire employees* B
+* [X]Managers can view all orders:* C
+* [X]By customer* C
+* [X]By date* C
+* [X]By employee* C
 * *not accessible on website (only through Postman currently)
 
 ***

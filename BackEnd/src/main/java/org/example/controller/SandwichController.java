@@ -37,7 +37,6 @@ public class SandwichController {
         return sandwichService.update_sandwich(sandwich);
     }
 
-
     @DeleteMapping("/{id_to_delete}")
     public void delete_sandwich(@PathVariable("id_to_delete") long id){
         sandwichService.delete_sandwich(id);

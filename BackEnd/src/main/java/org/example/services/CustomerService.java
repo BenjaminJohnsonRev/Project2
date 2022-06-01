@@ -26,7 +26,6 @@ public class CustomerService {
 //    public CustomerService(CustomerRepository customerRepository) {
 //        this.customerRepository = customerRepository;
 //    }
-
     public Customer ban_hammer(Customer customer){
         customer.setBanned(true);
         return customerRepository.save(customer);
