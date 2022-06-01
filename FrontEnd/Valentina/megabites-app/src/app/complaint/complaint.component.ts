@@ -3,6 +3,7 @@ import { UserAuthenticationComponent } from './../user-authentication/user-authe
 import { Complaint } from './../complaint';
 import { ComplaintService } from './../services/complaint.service';
 import { Component, OnInit } from '@angular/core';
+import { find } from 'rxjs';
 
 @Component({
   selector: 'app-complaint',
@@ -10,6 +11,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./complaint.component.css']
 })
 export class ComplaintComponent implements OnInit {
+
+  complaint:Complaint = {} as Complaint;
   complaints:Complaint[] = [];
   currentCustomerId!: Number;
   customerComponent!: UserAuthenticationComponent;
@@ -18,7 +21,7 @@ export class ComplaintComponent implements OnInit {
   constructor(private complaintService:ComplaintService) { }
 
   ngOnInit(): void {
-    this.currentCustomerId = this.customerComponent.getCustomer().customer_id!;
+    this.currentCustomerId = this.customerComponent.getCustomer().customer_id as number;
     this.getComplaintsByCustomerId();
   }
 
@@ -31,8 +34,10 @@ export class ComplaintComponent implements OnInit {
   }
 
 
-  complaint!:Complaint;
-  complain(){
+  
+  complain(ComplaintInput: string){
+    this.complaint.complaints = ComplaintInput;
+    console.log(this.complaint.complaints);
     this.complaintService.addComplaint(this.complaint);
   }
 
