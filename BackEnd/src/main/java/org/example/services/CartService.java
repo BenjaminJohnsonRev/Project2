@@ -50,7 +50,7 @@ public class CartService {
         cartRepository.deleteById(id);
     }
 
-    public double sum_cart(Long id){
+    public Cart sum_cart(Long id){
         double sum = 0;
         Cart cart = cartRepository.findById(id).get();
         Set<Sandwich> sandwiches = cart.getSandwiches();
@@ -62,7 +62,7 @@ public class CartService {
             sum += sandwich.getVegetable().getPrice();
         }
         cartRepository.findById(id).get().setCost_sum(sum);
-        return sum;
+        return cart;
     }
 
     public Cart add_sandwich_to_cart(long sandwich_id, long cart_id){

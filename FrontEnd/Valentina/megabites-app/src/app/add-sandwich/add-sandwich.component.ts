@@ -219,7 +219,17 @@ export class AddSandwichComponent implements OnInit {
               cart => {
                 this.cart = cart;
                 console.log(cart);
+
+
+                this.cartService.getSumCart(this.cart).subscribe(
+                  cart => {
+                    this.cart = cart;
+                    console.log(cart);
+                  });
               });
+
+            
+            
 
           });
       });
