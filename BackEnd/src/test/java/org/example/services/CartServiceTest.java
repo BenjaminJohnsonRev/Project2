@@ -14,9 +14,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.sql.Timestamp;
 import java.sql.Date;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
@@ -92,7 +91,7 @@ class CartServiceTest {
 
     @Test
     void update_cart() {
-        Set<Sandwich> sandwichSet = new HashSet<>();
+        List<Sandwich> sandwichSet = new ArrayList<>();
         sandwichSet.add(sandwich1);
         sandwichSet.add(sandwich2);
 

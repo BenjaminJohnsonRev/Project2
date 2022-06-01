@@ -53,7 +53,7 @@ public class CartService {
     public Cart sum_cart(Long id){
         double sum = 0;
         Cart cart = cartRepository.findById(id).get();
-        Set<Sandwich> sandwiches = cart.getSandwiches();
+        List<Sandwich> sandwiches = cart.getSandwiches();
         for (Sandwich sandwich: sandwiches) {
             sum += sandwich.getBread().getPrice();
             sum += sandwich.getMeat().getPrice();

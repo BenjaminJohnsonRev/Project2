@@ -44,6 +44,9 @@ export class AddSandwichComponent implements OnInit {
   seasoning!: Seasoning;
   sauce!: Sauce;
   empty_sandwich!: Sandwich;
+  quantity!:Number;
+  numbers!:Number[];
+
 
 
 
@@ -132,6 +135,7 @@ export class AddSandwichComponent implements OnInit {
     this.getAllSauce();
     this.getAllVegetable();
     this.getAllSeasoning();
+    this.numbers=Array.from(Array(10),(x,i)=>i).map(i=>i+1);
   }
 
 
@@ -196,6 +200,7 @@ export class AddSandwichComponent implements OnInit {
         console.log(cart);
 
 
+        for(let i=0;i<this.quantity;i++){
 
         this.sandwichService.addSandwich(this.sandwich).subscribe(
           sandwich => {
@@ -228,10 +233,8 @@ export class AddSandwichComponent implements OnInit {
                   });
               });
 
-
-
-
           });
+        }
       });
   }
 }
