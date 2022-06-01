@@ -18,7 +18,7 @@ export class ComplaintService {
     return this.http.get<Complaint>('http://localhost:9002/complaints/'+id);
   }
 
-  getComplaintsByCustomerId(id:Number){
+  getComplaintsByCustomerId(id?:Number){
     return this.http.get<Complaint[]>('http://localhost:9002/complaints/customer/'+id);
   }
 

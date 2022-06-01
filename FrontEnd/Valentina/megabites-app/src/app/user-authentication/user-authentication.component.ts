@@ -33,6 +33,7 @@ export class UserAuthenticationComponent implements OnInit {
   login(){
     this.customerService.login(this.customer).subscribe(
       customer=>{this.customer=customer;
+      localStorage.setItem('customerId', String(this.customer.customer_id));
       console.log(customer);
       if(customer==null){
         window.open('http://localhost:4200/','_self')?.focus();
@@ -42,9 +43,6 @@ export class UserAuthenticationComponent implements OnInit {
       }
     }
     )
-
-    
-
   }
 
   register(){
