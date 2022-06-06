@@ -14,4 +14,5 @@ public interface ComplaintsRepository extends JpaRepository<Complaints, Long> {
 
     @Query(value = "SELECT * FROM complaints where customer_id = ?1", nativeQuery = true)
     public List<Complaints> getAllByCustomer_id(long id);
+
 }
