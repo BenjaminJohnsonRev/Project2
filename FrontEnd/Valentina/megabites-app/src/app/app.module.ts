@@ -14,6 +14,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ManagerAuthenticationComponent } from './manager-authentication/manager-authentication.component';
 import { ComplaintComponent } from './complaint/complaint.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { ComplaintComponent } from './complaint/complaint.component';
     LogoutComponent,
     ManagerAuthenticationComponent,
     ComplaintComponent,
+    CustomerComponent,
+    CustomerOrdersComponent,
   ],
   imports: [
     BrowserModule,

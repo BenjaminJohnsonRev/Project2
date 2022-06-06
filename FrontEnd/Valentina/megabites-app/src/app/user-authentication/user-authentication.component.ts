@@ -17,7 +17,7 @@ export class UserAuthenticationComponent implements OnInit {
   customer!: Customer;
 
   constructor(private customerService:CustomerService) { }
-
+  display!:String;
 
   ngOnInit(): void {
     this.customer={
@@ -27,8 +27,11 @@ export class UserAuthenticationComponent implements OnInit {
       last_name: '',
       email: ''
     }
+
+    this.updateWindow();
+    
   }
-  display = "block";
+
 
   login(){
     this.customerService.login(this.customer).subscribe(
@@ -37,9 +40,12 @@ export class UserAuthenticationComponent implements OnInit {
       console.log(customer);
       if(customer==null){
         window.open('http://localhost:4200/','_self')?.focus();
+        CustomerService.setCustomerLoggedIn(false);
+
       }
       else{
         this.display = "none";
+        CustomerService.setCustomerLoggedIn(true);
       }
     }
     )
@@ -50,17 +56,29 @@ export class UserAuthenticationComponent implements OnInit {
       customer=>{this.customer=customer;
       console.log(customer);
     this.display = "none";
+    CustomerService.setCustomerLoggedIn(true);
       })
   }
 
   onCloseHandled() {
     this.display = "none";
     window.open('http://localhost:4200/','_self')?.focus();
+    CustomerService.setCustomerLoggedIn(false);
   }
 
   getCustomer(){
     console.log(this.customer);
     return this.customer;
+  }
+
+  updateWindow(){
+    console.log(CustomerService.getCustomerLoggedIn());
+    if(CustomerService.getCustomerLoggedIn()){
+      this.display="none";
+    }
+    else{
+      this.display="block";
+    }
   }
 
 

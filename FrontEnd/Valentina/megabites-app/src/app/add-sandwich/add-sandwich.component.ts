@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { UserAuthenticationComponent } from '../user-authentication/user-authentication.component';
 import { Sandwich } from '../sandwich';
 import { SandwichService } from '../services/sandwich.service';
@@ -27,6 +27,7 @@ import { SandwichOrderIDObject } from '../sandwichOrderIDObject';
 export class AddSandwichComponent implements OnInit {
 
   @ViewChild(UserAuthenticationComponent)
+
   private customerComponent!: UserAuthenticationComponent;
 
   breads!: Bread[];

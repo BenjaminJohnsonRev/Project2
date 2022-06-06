@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-build-sandwich',
@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuildSandwichComponent implements OnInit {
 
+customer_LoggedIn!:Boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    // this.customer_LoggedIn=history.state.customer_LoggedIn;
   }
 
   logout(){

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LogoutComponent } from '../logout/logout.component';
+import { NavigationExtras } from '@angular/router';
+import { CustomerService } from '../services/customer.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +10,12 @@ import { LogoutComponent } from '../logout/logout.component';
 })
 export class NavbarComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
+    CustomerService.setCustomerLoggedIn(false);
   }
 
 }
