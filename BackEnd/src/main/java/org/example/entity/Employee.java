@@ -37,7 +37,7 @@ public class Employee {
         this.years_of_experience = years_of_experience;
     }
 
-    @OneToMany(targetEntity = Sandwich.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Cart.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "employee_fk", referencedColumnName = "employee_id")
-    private List<Sandwich> sandwiches;
+    private List<Cart> carts;
 }
