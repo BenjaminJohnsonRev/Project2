@@ -3,63 +3,60 @@
 </app-user-authentication>
 
 <body>
-    
 
-<h1>Sandwich</h1>
 
-<form #bindProject="ngForm" (ngSubmit)="addSandwich()" >
-    
+    <h1>Sandwich</h1>
 
-    <div class = "ingredients">
-        <label for="meat">Meat:</label>
-            <select id="meat" [(ngModel)]="meat" name= "ingredients">
+    <form #bindProject="ngForm" (ngSubmit)="addSandwich()">
+
+
+        <div class="ingredients">
+            <label for="meat">Meat:</label>
+            <select id="meat" [(ngModel)]="meat" name="ingredients">
                 <option *ngFor="let meat of meats" [ngValue]="meat">{{meat.name}}</option>
             </select>
-    </div>
+        </div>
 
-    <div class = "ingredients">
-        <label for="bread">Bread:</label>
-        <select id="bread" [(ngModel)]="bread"  name= "ingredients">
-        <option *ngFor="let bread of breads" [ngValue]="bread">{{bread.name}}</option>
-        </select>
-    </div>
+        <div class="ingredients">
+            <label for="bread">Bread:</label>
+            <select id="bread" [(ngModel)]="bread" name="ingredients">
+                <option *ngFor="let bread of breads" [ngValue]="bread">{{bread.name}}</option>
+            </select>
+        </div>
 
-    <div class = "ingredients">
-        <label for="vegetable">Vegetable:</label>
-        <select id="vegetable" [(ngModel)]="vegetable" name= "ingredients" >
-        <option *ngFor="let vegetable of vegetables" [ngValue]="vegetable">{{vegetable.name}}</option>
-        </select>
-    </div>
+        <div class="ingredients">
+            <label for="vegetable">Vegetable:</label>
+            <select id="vegetable" [(ngModel)]="vegetable" name="ingredients">
+                <option *ngFor="let vegetable of vegetables" [ngValue]="vegetable">{{vegetable.name}}</option>
+            </select>
+        </div>
 
-    <div class = "ingredients">
-        <label for="sauce">Sauce:</label>
-        <select id="sauce" [(ngModel)]="sauce"  name= "ingredients">
-        <option *ngFor="let sauce of sauces" [ngValue]="sauce">{{sauce.name}}</option>
-        </select>
-    </div>
+        <div class="ingredients">
+            <label for="sauce">Sauce:</label>
+            <select id="sauce" [(ngModel)]="sauce" name="ingredients">
+                <option *ngFor="let sauce of sauces" [ngValue]="sauce">{{sauce.name}}</option>
+            </select>
+        </div>
 
-    <div class = "ingredients">
-        <label for="seasoning">Seasoning:</label>
-        <select id="seasoning" [(ngModel)]="seasoning" name= "ingredients" >
-        <option *ngFor="let seasoning of seasonings" [ngValue]="seasoning">{{seasoning.name}}</option>
-        </select>
-    </div>
+        <div class="ingredients">
+            <label for="seasoning">Seasoning:</label>
+            <select id="seasoning" [(ngModel)]="seasoning" name="ingredients">
+                <option *ngFor="let seasoning of seasonings" [ngValue]="seasoning">{{seasoning.name}}</option>
+            </select>
+        </div>
 
-    <div class = "ingredients">
-        <label for="quantity">Quantity:</label>
-            <select id="quantity" [(ngModel)]="quantity" name= "ingredients">
+        <div class="ingredients">
+            <label for="quantity">Quantity:</label>
+            <select id="quantity" [(ngModel)]="quantity" name="ingredients">
                 <option *ngFor="let quantity of numbers" [ngValue]="quantity">{{quantity}}</option>
             </select>
-    </div>
-    <button  type="submit" >Add Sandwich To Cart</button>
+        </div>
+        <button type="submit">Add Sandwich To Cart</button>
 
-</form>
+    </form>
 </body>
 
-<div>
-    {{cart.cart_id}}
-    
-</div>
+
 <!-- <button type = "button" (click) = "getAllBread()">all bread</button> -->
 
 <!-- <h3>Cart ID: {{sandwich.cart_id}}</h3>
