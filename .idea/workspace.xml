@@ -4,46 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ffac8e3-87b8-423c-9b69-2e389cd93c61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BackEnd/.ebextensions/fix-path.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/PostmanEntries.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/Requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/buildspec.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/dBeaverScript.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/minutes.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/ComplaintsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/ComplaintsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/ManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/ManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/SandwichController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controller/SandwichController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/dao/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/dao/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/dao/ManagerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/dao/ManagerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/dao/SandwichRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/dao/SandwichRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Complaints.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Complaints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/Sandwich.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Bread.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Bread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Meat.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Meat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Sauce.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Sauce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Seasoning.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Seasoning.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Vegetable.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/entity/menu/ingredients/Vegetable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/ComplaintsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/ComplaintsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/IngredientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/ManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/ManagerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/SandwichService.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/services/SandwichService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/dao/ManagerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/dao/ManagerRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/services/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/services/CustomerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/services/ManagerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/test/java/org/example/services/ManagerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/userStories.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="7ffac8e3-87b8-423c-9b69-2e389cd93c61" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -5,58 +5,90 @@
 <body>
 
 
-    <h1>Sandwich</h1>
+<h1>Sandwich</h1>
 
-    <form #bindProject="ngForm" (ngSubmit)="addSandwich()">
+<form #bindProject="ngForm" (ngSubmit)="addSandwich()" >
 
 
-        <div class="ingredients">
-            <label for="meat">Meat:</label>
-            <select id="meat" [(ngModel)]="meat" name="ingredients">
-                <option *ngFor="let meat of meats" [ngValue]="meat">{{meat.name}}</option>
+    <div class = "ingredients">
+        <label for="meat">Meat:</label>
+            <select id="meat" [(ngModel)]="meat" name= "ingredients">
+                <option *ngFor="let meat of meats" [ngValue]="meat">{{meat.name}} - ${{meat.price/100}}</option>
             </select>
-        </div>
+    </div>
 
-        <div class="ingredients">
-            <label for="bread">Bread:</label>
-            <select id="bread" [(ngModel)]="bread" name="ingredients">
-                <option *ngFor="let bread of breads" [ngValue]="bread">{{bread.name}}</option>
-            </select>
-        </div>
+    <div class = "ingredients">
+        <label for="bread">Bread:</label>
+        <select id="bread" [(ngModel)]="bread"  name= "ingredients">
+        <option *ngFor="let bread of breads" [ngValue]="bread">{{bread.name}} - ${{bread.price/100}}</option>
+        </select>
+    </div>
 
-        <div class="ingredients">
-            <label for="vegetable">Vegetable:</label>
-            <select id="vegetable" [(ngModel)]="vegetable" name="ingredients">
-                <option *ngFor="let vegetable of vegetables" [ngValue]="vegetable">{{vegetable.name}}</option>
-            </select>
-        </div>
+    <div class = "ingredients">
+        <label for="vegetable">Vegetable:</label>
+        <select id="vegetable" [(ngModel)]="vegetable" name= "ingredients" >
+        <option *ngFor="let vegetable of vegetables" [ngValue]="vegetable">{{vegetable.name}} - ${{vegetable.price/100}}</option>
+        </select>
+    </div>
 
-        <div class="ingredients">
-            <label for="sauce">Sauce:</label>
-            <select id="sauce" [(ngModel)]="sauce" name="ingredients">
-                <option *ngFor="let sauce of sauces" [ngValue]="sauce">{{sauce.name}}</option>
-            </select>
-        </div>
+    <div class = "ingredients">
+        <label for="sauce">Sauce:</label>
+        <select id="sauce" [(ngModel)]="sauce"  name= "ingredients">
+        <option *ngFor="let sauce of sauces" [ngValue]="sauce">{{sauce.name}} - ${{sauce.price/100}}</option>
+        </select>
+    </div>
 
-        <div class="ingredients">
-            <label for="seasoning">Seasoning:</label>
-            <select id="seasoning" [(ngModel)]="seasoning" name="ingredients">
-                <option *ngFor="let seasoning of seasonings" [ngValue]="seasoning">{{seasoning.name}}</option>
-            </select>
-        </div>
+    <div class = "ingredients">
+        <label for="seasoning">Seasoning:</label>
+        <select id="seasoning" [(ngModel)]="seasoning" name= "ingredients" >
+        <option *ngFor="let seasoning of seasonings" [ngValue]="seasoning">{{seasoning.name}} - ${{seasoning.price/100}}</option>
+        </select>
+    </div>
 
-        <div class="ingredients">
-            <label for="quantity">Quantity:</label>
-            <select id="quantity" [(ngModel)]="quantity" name="ingredients">
+    <div class = "ingredients">
+        <label for="quantity">Quantity:</label>
+            <select id="quantity" [(ngModel)]="quantity" name= "ingredients">
                 <option *ngFor="let quantity of numbers" [ngValue]="quantity">{{quantity}}</option>
             </select>
-        </div>
-        <button type="submit">Add Sandwich To Cart</button>
+    </div>
+    <button  type="submit" >Add Sandwich To Cart</button>
 
-    </form>
+</form>
 </body>
 
+<!-- export interface Cart{
+    cart_id?:Number,
+    customer_id?:Number,
+    employee_id:Number,
+    cost_sum:Number,
+    cart_date?:Date
+} -->
 
+<div>
+    <body>
+    <table class="table">
+        <thead>
+            <th scope="col">Bread:</th>
+            <th scope="col">Meat:</th>
+            <th scope="col">Vegetable:</th>
+            <th scope="col">Sauce:</th>
+            <th scope="col">Seasoning:</th>
+            <th scope="col">Sandwich Total:</th>
+        </thead>
+        <tbody>
+            <tr scope="row" class = "message" *ngFor="let sandwich of cart.sandwiches">
+                <td>{{sandwich.bread.name}}</td>
+                <td>{{sandwich.meat.name}}</td>
+                <td>{{sandwich.vegetable.name}}</td>
+                <td>{{sandwich.sauce.name}}</td>
+                <td>{{sandwich.seasoning.name}}</td>
+                <td>{{(sandwich.bread.price+sandwich.meat.price+sandwich.vegetable.price+sandwich.sauce.price+sandwich.seasoning.price)/100}}</td>
+            </tr>
+        </tbody>
+    </table>
+    Total: ${{cart.cost_sum/100}}
+</body>
+</div>
 <!-- <button type = "button" (click) = "getAllBread()">all bread</button> -->
 
 <!-- <h3>Cart ID: {{sandwich.cart_id}}</h3>

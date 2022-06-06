@@ -21,7 +21,6 @@ public class Cart {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long cart_id;
     private long customer_id;
-    private long employee_id;
     private double cost_sum;
     private Timestamp cart_date;
 
@@ -30,19 +29,17 @@ public class Cart {
     private List<Sandwich> sandwiches;
 
 
-    public Cart(long customer_id, long employee_id, double cost_sum) {
+    public Cart(long customer_id, double cost_sum) {
         this.customer_id = customer_id;
-        this.employee_id = employee_id;
         this.cost_sum = cost_sum;
         this.cart_date = new Timestamp(System.currentTimeMillis());
         System.out.println(cart_date);
         this.sandwiches = new ArrayList<>();
     }
 
-    public Cart(long cart_id, long customer_id, long employee_id, double cost_sum, Timestamp cart_date) {
+    public Cart(long cart_id, long customer_id, double cost_sum, Timestamp cart_date) {
         this.cart_id = cart_id;
         this.customer_id = customer_id;
-        this.employee_id = employee_id;
         this.cost_sum = cost_sum;
         this.cart_date = cart_date;
         this.sandwiches = new ArrayList<>();
