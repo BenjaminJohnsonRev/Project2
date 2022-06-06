@@ -34,6 +34,7 @@ export class AddSandwichComponent implements OnInit {
   vegetables!: Vegetable[];
   seasonings!: Seasoning[];
   sauces!: Sauce[];
+
   customer!: Customer;
   cart!: Cart;
   soid_object!: SandwichOrderIDObject;
@@ -49,7 +50,6 @@ export class AddSandwichComponent implements OnInit {
 
 
 
-
   constructor(private sandwichService: SandwichService,
     private breadService: BreadService,
     private meatService: MeatService,
@@ -61,6 +61,7 @@ export class AddSandwichComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+  
     this.empty_sandwich = {
       sandwich_id: 0,
       bread: {
@@ -224,7 +225,6 @@ export class AddSandwichComponent implements OnInit {
               cart => {
                 this.cart = cart;
                 console.log(cart);
-
 
                 this.cartService.getSumCart(this.cart).subscribe(
                   cart => {
