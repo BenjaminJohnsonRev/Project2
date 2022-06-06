@@ -1,8 +1,10 @@
 package org.example.services;
 
 import org.example.dao.CartRepository;
+import org.example.dao.EmployeeRepository;
 import org.example.dao.SandwichRepository;
 import org.example.entity.Cart;
+import org.example.entity.Employee;
 import org.example.entity.menu.Sandwich;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 @CrossOrigin(origins="*")
@@ -21,7 +24,15 @@ public class CartService {
     @Autowired
     SandwichRepository sandwichRepository;
 
+    @Autowired
+    EmployeeRepository employeeRepository;
+
     public Cart add_cart(Cart cart){
+        List<Employee> employees = employeeRepository.findAll();
+        Random random = new Random();
+        int rEmployee = random.nextInt(employees.size());
+        Employee employee = employees.get(rEmployee);
+        employee.addCart(cart);
         cartRepository.save(cart);
         return cart;
     }
