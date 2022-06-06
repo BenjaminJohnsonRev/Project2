@@ -10,6 +10,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class SandwichEmployeeIdObject {
-    private Long order_id;
+    private Long employee_id;
     private Long sandwich_id;
 }

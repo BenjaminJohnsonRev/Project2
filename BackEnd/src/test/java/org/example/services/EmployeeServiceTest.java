@@ -31,8 +31,8 @@ class EmployeeServiceTest {
 
     @BeforeEach
     public void setup(){
-        test_employee1 = new Employee(1,1, "tom", 1);
-        test_employee2 = new Employee(2, 1, "mat", 2);
+        test_employee1 = new Employee(1l, 1l, "tom", 1);
+        test_employee2 = new Employee(2l, 1l, "mat", 2);
     }
 
     @Test
@@ -80,7 +80,7 @@ class EmployeeServiceTest {
         
         given(employee_repository.getById(1L)).willReturn(test_employee1);
         
-        Employee new_employee = new Employee(1,1, "dave", 1000);
+        Employee new_employee = new Employee(1l,1l, "dave", 1000);
         employee_service.update_employee(new_employee,1L);
 
         assertThat(employee_service.get_employee_by_id(1L)).isEqualTo(new_employee);
