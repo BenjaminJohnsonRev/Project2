@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CustomerService {
 
+  static customerLoggedIn=false;
   constructor(private http:HttpClient) { }
 
   login(customer:Customer){
@@ -21,6 +22,14 @@ export class CustomerService {
 
   getAllCustomers(){
     return this.http.get<Customer[]>('http://localhost:9002/customers');
+  }
+
+  static getCustomerLoggedIn(): boolean{
+    return this.customerLoggedIn;
+  }
+
+  static setCustomerLoggedIn(newStatus:boolean){
+    this.customerLoggedIn=newStatus;
   }
 
 }
