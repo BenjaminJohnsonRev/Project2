@@ -237,6 +237,7 @@ export class AddSandwichComponent implements OnInit {
                     console.log(cart);
                   });
               });
+              this.getCarService.s
 
           });
         }

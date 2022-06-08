@@ -11,8 +11,13 @@ import { Customer } from '../customer';
 export class CartService {
 
   static cart= {
-    customer_id: 0,
-    cost_sum: 0
+    // cart_id?:Number,
+    // customer_id?:Number,
+    // employee_id?:Number,
+    // cost_sum:number,
+    // cart_date?:Date,
+    // submitted?:boolean,
+    // sandwiches?:Sandwich[]
   }
   // sandwich!:SandwichOrerIDObject;
   // // customer!:Customer;
@@ -23,9 +28,16 @@ export class CartService {
     return this.cart;
   }
 
-  // static setCart(cart:Cart){
-  //   this.cart=cart;
-  // }
+  static setCart(cart:Cart){
+    // cart_id?:Number,
+    // customer_id?:Number,
+    // employee_id?:Number,
+    // cost_sum:number,
+    // cart_date?:Date,
+    // submitted?:boolean,
+    // sandwiches?:Sandwich[]
+    this.cart=cart;
+  }
 
   updateCart(cart:Cart){
     return this.http.put<Cart>('http://localhost:9002/carts', cart);
