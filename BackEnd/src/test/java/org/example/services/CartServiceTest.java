@@ -44,8 +44,8 @@ class CartServiceTest {
 
     @BeforeEach
     public void setup(){
-        test_cart1 = new Cart(1L,1L,10.00,Timestamp.valueOf("2222-01-14 09:01:16"));
-        test_cart2 = new Cart(2L,2L,20.00,Timestamp.valueOf("2222-01-14 09:01:16"));
+        test_cart1 = new Cart(1L,1L,10.00,Timestamp.valueOf("2222-01-14 09:01:16"),false);
+        test_cart2 = new Cart(2L,2L,20.00,Timestamp.valueOf("2222-01-14 09:01:16"),false);
 
         Bread bread1 = new Bread(1L,"White",1);
         Bread bread2 = new Bread(2L,"Multigrain",2);
@@ -95,7 +95,7 @@ class CartServiceTest {
         sandwichSet.add(sandwich1);
         sandwichSet.add(sandwich2);
 
-        Cart test_cart3 = new Cart(1L,6,12.00,Timestamp.valueOf("2222-01-14 09:01:16"),sandwichSet);
+        Cart test_cart3 = new Cart(1L,6,12.00,Timestamp.valueOf("2222-01-14 09:01:16"),false,sandwichSet);
         cartService.add_cart(test_cart1);
 
         given(cartRepository.getById(1L)).willReturn(test_cart1);

@@ -1,0 +1,42 @@
+<p>checkout works!</p>
+<form #bindProject="ngForm" (ngSubmit)="submitOrder()" >
+<label for="FirstName">First Name</label>
+<input required id="FirstName" type="text" name="FirstName"/>
+<br/>
+<label for="LastName">Last Name</label>
+<input required id="LastName" type="text" name="LastName"/>
+<br/>
+<label for="email">Email</label>
+<input required id="email" type="text" name="email"/>
+<br/>
+<button type="submit">Submit Order</button>
+</form>
+
+<div>
+    <body>
+    <table class="table">
+        <thead>
+            <th scope="col">Bread:</th>
+            <th scope="col">Meat:</th>
+            <th scope="col">Vegetable:</th>
+            <th scope="col">Sauce:</th>
+            <th scope="col">Seasoning:</th>
+            <th scope="col">Sandwich Total:</th>
+        </thead>
+        <tbody>
+            <tr scope="row" class = "message" *ngFor="let sandwich of cart.sandwiches">
+                <td>{{sandwich.bread.name}}</td>
+                <td>{{sandwich.meat.name}}</td>
+                <td>{{sandwich.vegetable.name}}</td>
+                <td>{{sandwich.sauce.name}}</td>
+                <td>{{sandwich.seasoning.name}}</td>
+                <td>{{(sandwich.bread.price+sandwich.meat.price+sandwich.vegetable.price+sandwich.sauce.price+sandwich.seasoning.price)/100}}</td>
+            </tr>
+        </tbody>
+    </table>
+    Total: ${{cart.cost_sum/100}}
+</body>
+<br>
+<!-- <button (click) = "logout()">Logout</button> -->
+
+</div>
