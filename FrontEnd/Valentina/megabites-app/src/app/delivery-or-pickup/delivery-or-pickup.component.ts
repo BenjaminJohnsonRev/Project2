@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from '../customer';
 import { Delivery } from '../delivery';
 import { Pickup } from '../pickup';
@@ -8,9 +9,6 @@ import { DeliveryOrPickupService } from '../services/delivery-or-pickup.service'
 @Component({
   selector: 'app-delivery-or-pickup',
   templateUrl: './delivery-or-pickup.component.html',
-  styles:[
-    '.modal{background: rgba(0,0,0, .5)};'
-  ],
   styleUrls: ['./delivery-or-pickup.component.css']
 })
 export class DeliveryOrPickupComponent implements OnInit {
@@ -19,7 +17,7 @@ export class DeliveryOrPickupComponent implements OnInit {
   delivery!: Delivery;
   pickup!: Pickup;
   pickupOrDelivery!: String;
-
+  router!:Router;
   constructor(private customerService:CustomerService, private deliveryOrPickupService:DeliveryOrPickupService) { }
   display!:String;
 
@@ -33,7 +31,8 @@ export class DeliveryOrPickupComponent implements OnInit {
       status: false,
       address: ''
     }
-
+    
+    this.pickupOrDelivery = '';
 
     this.updateWindow();
     
@@ -44,29 +43,28 @@ export class DeliveryOrPickupComponent implements OnInit {
     // this.deliveryOrPickupService.login(this.delivery).subscribe(
     //   delivery=>{this.delivery=delivery;
       // this.delivery = delivery;
+      const navigationDetails: string[] = ['/add-sandwich'];
       if(this.pickupOrDelivery === ("delivery")){
         localStorage.setItem('deliveryAddress', String(this.delivery.address));
         console.log(this.delivery.address);
         if(this.delivery==null){
-        window.open('http://localhost:4200/','_self')?.focus();
         DeliveryOrPickupService.setDeliveryLoggedIn(false);
         }
         else{
           this.display = "none";
           DeliveryOrPickupService.setDeliveryLoggedIn(true);
+          this.router.navigate(navigationDetails);
         }
 
       } else if(this.pickupOrDelivery === "pickup"){ 
         localStorage.setItem('pickupAddress', String(this.pickup.address));
         console.log(this.pickup.address);
         if(this.pickup==null){
-          window.open('http://localhost:4200/','_self')?.focus();
           DeliveryOrPickupService.setPickupLoggedIn(false);
-
         }
         else{
-          this.display = "none";
           DeliveryOrPickupService.setPickupLoggedIn(true);
+          this.router.navigate(navigationDetails);
         }
       
       }
