@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { LogoutComponent } from '../logout/logout.component';
 import { NavigationExtras } from '@angular/router';
 import { CustomerService } from '../services/customer.service';
 

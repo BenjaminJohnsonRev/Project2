@@ -23,6 +23,7 @@ public class Cart {
     private long customer_id;
     private double cost_sum;
     private Timestamp cart_date;
+    private boolean submitted;
 
     @OneToMany(targetEntity = Sandwich.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_fk", referencedColumnName = "cart_id")
@@ -34,14 +35,17 @@ public class Cart {
         this.cost_sum = cost_sum;
         this.cart_date = new Timestamp(System.currentTimeMillis());
         System.out.println(cart_date);
+        this.submitted = false;
         this.sandwiches = new ArrayList<>();
     }
 
-    public Cart(long cart_id, long customer_id, double cost_sum, Timestamp cart_date) {
+    public Cart(long cart_id, long customer_id, double cost_sum, Timestamp cart_date,boolean submitted) {
         this.cart_id = cart_id;
         this.customer_id = customer_id;
         this.cost_sum = cost_sum;
         this.cart_date = cart_date;
+        this.submitted = submitted;
+
         this.sandwiches = new ArrayList<>();
     }
 

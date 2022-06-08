@@ -138,6 +138,10 @@ export class AddSandwichComponent implements OnInit {
     this.getAllVegetable();
     this.getAllSeasoning();
     this.numbers=Array.from(Array(10),(x,i)=>i).map(i=>i+1);
+
+    if(CustomerService.username!=""){
+      this.cart
+    }
   }
 
 
@@ -237,6 +241,10 @@ export class AddSandwichComponent implements OnInit {
           });
         }
       });
+  }
+  
+  logout(){
+    window.open('http://localhost:4200/','_self')?.focus();
   }
 }
 

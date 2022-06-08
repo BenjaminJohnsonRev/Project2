@@ -9,12 +9,27 @@ import { Customer } from '../customer';
   providedIn: 'root'
 })
 export class CartService {
-  // cart!:Cart;
+
+  static cart= {
+    customer_id: 0,
+    cost_sum: 0
+  }
   // sandwich!:SandwichOrerIDObject;
   // // customer!:Customer;
 
   constructor(private http:HttpClient) { }
 
+  static getCart(): Cart{
+    return this.cart;
+  }
+
+  // static setCart(cart:Cart){
+  //   this.cart=cart;
+  // }
+
+  updateCart(cart:Cart){
+    return this.http.put<Cart>('http://localhost:9002/carts', cart);
+  }
 
   //addCart()-creates an empty cart
   addCart(cart:Cart){
@@ -26,7 +41,7 @@ export class CartService {
     return this.http.put<Cart>('http://localhost:9002/carts/add', soid_object);
   }
 
-  getCart(customer:Customer){
+  getCustomerCart(customer:Customer){
     console.log(customer.customer_id);
     return this.http.get<Cart>('http://localhost:9002/carts/history/customer/'+customer.customer_id);
   }
