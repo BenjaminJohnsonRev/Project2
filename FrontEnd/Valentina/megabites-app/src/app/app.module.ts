@@ -16,6 +16,7 @@ import { ManagerAuthenticationComponent } from './manager-authentication/manager
 import { ComplaintComponent } from './complaint/complaint.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
+import { DeliveryOrPickupComponent } from './delivery-or-pickup/delivery-or-pickup.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CustomerOrdersComponent } from './customer-orders/customer-orders.compo
     ComplaintComponent,
     CustomerComponent,
     CustomerOrdersComponent,
+    DeliveryOrPickupComponent,
   ],
   imports: [
     BrowserModule,

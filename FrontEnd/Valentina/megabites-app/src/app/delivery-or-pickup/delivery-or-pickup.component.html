@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+ <!-- Modal -->
+ <div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+
+       <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title">Choose Pickup or Delivery</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="onCloseHandled()">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+               <div class="wrapper">
+                   <div class="block">
+                       <form class="delivery">
+                           <h6>Delivery</h6>
+                           <label for="html">Pickup</label><br>
+                           <input type="radio" id="html" name="fav_language" [(ngModel)]="pickupOrDelivery" value="pickup">
+                            <label for="css">Delivery</label><br>
+                            <input type="radio" id="css" name="fav_language" [(ngModel)]="pickupOrDelivery" value="delivery">
+                           <label for="delivery-address">Address</label>
+                           <input required id="delivery-address" type="text" name="delivery-address" [(ngModel)]="delivery.address"/>
+                            <label for="css">Delivery</label><br>
+                           <button (click) = "forDelivery()">Delivery</button>
+                        </form>
+                </div>
+            </div>
+            </div>
+            <!-- </div> -->
+        </div>
+        </div>

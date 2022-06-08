@@ -1,38 +1,38 @@
 User Stories:
+[F][B]Frontend and Backend
+[X][X]Customers can create an account (register)
+[X][X]Customers can login
+[ ][X]Customers can logout
+[ ][ ]Customers can choose pickup or delivery
+[ ][ ]Customers can choose an address for delivery (GPS map possibly)
+[X][X]Customers can add menu items to cart
+[X][X]Customer can customize a sandwich :
+[ ][ ]Type of sandwich
+[X][X]Type of meat
+[X][X]Type of vegetable
+[X][X]Type of seasonings(salt/pepper)
+[X][X]Type of sauces
+[X][X]Customer can change quantity of ingredients
+[X][X]Customer can change quantity of items
+[X][X]Customers can view their order in a cart
+[X][X]Customers can view current total in cart
+[ ][ ]Customers can choose a payment method
+[ ][ ]Customers can choose a tip amount
+[X][X]Customers can view purchase history in account
+[X][X]Customers can view receipt after purchase
+[X][X]Customers can submit complaints
+[X][X]Customers can edit complaints
+[X][X]Employee randomly assigned to sandwich being made
+[X][X]Managers can ban customers
+[ ][ ]Managers can apply discounts
+[ ][ ]Managers can choose feature menu items
+[X][X]Managers can see complaints
+[X][X]Managers can delete complaints
+[ ][ ]Managers can respond to complaints
+[ ][X]Managers can hire employees
 
-[X]Customers can create an account (register)
-[X]Customers can login
-[X]Customers can logout
-[ ]Customers can choose pickup or delivery
-[ ]Customers can choose an address for delivery (GPS map possibly)
-[X]Customers can add menu items to cart
-[X]Customer can customize a sandwich :
-[ ]Type of sandwich
-[X]Type of meat
-[X]Type of vegetable
-[X]Type of seasonings(salt/pepper)
-[X]Type of sauces
-[X]Customer can change quantity of ingredients
-[X]Customer can change quantity of items
-[X]Customers can view their order in a cart
-[X]Customers can view current total in cart
-[ ]Customers can choose a payment method
-[ ]Customers can choose a tip amount
-[X]Customers can view purchase history in account
-[X]Customers can view receipt after purchase
-[X]Customers can submit complaints
-[X]Customers can edit complaints
-[ ]Employee randomly assigned to sandwich being made (% of failure, accumulating)
-[X]Managers can ban customers
-[ ]Managers can apply discounts
-[ ]Managers can choose feature menu items
-[X]Managers can see complaints
-[X]Managers can delete complaints
-[ ]Managers can respond to complaints
-[X]Managers can hire employees
 
-
-[X]Managers can view all orders:
-[X]By customer
-[X]By date
-[X]By employee
+[X][X]Managers can view all orders:
+[X][X]By customer
+[X][X]By date
+[X][X]By employee
