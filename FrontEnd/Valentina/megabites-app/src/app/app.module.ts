@@ -16,6 +16,7 @@ import { ComplaintComponent } from './complaint/complaint.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { DeliveryOrPickupComponent } from './delivery-or-pickup/delivery-or-pickup.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CustomerComponent,
     CustomerOrdersComponent,
     CheckoutComponent,
+    DeliveryOrPickupComponent
   ],
   imports: [
     BrowserModule,

@@ -9,14 +9,17 @@ import { CustomerComponent } from './customer/customer.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { DeliveryOrPickupComponent } from './delivery-or-pickup/delivery-or-pickup.component';
+import { AddSandwichComponent } from './add-sandwich/add-sandwich.component';
 
 const routes: Routes = [
-  {path: 'build-sandwich',component:BuildSandwichComponent},
+  {path: 'build-sandwich',component:DeliveryOrPickupComponent},
   {path: 'management',component:ManagementComponent},
   {path: 'customer',component:CustomerComponent},
   {path: 'complaint', component:ComplaintComponent},
   {path: 'orders',component:CustomerOrdersComponent},
-  {path: 'checkout',component:CheckoutComponent}
+  {path: 'checkout',component:CheckoutComponent},
+  {path: 'add-sandwich', component:AddSandwichComponent}
 
 ]
 @NgModule({

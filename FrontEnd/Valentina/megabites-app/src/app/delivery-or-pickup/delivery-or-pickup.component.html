@@ -1,0 +1,20 @@
+<app-user-authentication>
+
+</app-user-authentication>
+  
+<body>
+  <h1> Choose Pickup or Delivery</h1>
+                <form class="delivery">
+                    <label for="delivery-address">Address:</label>
+                    <input required id="delivery-address" type="text" name="delivery-address" [(ngModel)]="delivery.address"/>
+                    <br>
+                    <label for="html">Pickup</label>
+                    <input type="radio" id="html" name="pickupOrDelivery"value="pickup" ngModel>
+                    <br>
+                    <label for="css">Delivery</label>
+                    <input type="radio" id="css" name="pickupOrDelivery" value="delivery" ngModel>
+                    <br>
+                    <button type = submit (click) = "forDelivery()" routerLink = "/add-sandwich">Delivery</button>
+                </form>
+            </body>
+    <!-- </div> -->
