@@ -1,6 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Customer } from 'src/app/customer';
-import { LogoutComponent } from '../logout/logout.component';
 import { CustomerService } from '../services/customer.service';
 import {  EventEmitter} from '@angular/core';
 

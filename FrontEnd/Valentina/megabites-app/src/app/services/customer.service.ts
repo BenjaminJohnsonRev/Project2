@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class CustomerService {
 
   static customerLoggedIn=false;
+  static username='';
+
   constructor(private http:HttpClient) { }
 
   login(customer:Customer){
@@ -30,6 +32,14 @@ export class CustomerService {
 
   static setCustomerLoggedIn(newStatus:boolean){
     this.customerLoggedIn=newStatus;
+  }
+
+  static getUsername(): string{
+    return this.username;
+  }
+
+  static setUsername(newUsername:string){
+    this.username=newUsername;
   }
 
 }

@@ -11,12 +11,11 @@ import { BuildSandwichComponent } from './build-sandwich/build-sandwich.componen
 import { AddSandwichComponent } from './add-sandwich/add-sandwich.component';
 import { ManagementComponent } from './management/management.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LogoutComponent } from './logout/logout.component';
 import { ManagerAuthenticationComponent } from './manager-authentication/manager-authentication.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
-import { DeliveryOrPickupComponent } from './delivery-or-pickup/delivery-or-pickup.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 @NgModule({
@@ -27,12 +26,11 @@ import { DeliveryOrPickupComponent } from './delivery-or-pickup/delivery-or-pick
     AddSandwichComponent,
     ManagementComponent,
     NavbarComponent,
-    LogoutComponent,
     ManagerAuthenticationComponent,
     ComplaintComponent,
     CustomerComponent,
     CustomerOrdersComponent,
-    DeliveryOrPickupComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
